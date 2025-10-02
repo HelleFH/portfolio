@@ -1,0 +1,7 @@
+@import '/src/styles/main';
+
+.index-container {
+  @include page-container;
+  padding: var(--padding);
+  text-align: center;
+}

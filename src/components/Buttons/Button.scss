@@ -1,0 +1,28 @@
+.custom-button {
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--small-gap, 8px);
+  place-self: center;
+  text-decoration: none !important;
+  background-color: transparent;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: var(--border-radius, 4px);
+  color: var(--white-color, #fff);
+  fill: var(--white-color, #fff);
+  font-size: 1rem;
+  font-family: 'GlacialIndifference-Regular', sans-serif;
+  font-weight: 500;
+  padding: 7px 16px 9px;
+  transition: background-color 0.2s ease;
+  height: fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.custom-button:active {
+  transform: translateY(0);
+  opacity: 0.9;
+}

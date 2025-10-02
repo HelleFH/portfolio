@@ -1,0 +1,12 @@
+@import '/src/styles/main';
+
+.social-links-container {
+    display: flex;
+    flex-direction: row;
+    gap: var(--small-gap);
+    justify-content: center;
+
+    .social-link:hover {
+        color: #fcbf49 !important;
+    }
+}

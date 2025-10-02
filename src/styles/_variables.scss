@@ -1,0 +1,60 @@
+:root {
+  /* Colors */
+  --lightgray-color: #f3f3f7;
+  --darkgray-color: var(--black-color);
+  --text-color: #141414;
+  --white-color: #fff;
+  --border-color: #cfcfcf;
+  --hero-color:#565656;
+  --blue-color:#007bff;
+  --black-color:#212427;
+
+  /* Box Shadow */
+  --box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);
+  --small-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+
+
+  /* Border Radius */
+  --small-border-radius: 2px;
+  --border-radius: 5px;
+
+  /* Widths */
+  --inner-container-width: 1600px;
+  --outer-container-width: 1600px;
+
+  /* Spacing */
+  --padding: 2rem;
+  --xs-padding: calc(0.3 * var(--padding));
+
+  --small-padding: calc(0.5 * var(--padding));
+  --large-padding: calc(2 * var(--padding));
+  --xl-padding: calc(3 * var(--padding));
+
+
+  --gap: 2rem;
+  --small-gap: calc(0.5 * var(--gap));
+  --large-gap:calc(2 * var(--gap));
+  --xl-gap: calc(3 * var(--gap));
+
+
+  /* Font Sizes */
+  --font-size-small: 0.9rem;
+  --large-paragraph-font: 1.2rem;
+  --large-title-font: 2.8rem;
+  --medium-title-font: 1.8rem;
+}
+
+@media (max-width: 1600px) {
+  :root {
+    /* Font Sizes */
+    --font-size-small: 0.8rem;
+    --large-title-font: 2rem;
+    --medium-title-font: 1.6rem;
+    --large-paragraph-font: 1.1rem;
+
+    --padding: 1.5rem;
+
+
+  }
+}

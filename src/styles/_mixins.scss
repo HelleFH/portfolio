@@ -1,0 +1,24 @@
+@mixin flex-column {
+
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+@mixin flex-row {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+
+}

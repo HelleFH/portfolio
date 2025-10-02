@@ -1,0 +1,36 @@
+@import '/src/styles/main';
+
+.projects-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0.6rem;
+  margin: 0 auto;
+  justify-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+
+  background-color: white;
+  padding: var(--padding);
+  margin-bottom: 4rem;
+
+  &__container {
+    @include flex-column;
+    border-radius: 8px;
+  }
+
+  &__intro {
+    background-color: white;
+    max-width: 1200px;
+    width: 100%;
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7rem;
+      padding: var(--xs-padding) 0;
+    }
+
+  }
+}

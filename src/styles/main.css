@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+:root {
+  /* Colors */
+  --background-color: #f8f8f8;
+  --lightgray-color: #f3f3f7;
+  --darkgray-color: var(--black-color);
+  --text-color: var(--black-color);
+  --white-color: #fff;
+  --border-color: #f3f3f7;
+  --hero-color:darken(rgb(92, 92, 92), 6.2%);
+  --blue-color:#007bff;
+  --black-color:#212427;
+  /* Box Shadow */
+  --box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  --small-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Border Radius */
+  --border-radius: 15px;
+  /* Widths */
+  --inner-container-width: 1600px;
+  --outer-container-width: 1600px;
+  /* Spacing */
+  --padding: 2rem;
+  --small-padding: calc(0.5 * var(--padding));
+  --large-padding: calc(2 * var(--padding));
+  --xl-padding: calc(3 * var(--padding));
+  --gap: 2rem;
+  --small-gap: calc(0.5 * var(--gap));
+  --large-gap:calc(2 * var(--gap));
+  --xl-gap: calc(3 * var(--gap));
+  /* Font Sizes */
+  --font-size-small: 0.9rem;
+  --large-paragraph-font: 1.2rem;
+  --large-title-font: 2.8rem;
+  --medium-title-font: 1.8rem;
+}
+
+@media (max-width: 1600px) {
+  :root {
+    /* Font Sizes */
+    --font-size-small: 0.8rem;
+    --large-title-font: 2rem;
+    --medium-title-font: 1.6rem;
+    --large-paragraph-font: 1.1rem;
+    /* Spacing */
+    --padding: 1.5rem;
+    /* Widths */
+    --inner-container-width: 90vw;
+    --outer-container-width: 98vw;
+  }
+}
+/* Google Fonts import for Exo, Lato, and Open Sans */
+.dnd-section {
+  padding: 0 !important;
+}
+
+/* Main content container */
+.main-content {
+  max-width: 95vw;
+}
+
+/* Global reset for body margin and font settings */
+body {
+  margin: 0 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Exo", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  color: var(--black-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+h2 {
+  font-weight: 800;
+}
+
+.hs-content-id-92296409586,
+.hs-web-interactive {
+  display: none !important;
+}
+
+/* Custom styling for video thumbnail overlays (e.g., YouTube thumbnails) */
+.ytp-cued-thumbnail-overlay-image {
+  background-size: cover !important;
+  -moz-background-size: cover !important;
+  -webkit-background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  border-radius: 10px !important;
+  opacity: 0.7 !important;
+}
+
+/* Base button styles */
+button:not(.contact-modal__close-btn, .close-modal) {
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--small-gap);
+  place-self: center;
+  background-color: var(--white-color);
+  border: 1px solid var(--darkgray-color);
+  border-radius: 20px;
+  color: var(--black-color);
+  fill: var(--white-color);
+  font-size: 1rem;
+  font-family: "Open Sans";
+  font-weight: 600;
+  padding: var(--small-padding) var(--padding);
+  transition: background-color 0.2s ease;
+  height: fit-content;
+  width: fit-content;
+  cursor: pointer;
+}
+
+/* General button hover effect, excluding close buttons */
+button:hover:not(.contact-modal__close-btn, .close-modal, .close-button.top-right) {
+  background-color: var(--darkgray-color);
+  border: 1px solid var(--darkgray-color);
+  color: white;
+}
+
+/* Active effect */
+button:active {
+  transform: translateY(0);
+  opacity: 0.9;
+}
+
+/* Styling for links */
+a {
+  cursor: pointer;
+}
+
+#hs-overlay-cta-92296409586 {
+  display: none !important;
+}
+
+/* Mobile styles for buttons on smaller screens */
+@media (max-width: 1000px) {
+  button {
+    font-size: var(--font-size-small);
+    padding: 0.7rem 0.9rem !important;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
