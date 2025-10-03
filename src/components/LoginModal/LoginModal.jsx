@@ -3,7 +3,7 @@ import { Modal, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 import './LoginModal.scss'; // global SCSS, not CSS modules
-
+import CloseButton from '../Buttons/CloseButton.tsx';
 const LoginModal = ({ show, onHide, project }) => {
 
   const [copiedField, setCopiedField] = React.useState(null);
@@ -20,6 +20,7 @@ const handleCopy = (text, field) => {
   return (
     <Modal show={show} onHide={onHide} centered backdrop="static" className="login-modal">
       <Modal.Header >
+        <CloseButton      onClick={onHide} />
         <Modal.Title>Login Details</Modal.Title>
       </Modal.Header>
 <Modal.Body>
@@ -70,9 +71,7 @@ const handleCopy = (text, field) => {
   )}
 </Modal.Body>
       <Modal.Footer>
-        <Button variant="primary" onClick={onHide}>
-          Close
-        </Button>
+
       </Modal.Footer>
     </Modal>
   );

@@ -10,6 +10,37 @@
     }
 }
 
+.link-with-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: #007bff; // highlight on hover
+    }
+
+    svg {
+        flex-shrink: 0;
+    }
+}
+
+.link-with-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+
+    svg {
+        flex-shrink: 0;
+    }
+}
+
 .project-details-list {
     padding-left: 0;
     list-style: none;
@@ -55,7 +86,6 @@
         @include flex-row;
         gap: 1.5em;
         justify-content: flex-end;
-        margin-top: 2rem;
         padding: 1rem 2rem;
 
         .project-button {
@@ -116,7 +146,6 @@
     justify-content: space-between;
     flex-direction: row;
     gap: 1.5rem;
-    margin-top: 2rem;
     padding: 0 2rem;
     width: 100%;
 }

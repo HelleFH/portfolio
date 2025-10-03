@@ -65,6 +65,8 @@ svg:active  {  transform: scale(0.95);
   justify-self: flex-end;
   font-size: 20px;
   font-weight: 600;
+
+  
 }
 
 .close-modal-button:hover {

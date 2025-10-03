@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import ProjectButtons from '../../../../components/ProjectButtons/ProjectButtons';
 import { Link } from 'react-router-dom';
 import './ProjectModal.scss';
+import { FaArrowRight, FaSignInAlt } from "react-icons/fa";
+import CloseButton from '../../../../components/Buttons/CloseButton.tsx';
 import LoginModal from '../../../../components/LoginModal/LoginModal';
 
 const ProjectModal = ({
@@ -44,9 +46,8 @@ const ProjectModal = ({
     <Modal show={show} onHide={handleClose} centered className="custom-modal">
       <Modal.Dialog className="login-modal-dialog fade-in">
         <Modal.Body {...swipeHandlers} className="modal-body-custom">
-          <Button className="close-button" onClick={handleClose}>
-            &times;
-          </Button>
+          <CloseButton   onClick={handleClose}/>
+
 
           <div className="chevron chevron-left" onClick={handlePrev}>
             <FontAwesomeIcon icon={faChevronLeft} size="sm" />
@@ -86,20 +87,25 @@ const ProjectModal = ({
             )}
 
 
-            <div className="links-container">
-              <Link
-                to={{
-                  pathname: `/project/${project.type}/${project.id}`,
-                  state: { selectedProjectIndex, projectType: project.type },
-                }}
-                className="read-more-link"
-              >
-                Read More
-              </Link>
-              {project.username && (
-                <a onClick={handleShowLoginDetails}>Show Login Details</a>
-              )}
-            </div>
+    <div className="links-container">
+  <Link
+    to={{
+      pathname: `/project/${project.type}/${project.id}`,
+      state: { selectedProjectIndex, projectType: project.type },
+    }}
+    className="read-more-link link-with-icon"
+  >
+    Read More <FaArrowRight size={14} />
+  </Link>
+
+  {project.username && (
+    <a onClick={handleShowLoginDetails} className="link-with-icon">
+      <FaSignInAlt size={14} /> Show Login Details
+    </a>
+  )}
+</div>
+
+
 
             <LoginModal
               show={showLoginModal}

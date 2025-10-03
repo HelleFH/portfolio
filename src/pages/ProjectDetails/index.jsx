@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { useParams, useNavigate, Link, useLocation } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import LoginModal from "../../components/LoginModal/LoginModal";
 import { useSwipeable } from "react-swipeable";
 import { frontendProjects } from '../../data/frontendprojects';
@@ -7,6 +7,8 @@ import { fullStackProjects } from '../../data/fullstackprojects';
 import Layout from '../../components/Layout/Layout';
 import ProjectButtons from "../../components/ProjectButtons/ProjectButtons";
 import './index.scss';
+import { ArrowRight, LogIn } from "lucide-react";
+
 
 const ProjectDetail = () => {
   const { id, type } = useParams();
@@ -115,7 +117,19 @@ const ProjectDetail = () => {
               ))}
             </ul>
           </div>
+  {project && (
 
+            <div className="links-container">
+
+
+              {/* Show login details */}
+              {project.username && (
+                <a onClick={handleShowLoginDetails} className="link-with-icon">
+                  <LogIn size={16} /> Show Login Details
+                </a>
+              )}
+            </div>
+          )}
           {project && (
             <ProjectButtons
               projectLink={project.projectLink}
@@ -124,14 +138,7 @@ const ProjectDetail = () => {
               githubButtonText={project.githubButtonText}
             />
           )}
-          {project && (
-            <div className="links-container">
-
-              {project.username && (
-                <a onClick={handleShowLoginDetails}>Show Login Details</a>
-              )}
-            </div>
-          )}
+        
           {/* Navigation chevrons */}
           <div className="navigation-buttons">
             <button
