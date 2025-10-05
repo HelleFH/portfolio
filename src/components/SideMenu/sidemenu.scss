@@ -1,3 +1,13 @@
 .side-links {
     color: #324b4b;
 }
+
+.burger-icon {
+    height: 30px;
+    display:flex;
+    align-items: center;
+}
+
+.burger-icon:hover {
+    transform:scale(1.1);
+}

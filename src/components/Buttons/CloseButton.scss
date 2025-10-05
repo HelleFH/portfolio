@@ -14,11 +14,11 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease-in-out;
-  font-size: 2rem; /* fallback for × */
+  font-size: 2rem; 
 }
 
 .close-button:hover {
-  color: #95b1b0;
+  color: rgb(var(--dark-color));
 }
 
 @media (min-width: 1050px) {

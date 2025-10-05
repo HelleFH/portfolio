@@ -20,11 +20,20 @@
 }
 
 @font-face {
+  font-family: 'Cup-cakes';
+  src: url('../assets/fonts/CupCakes.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+@font-face {
   font-family: 'PangramSans-Medium';
   src: url('../assets/fonts/PPPangramSans-Medium.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-  
+
 }
 
 @font-face {
@@ -33,12 +42,14 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'GlacialIndifference-Regular';
   src: url('../assets/fonts/GlacialIndifference-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'GlacialIndifference-Bold';
   src: url('../assets/fonts/GlacialIndifference-Bold.otf') format('opentype');
@@ -64,11 +75,11 @@ body {
 }
 
 
-a,
-a:visited,
-a:hover {
+
+a:visited
+ {
   color: inherit !important;
- 
+
 }
 
 h1,
@@ -110,14 +121,21 @@ button:active {
   transform: translateY(0);
   opacity: 0.9;
 }
-
+ul { font-family: 'PangramSans-Regular';}
 /* Styling for links */
 a {
   cursor: pointer;
+  font-family: 'Cup-cakes';
+  letter-spacing: -0.1rem;
+  font-size:16px;
+  @include flex-row;
+  gap:0.5rem;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+
 }
 
 a:visited,
-a:hover,
 a:active {
   color: inherit;
 }

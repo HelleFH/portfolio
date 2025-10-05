@@ -93,13 +93,12 @@ const ProjectModal = ({
       pathname: `/project/${project.type}/${project.id}`,
       state: { selectedProjectIndex, projectType: project.type },
     }}
-    className="read-more-link link-with-icon"
   >
     Read More <FaArrowRight size={14} />
   </Link>
 
   {project.username && (
-    <a onClick={handleShowLoginDetails} className="link-with-icon">
+    <a onClick={handleShowLoginDetails}>
       <FaSignInAlt size={14} /> Show Login Details
     </a>
   )}

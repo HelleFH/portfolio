@@ -20,9 +20,9 @@ const SideMenu: React.FC<SideMenuProps> = ({ items, open, setOpen }) => {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="z-9 absolute p-2 rounded-lg text-white right-10"
+        className=" burger-icon z-9 p-2 rounded-lg text-white right-10"
       >
-        <Menu size={28} />
+        <Menu size={30} />
       </button>
 
       <AnimatePresence >

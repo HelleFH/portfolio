@@ -5,7 +5,7 @@ const ProjectButtons = ({ projectLink, githubLink, buttonText, githubButtonText 
   return (
     <div className="project-buttons">
       <Button
-            bgColor="#324b4b"
+        bgColor="rgb(var(--dark-color)"
 
         className="project-buttons__button project-buttons__button--project"
         onClick={() => window.open(projectLink, '_blank')}
@@ -13,8 +13,8 @@ const ProjectButtons = ({ projectLink, githubLink, buttonText, githubButtonText 
         {buttonText}
       </Button>
       <Button
-      bgColor="transparent"
-      fontColor="black"
+        bgColor="transparent"
+        fontColor="rgb(var(--black-color)"
         className="project-buttons__button project-buttons__button--github"
         onClick={() => window.open(githubLink, '_blank')}
       >

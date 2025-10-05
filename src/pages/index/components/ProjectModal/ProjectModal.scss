@@ -45,6 +45,15 @@
   align-items: center;
   justify-content: center;
 
+
+  .link-with-icon {
+    @include flex-row;
+    gap: 0.5rem;
+    flex-wrap:nowrap;
+    white-space: nowrap;
+  }
+
+
   .modal-dialog {
     margin: auto;
     max-width: 100%;
@@ -62,7 +71,7 @@
     max-width: fit-content;
     overflow: hidden;
     margin: 0 auto;
-    background-color: white;
+    background-color: var(--white-color);
     border-radius: var(--border-radius);
   }
 
@@ -115,7 +124,7 @@
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.3);
-      color: white;
+      color: var(--white-color);
       transform: translateY(-50%) scale(1.05);
     }
 
@@ -148,7 +157,7 @@
 
   .project-description {
     display: none;
-    max-width:350px;
+    max-width: 350px;
 
     @media (min-width: 1050px) {
       display: block;
@@ -190,13 +199,14 @@
     display: flex;
     gap: var(--gap);
 
+
     a {
-      color: #222524;
+      color: rgb(var(--dark-color));
       font-weight: 400;
       transition: all 0.3s ease-in-out;
 
       &:hover {
-        background-color: #f3f3f3;
+        color: rgb(var(--lightgreen));
       }
 
       &:first-child {

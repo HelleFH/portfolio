@@ -1,13 +1,14 @@
 :root {
-  /* Colors */
-  --lightgray-color: #f3f3f7;
-  --darkgray-color: var(--black-color);
+
   --text-color: #141414;
   --white-color: #fff;
-  --border-color: #cfcfcf;
-  --hero-color:#565656;
-  --blue-color:#007bff;
-  --black-color:#212427;
+
+
+  --darkgreen:55, 132, 109;
+  --lightgreen:	0, 197, 151;
+  --dark-color:	54,	75,	68;
+  --cyan:	90, 228, 227;
+
 
   /* Box Shadow */
   --box-shadow: 0 10px 16px rgba(0, 0, 0, 0.1);

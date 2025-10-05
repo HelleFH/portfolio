@@ -2,29 +2,23 @@ import { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import LoginModal from "../../components/LoginModal/LoginModal";
 import { useSwipeable } from "react-swipeable";
-import { frontendProjects } from '../../data/frontendprojects';
-import { fullStackProjects } from '../../data/fullstackprojects';
-import Layout from '../../components/Layout/Layout';
+import { frontendProjects } from "../../data/frontendprojects";
+import { fullStackProjects } from "../../data/fullstackprojects";
+import Layout from "../../components/Layout/Layout";
 import ProjectButtons from "../../components/ProjectButtons/ProjectButtons";
+import { LogIn } from "lucide-react";
+import { FaArrowLeft } from "react-icons/fa";
 import './index.scss';
-import { ArrowRight, LogIn } from "lucide-react";
-
 
 const ProjectDetail = () => {
   const { id, type } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Get passed index from router state (if available)
-  const { selectedProjectIndex: passedIndex, projectType } = location.state || {};
+  const { selectedProjectIndex: passedIndex } = location.state || {};
+  const projectList = type === "frontend" ? frontendProjects : fullStackProjects;
 
-  // Determine the project list based on the type
-  const projectList = type === 'frontend' ? frontendProjects : fullStackProjects;
-
-  // Find index from URL param
-  const indexFromId = projectList.findIndex(proj => proj.id === parseInt(id, 10));
-
-  // Use passed index if available, otherwise use index from URL
+  const indexFromId = projectList.findIndex((proj) => proj.id === parseInt(id, 10));
   const currentIndex = passedIndex !== undefined ? passedIndex : indexFromId;
   const selectedProject = projectList[currentIndex];
 
@@ -33,9 +27,7 @@ const ProjectDetail = () => {
   const scrollPositionRef = useRef(0);
 
   useEffect(() => {
-    if (!selectedProject) {
-      navigate('/404');
-    }
+    if (!selectedProject) navigate("/404");
   }, [selectedProject, navigate]);
 
   useEffect(() => {
@@ -51,14 +43,14 @@ const ProjectDetail = () => {
     const total = projectList.length;
     const wrappedIndex = (newIndex + total) % total;
     const newProject = projectList[wrappedIndex];
-
-    navigate(`/project/${type}/${newProject.id}`, {
-      state: { scrollY: window.scrollY }
-    });
+    navigate(`/project/${type}/${newProject.id}`, { state: { scrollY: window.scrollY } });
   };
 
-  const handleHideLoginDetails = () => setShowLoginModal(false);
-  const handleShowLoginDetails = () => setShowLoginModal(true);
+  const handleBackToProjects = () => {
+    navigate("/", {
+      state: { selectedProjectIndex: currentIndex, projectType: type },
+    });
+  };
 
   const handlers = useSwipeable({
     onSwipedLeft: () => navigateToProject(currentIndex + 1),
@@ -66,112 +58,103 @@ const ProjectDetail = () => {
     trackMouse: true,
   });
 
-  const handleBackToProjects = () => {
-    navigate('/', {
-      state: { selectedProjectIndex: currentIndex, projectType: type }
-    });
-  };
-
-  if (!selectedProject) {
-    return <p>Loading...</p>;
-  }
+  if (!selectedProject) return <p className="text-center mt-20 text-gray-600">Loading...</p>;
 
   return (
-    <div className="project-container project-details" {...handlers}>
-      <Layout
-        heroTitle={selectedProject.name}
-        heroSubtitle={selectedProject.descriptionHeader}
-      >
-        <a onClick={handleBackToProjects} className="back-button">
-          Back to Projects
-        </a>
+    <div className="flex flex-col items-center justify-center w-full min-h-screen bg-gray-50" {...handlers}>
+      <Layout heroTitle={selectedProject.name} heroSubtitle={selectedProject.descriptionHeader}>
+        <div className="mx-auto relative flex flex-col items-center w-full max-w-3xl p-6 bg-white rounded-xl shadow-lg mt-[-6rem] z-10 transition-all hover:shadow-2xl">
+          {/* Back Button */}
+          <button
+            onClick={handleBackToProjects}
+            className="font-[cup-cakes] tracking-tighter flex items-center gap-2 text-gray-600 hover:text-green-800 transition-colors duration-300 self-start"
+          >
+            <FaArrowLeft size={14} /> Back to Projects
+          </button>
 
-        <div className="project-details-container">
-          <div className="image-wrapper">
+          {/* Image */}
+          <div className="w-full max-w-2xl overflow-hidden rounded-lg shadow-md mt-4">
             <img
               src={selectedProject.images[0]}
               alt={selectedProject.name}
-              className="project-image"
+              className="w-full h-auto object-cover"
             />
           </div>
 
-          <div className="project-text">
-            <h4>{selectedProject.descriptionHeader}</h4>
-            <p>{selectedProject.description}</p>
+          {/* Text Section */}
+          <div className="flex flex-col gap-5 text-gray-800 text-left w-full mt-6">
+            <h4 className="text-2xl font-semibold">{selectedProject.descriptionHeader}</h4>
+            <p className="text-lg leading-relaxed">{selectedProject.description}</p>
 
             {selectedProject.projectDetails && (
               <>
-                <h4>Project Features</h4>
-                <ul className="project-details-list">
+                <h4 className="text-center text-xl font-semibold mt-4">Project Features</h4>
+                <ul className="mx-auto list-none pl-0 space-y-2">
                   {selectedProject.projectDetails.map((detail, index) => (
-                    <li key={index}>{detail}</li>
+                    <li key={index} className=" relative pl-6 text-gray-700 before:content-['✦'] before:absolute before:left-0 before:text-teal-500">
+                      {detail}
+                    </li>
                   ))}
                 </ul>
               </>
             )}
 
-            <h4>Technologies Used</h4>
-            <ul className="technologies-list">
+            <h4 className="mx-auto text-xl font-semibold mt-4">Technologies Used</h4>
+            <ul className="mx-auto flex flex-wrap gap-3 font-semibold uppercase text-gray-700 text-sm">
               {selectedProject.technologiesMore?.map((tech, index) => (
-                <li key={index} className="tech-item">{tech}</li>
+                <li key={index} className="flex items-center after:content-['•'] after:mx-2 last:after:content-none">
+                  {tech}
+                </li>
               ))}
             </ul>
           </div>
-  {project && (
 
-            <div className="links-container">
-
-
-              {/* Show login details */}
-              {project.username && (
-                <a onClick={handleShowLoginDetails} className="link-with-icon">
-                  <LogIn size={16} /> Show Login Details
-                </a>
-              )}
+          {/* Login Details */}
+          {project?.username && (
+            <div className="flex items-center gap-2 mt-6 text-green-700 hover:text-green-900 cursor-pointer" onClick={() => setShowLoginModal(true)}>
+              <LogIn size={18} /> Show Login Details
             </div>
           )}
+
+          {/* Buttons */}
           {project && (
-            <ProjectButtons
-              projectLink={project.projectLink}
-              githubLink={project.githubLink}
-              buttonText={project.buttonText}
-              githubButtonText={project.githubButtonText}
-            />
+            <div className="mt-6">
+              <ProjectButtons
+                projectLink={project.projectLink}
+                githubLink={project.githubLink}
+                buttonText={project.buttonText}
+                githubButtonText={project.githubButtonText}
+              />
+            </div>
           )}
-        
-          {/* Navigation chevrons */}
-          <div className="navigation-buttons">
+
+          {/* Project Navigation */}
+          <div className="flex justify-between w-full mt-8 text-4xl text-gray-700">
             <button
-              className="nav-button nav-button--prev"
               onClick={() => navigateToProject(currentIndex - 1)}
+              className="hover:text-green-800 transition-colors duration-300"
               aria-label="Previous Project"
             >
               &#x2039;
             </button>
             <button
-              className="nav-button nav-button--next"
               onClick={() => navigateToProject(currentIndex + 1)}
+              className="hover:text-green-800 transition-colors duration-300"
               aria-label="Next Project"
             >
               &#x203A;
             </button>
-
           </div>
-
         </div>
-
-
 
         <LoginModal
           show={showLoginModal}
-          onHide={handleHideLoginDetails}
+          onHide={() => setShowLoginModal(false)}
           selectedProjectIndex={currentIndex}
           project={project}
-          backdropClassName="login-modal-backdrop"
-          dialogClassName="project-login-modal"
           handleCopyToClipboard={(text) => {
             navigator.clipboard.writeText(text);
-            alert('Copied to clipboard');
+            alert("Copied to clipboard");
           }}
         />
       </Layout>

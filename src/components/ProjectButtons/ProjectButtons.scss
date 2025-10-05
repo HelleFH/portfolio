@@ -2,12 +2,12 @@
   display: flex;
   gap: 0.5em;
   align-items: flex-start;
-      @media (max-width: 768px) {
-      margin-top:0;
 
+  button {
+    border-color: rgba(var(--darkgreen),0.6) !important;
   }
 
-
+  @media (max-width: 768px) {
+    margin-top: 0;
   }
-
-
+}

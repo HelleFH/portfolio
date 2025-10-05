@@ -1,27 +1,31 @@
+@import '/src/styles/main';
+
 .footer {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background-color: white;
-  padding: var(--xl-padding);
+  background-color: var(--white-color);
+  padding: var(--padding);
   width: 100%;
   border-top: 1px solid #ddd;
   margin-top: var(--padding);
   font-family: 'roboto';
 
-  .social-link:hover {
-    color: #0073b1 !important;
+
+
+  strong {
+    @include flex-column;
+    font-family: 'Cup-cakes';
+
   }
 
   &__logo-section {
+    @include flex-column;
     flex: 1;
     text-align: center;
 
     img {
-      width: 200px;
-      height: auto;
-      margin-bottom: 1rem;
+      max-width: 200px;
     }
   }
 
@@ -32,36 +36,20 @@
 
   &__pages,
   &__contact {
+    @include flex-column;
+    gap: 0.5rem;
     flex: 1;
-    min-width: 250px;
-    text-align: center;
-
-
-    h3 {
-      font-size: var(--large-paragraph-font);
-      margin-bottom: 1rem;
-      color: #333;
-
-    }
-
   }
 
   &__contact {
-    p {
-      margin: 0.5rem 0;
-    }
 
     a {
-      color: #0073b1 !important;
+      color: rgba(var(--darkgreen)) !important;
       text-decoration: none;
+      font-size: 18px;
       transition: color 0.3s ease;
       font-weight: 500;
 
-
-      &:hover {
-        font-weight: 600;
-        color: #0073b1;
-      }
     }
   }
 

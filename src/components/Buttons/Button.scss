@@ -10,14 +10,14 @@
   place-self: center;
   text-decoration: none !important;
   background-color: transparent;
-  border: 1px solid var(--border-color, #ccc);
+  border: 1px solid rgb(var(--cyan), 0.4);
   border-radius: var(--border-radius, 4px);
   color: var(--white-color, #fff);
   fill: var(--white-color, #fff);
   font-size: 1rem;
   font-family: 'GlacialIndifference-Regular', sans-serif;
   font-weight: 500;
-  padding: 7px 16px 9px;
+  padding: 6px 14px 7px;
   transition: background-color 0.2s ease;
   height: fit-content;
   width: fit-content;
@@ -28,4 +28,18 @@
   transform: translateY(0);
   opacity: 0.9;
 }
- .custom-button:hover {background-color: #95b1b0 !important;color:var(--black-color)}
+
+.custom-button:hover {
+  background-color: rgb(0, 0, 0, 0.1) !important;
+  color: var(--black-color);
+  border-color:rgb(0, 0, 0, 0.1)!important;
+  transition: background-color 0.5s, ease 0.5s; 
+}
+
+.hero {
+
+  .custom-button:hover {
+    color: white !important;
+  }
+
+}

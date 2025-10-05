@@ -47,7 +47,7 @@
 }
 
 .card-information p {
-  color: white;
+  color: var(--white-color);
   font-weight: 400;
   font-family: "Roboto";
   font-size: 0.8em;
@@ -64,7 +64,7 @@
 }
 
 .info-button svg {
-  color: white;
+  color: var(--white-color);
 }
 
 .info-button {
@@ -78,7 +78,7 @@
 
 .card {
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
-  background-color: white;
+  background-color: var(--white-color);
   border-radius: 20px;
   padding: 0.3em 0.3em 1em 0.3em;
   z-index: 9998;

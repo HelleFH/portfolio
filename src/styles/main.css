@@ -130,7 +130,7 @@ button:not(.contact-modal__close-btn, .close-modal) {
 button:hover:not(.contact-modal__close-btn, .close-modal, .close-button.top-right) {
   background-color: var(--darkgray-color);
   border: 1px solid var(--darkgray-color);
-  color: white;
+  color: var(--white-color);
 }
 
 /* Active effect */
