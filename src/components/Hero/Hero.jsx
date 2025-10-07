@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Images from "../../assets/images";
-import Button from "../Buttons/Button.tsx";
+import Button from '../Buttons/Button.tsx'
 import './hero.scss'
 
 const Hero = ({ title, subtitle, buttons }) => {
@@ -15,7 +15,7 @@ const Hero = ({ title, subtitle, buttons }) => {
   };
 
   return (
-    <section className="w-full relative flex flex-col justify-center items-start  px-16 min-h-[80vh] text-white overflow-hidden hero">
+    <section className="w-full relative flex flex-col justify-center items-start  px-16 min-h-[75vh] text-[rgba(var(--white-color))] overflow-hidden hero">
       
       {!videoEnded && (
         <video
@@ -36,18 +36,18 @@ const Hero = ({ title, subtitle, buttons }) => {
 
       {/* Content */}
       <div className="relative flex flex-col gap-4 items-start w-full p-12 md:p-16">
-        <p className="font-light text-lg font-prompt">{subtitle}</p>
-        <h1 className="text-5xl md:text-6xl font-light max-w-3xl font-inter">{title}</h1>
-
+        <p className="mt-[5%] -mb-3 font-light text-l g font-prompt">{subtitle}</p>
+        <h1 className="max-w-[800px] text-5xl md:text-6xl font-light font-inter">{title}</h1>
+<p className="max-w-[700px] pt-2">React Developer building clean, responsive interfaces and smooth user experiences. Merging a scientific mindset with creative coding </p>
         {/* Button Container */}
-        <div className="flex flex-row gap-4 mt-6">
+        <div className="flex flex-rowgap-4 mt-6">
           {buttons &&
             buttons.map((button, index) => (
               <React.Fragment key={index}>
                 {button.type === "link" && button.text && (
                   <Button
                     onClick={() => handleButtonClick(button.path)}
-                    className="bg-transparent text-white px-4 py-2 rounded-md font-regular hover:bg-gray-100"
+                    className="custom-button"
                   >
                     {button.text}
                   </Button>

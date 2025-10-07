@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import LoginModal from "../../components/LoginModal/LoginModal";
+import LoginModal from "../../components/LoginModal/LoginModal.tsx";
 import { useSwipeable } from "react-swipeable";
 import { frontendProjects } from "../../data/frontendprojects";
 import { fullStackProjects } from "../../data/fullstackprojects";
@@ -63,11 +63,11 @@ const ProjectDetail = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full min-h-screen bg-gray-50" {...handlers}>
       <Layout heroTitle={selectedProject.name} heroSubtitle={selectedProject.descriptionHeader}>
-        <div className="mx-auto relative flex flex-col items-center w-full max-w-3xl p-6 bg-white rounded-xl shadow-lg mt-[-6rem] z-10 transition-all hover:shadow-2xl">
+        <div className="mx-auto relative flex flex-col items-center w-full max-w-3xl p-6 bg-[rgba(var(--white-color))] rounded-xl shadow-lg mt-[-6rem] z-10 transition-all hover:shadow-2xl">
           {/* Back Button */}
           <button
             onClick={handleBackToProjects}
-            className="font-[cup-cakes] tracking-tighter flex items-center gap-2 text-gray-600 hover:text-green-800 transition-colors duration-300 self-start"
+            className="font-[cup-cakes] tracking-tighter flex items-center gap-2 text-gray-600 hover:text-[rgba(var(--darkgreen))]-800 transition-colors duration-300 self-start"
           >
             <FaArrowLeft size={14} /> Back to Projects
           </button>
@@ -111,7 +111,7 @@ const ProjectDetail = () => {
 
           {/* Login Details */}
           {project?.username && (
-            <div className="flex items-center gap-2 mt-6 text-green-700 hover:text-green-900 cursor-pointer" onClick={() => setShowLoginModal(true)}>
+            <div className="flex items-center gap-2 mt-6 text-[rgba(var(--darkgreen))]-700 hover:text-[rgba(var(--cyan))]-900 cursor-pointer" onClick={() => setShowLoginModal(true)}>
               <LogIn size={18} /> Show Login Details
             </div>
           )}
@@ -132,14 +132,14 @@ const ProjectDetail = () => {
           <div className="flex justify-between w-full mt-8 text-4xl text-gray-700">
             <button
               onClick={() => navigateToProject(currentIndex - 1)}
-              className="hover:text-green-800 transition-colors duration-300"
+              className="hover:text-[rgba(var(--darkgreen))]-800 transition-colors duration-300"
               aria-label="Previous Project"
             >
               &#x2039;
             </button>
             <button
               onClick={() => navigateToProject(currentIndex + 1)}
-              className="hover:text-green-800 transition-colors duration-300"
+              className="hover:text-[rgba(var(--darkgreen))]-800 transition-colors duration-300"
               aria-label="Next Project"
             >
               &#x203A;

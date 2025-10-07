@@ -56,7 +56,7 @@
 
   .modal-dialog {
     margin: auto;
-    max-width: 100%;
+    max-width: 98vw;
   }
 
   .modal-content-container {
@@ -71,7 +71,7 @@
     max-width: fit-content;
     overflow: hidden;
     margin: 0 auto;
-    background-color: var(--white-color);
+    background-color: rgba(var(--white-color));
     border-radius: var(--border-radius);
   }
 
@@ -124,7 +124,7 @@
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.3);
-      color: var(--white-color);
+      color: rgba(var(--white-color));
       transform: translateY(-50%) scale(1.05);
     }
 
@@ -201,17 +201,15 @@
 
 
     a {
-      color: rgb(var(--dark-color));
+      color: rgb(var(--dark-color)) !important;
       font-weight: 400;
       transition: all 0.3s ease-in-out;
 
       &:hover {
-        color: rgb(var(--lightgreen));
+        color: rgb(var(--cyan)) !important;
       }
 
-      &:first-child {
-        color: #343434;
-      }
+
     }
 
     @media (min-width: 800px) and (max-width: 1000px) {

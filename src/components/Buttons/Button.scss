@@ -13,7 +13,6 @@
   border: 1px solid rgb(var(--cyan), 0.4);
   border-radius: var(--border-radius, 4px);
   color: var(--white-color, #fff);
-  fill: var(--white-color, #fff);
   font-size: 1rem;
   font-family: 'GlacialIndifference-Regular', sans-serif;
   font-weight: 500;
@@ -30,16 +29,17 @@
 }
 
 .custom-button:hover {
-  background-color: rgb(0, 0, 0, 0.1) !important;
-  color: var(--black-color);
-  border-color:rgb(0, 0, 0, 0.1)!important;
-  transition: background-color 0.5s, ease 0.5s; 
+  background-color: rgba(var(--lightgreen), 0.4) !important;
+  color: black !important;
+  border-color: rgb(0, 0, 0, 0.1) !important;
+  transition: background-color 0.5s, ease 0.5s;
 }
 
 .hero {
 
   .custom-button:hover {
     color: white !important;
+
   }
 
 }

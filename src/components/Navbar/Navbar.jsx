@@ -45,16 +45,16 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-[9995] flex items-center justify-between px-6 h-[7vh] min-h-[60px]
         font-medium tracking-tight transition-all duration-500 ease-in-out
-        ${scrolled ? "bg-[rgba(54,75,68,0.85)] backdrop-blur-md" : "bg-transparent"}
+        ${scrolled ? "bg-[rgba(54,75,68,0.95)] backdrop-blur-sm" : "bg-transparent"}
         ${isHidden && !menuOpen ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"}
       `}
     >
       {/* Navbar Content */}
-      <div className="flex items-center justify-between w-full text-white">
+      <div className="flex items-center justify-between w-full text-[rgba(var(--white-color))]">
         {/* Logo */}
         <Link
           to="/"
-          className="flex items-center gap-2 text-white no-underline transition-transform duration-300 hover:scale-105"
+          className="flex items-center justify-start gap-2 text-[rgba(var(--white-color))] no-underline transition-transform duration-300 "
         >
           <img
             src={Images.FooterLogo}
@@ -65,11 +65,11 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex items-center gap-6 text-white transition-all duration-300">
+        <ul className="hidden md:flex items-center gap-4 text-[rgba(var(--white-color))] transition-all duration-300">
           <li>
             <Link
               to="/about"
-              className="px-3 py-1 rounded-md transition-colors duration-300 hover:bg-[rgba(0,100,0,0.6)]"
+              className="text-lg px-1 rounded-md transition-colors duration-300 hover:bg-[rgba(0,100,0,0.6)]"
               onClick={() => setMenuOpen(false)}
             >
               About
@@ -78,30 +78,31 @@ const Navbar = () => {
 
           {/* Inline Social Links */}
           <li className="flex items-center gap-3">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-green-200 transition-colors duration-300"
-            >
-              <Instagram size={20} />
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-green-200 transition-colors duration-300"
-            >
-              <Facebook size={20} />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-green-200 transition-colors duration-300"
-            >
-              <Linkedin size={20} />
-            </a>
+         <a
+  href="https://instagram.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="social-icon"
+>
+  <Instagram size={20} />
+</a>
+<a
+  href="https://facebook.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="social-icon"
+>
+  <Facebook size={20} />
+</a>
+<a
+  href="https://linkedin.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="social-icon mr-3"
+>
+  <Linkedin size={20} />
+</a>
+
           </li>
         </ul>
 

@@ -62,12 +62,16 @@ const ProjectsOverview = () => {
       {/* Intro Section */}
       <div
         id="react-projects"
-        className="w-full max-w-6xl bg-white rounded-lg p-6 md:p-8 text-center mb-6 shadow-sm"
+        className="w-full max-w-6xl bg-[rgba(var(--white-color))] rounded-lg p-6 md:p-8 text-center mb-6 shadow-sm"
       >
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-800">
           React Projects
         </h2>
-        <p className="text-gray-600 text-lg mt-3">
+        <div className="text-left flex flex-col items-center gap-5 p-4">
+          <p>I’m a web and mobile developer who works with React, React Native, TypeScript, and JavaScript. I have a solid background in HTML, CSS, and modern frontend tools like Tailwind and Bootstrap — though I still love writing custom CSS.</p>
+
+        </div>
+        <p className=" text-lg mt-3">
           Here are some examples of the work I've done in React.
         </p>
       </div>
@@ -75,7 +79,7 @@ const ProjectsOverview = () => {
       {/* Project Grid */}
       <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 
-                   w-full max-w-6xl bg-white p-6 md:p-8 rounded-lg shadow-sm mb-16"
+                   w-full max-w-6xl bg-[rgba(var(--white-color))] p-6 md:p-8 rounded-lg shadow-sm mb-16"
       >
         {frontendProjects.map((project, index) => (
           <Card

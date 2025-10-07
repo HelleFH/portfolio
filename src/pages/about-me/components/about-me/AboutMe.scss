@@ -6,7 +6,7 @@
     display: flex;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: var(--white-color);
+    background-color: rgba(var(--white-color));
 
 
     &__header {
@@ -65,7 +65,7 @@
         gap: 2rem;
 
         padding: var(--padding);
-        background-color: var(--white-color);
+        background-color: rgba(var(--white-color));
 
         @media (min-width: 768px) {
             flex-direction: row;
@@ -73,7 +73,7 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: var(--large-padding);
-            background-color: var(--white-color);
+            background-color: rgba(var(--white-color));
             border-radius: var(--border-radius);
 
         }

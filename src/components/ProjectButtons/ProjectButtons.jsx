@@ -5,7 +5,7 @@ const ProjectButtons = ({ projectLink, githubLink, buttonText, githubButtonText 
   return (
     <div className="project-buttons">
       <Button
-        bgColor="rgb(var(--dark-color)"
+        bgColor="rgb(var(--darkgreen)"
 
         className="project-buttons__button project-buttons__button--project"
         onClick={() => window.open(projectLink, '_blank')}

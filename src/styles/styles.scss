@@ -134,7 +134,9 @@ a {
   flex-wrap: nowrap;
 
 }
-
+.social-icon {
+  @apply p-1 rounded-md transition-colors duration-300 hover:bg-[rgba(0,100,0,0.6)];
+}
 a:visited,
 a:active {
   color: inherit;

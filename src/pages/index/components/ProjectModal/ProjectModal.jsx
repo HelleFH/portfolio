@@ -3,12 +3,12 @@ import { useSwipeable } from 'react-swipeable';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Modal } from 'react-bootstrap';
-import ProjectButtons from '../../../../components/ProjectButtons/ProjectButtons';
+import ProjectButtons from '../../../../components/ProjectButtons/ProjectButtons.jsx';
 import { Link } from 'react-router-dom';
 import './ProjectModal.scss';
 import { FaArrowRight, FaSignInAlt } from "react-icons/fa";
 import CloseButton from '../../../../components/Buttons/CloseButton.tsx';
-import LoginModal from '../../../../components/LoginModal/LoginModal';
+import LoginModal from '../../../../components/LoginModal/LoginModal.tsx';
 
 const ProjectModal = ({
   show,
@@ -27,13 +27,8 @@ const ProjectModal = ({
     trackMouse: true,
   });
 
-  const handleShowLoginDetails = () => {
-    setShowLoginModal(true);
-  };
-
-  const handleHideLoginDetails = () => {
-    setShowLoginModal(false);
-  };
+  const handleShowLoginDetails = () => setShowLoginModal(true);
+  const handleHideLoginDetails = () => setShowLoginModal(false);
 
   if (selectedProjectIndex === null || !projects[selectedProjectIndex]) {
     return null;
@@ -46,19 +41,14 @@ const ProjectModal = ({
     <Modal show={show} onHide={handleClose} centered className="custom-modal">
       <Modal.Dialog className="login-modal-dialog fade-in">
         <Modal.Body {...swipeHandlers} className="modal-body-custom">
-          <CloseButton   onClick={handleClose}/>
-
+          <CloseButton onClick={handleClose} />
 
           <div className="chevron chevron-left" onClick={handlePrev}>
             <FontAwesomeIcon icon={faChevronLeft} size="sm" />
           </div>
 
           <div className="modal-image-container">
-            <img
-              className="modal-image"
-              src={project.images[0]}
-              alt={project.name}
-            />
+            <img className="modal-image" src={project.images[0]} alt={project.name} />
           </div>
 
           <div className="chevron chevron-right" onClick={handleNext}>
@@ -66,16 +56,16 @@ const ProjectModal = ({
           </div>
 
           <div className="modal-content-container">
-              <h2 className="modal-title">{project.name}</h2>
-              <p className="project-description">{project.descriptionHeader}</p>
+            <h2 className="modal-title">{project.name}</h2>
+            <p className="project-description">{project.descriptionHeader}</p>
 
-              <ul className="technologies-list">
-                {technologies.split(',').map((tech, i) => (
-                  <li className="tech-item" key={i}>
-                    {tech.trim()}
-                  </li>
-                ))}
-              </ul>
+            <ul className="technologies-list">
+              {technologies.split(',').map((tech, i) => (
+                <li className="tech-item" key={i}>
+                  {tech.trim()}
+                </li>
+              ))}
+            </ul>
 
             {project && (
               <ProjectButtons
@@ -86,25 +76,22 @@ const ProjectModal = ({
               />
             )}
 
+            <div className="links-container">
+              <Link
+                to={{
+                  pathname: `/project/${project.type}/${project.id}`,
+                  state: { selectedProjectIndex, projectType: project.type },
+                }}
+              >
+                Read More <FaArrowRight size={14} />
+              </Link>
 
-    <div className="links-container">
-  <Link
-    to={{
-      pathname: `/project/${project.type}/${project.id}`,
-      state: { selectedProjectIndex, projectType: project.type },
-    }}
-  >
-    Read More <FaArrowRight size={14} />
-  </Link>
-
-  {project.username && (
-    <a onClick={handleShowLoginDetails}>
-      <FaSignInAlt size={14} /> Show Login Details
-    </a>
-  )}
-</div>
-
-
+              {project.username && (
+                <a onClick={handleShowLoginDetails}>
+                  <FaSignInAlt size={14} /> Show Login Details
+                </a>
+              )}
+            </div>
 
             <LoginModal
               show={showLoginModal}
@@ -118,7 +105,6 @@ const ProjectModal = ({
               }}
             />
           </div>
-
         </Modal.Body>
       </Modal.Dialog>
     </Modal>

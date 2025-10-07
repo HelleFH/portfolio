@@ -2,8 +2,6 @@
 
 nav {
   a {
-
-
     &:hover:not(.logo) {
       background-color: rgb(var(--darkgreen, 0.7)) !important;
     }
@@ -14,7 +12,7 @@ nav {
     .social-link {
       border-radius: 0.375rem;
       padding: 0.25rem 0.75rem;
-      
+
     }
   }
 }

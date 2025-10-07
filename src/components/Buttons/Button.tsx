@@ -21,7 +21,7 @@ const Button: React.FC<ButtonProps> = ({
       style={{
         backgroundColor: bgColor,
         color: fontColor,
-        ...style, // allow inline overrides if needed
+        ...style, 
       }}
       {...props}
     >
