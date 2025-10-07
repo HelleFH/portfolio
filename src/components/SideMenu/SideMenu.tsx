@@ -22,7 +22,7 @@ const SideMenu = ({ items, open, setOpen, scrolled }: SideMenuProps) => {
      
 <button
   onClick={() => setOpen(!open)}
-  className="transition-colors rounded-md duration-300 p-1  hover:text-[rgba(var(--darkgreen),0.9)]"
+  className="rounded-md p-1 transition-colors duration-300  hover:text-[rgba(var(--darkgreen),0.9)]"
 >
   {open ? <X size={24} color="black" className="text-[rgba(var(--black-color))] "/> : <Menu size={24} color="white" />}
 </button>
@@ -38,7 +38,7 @@ const SideMenu = ({ items, open, setOpen, scrolled }: SideMenuProps) => {
               animate={{ opacity: 0.5 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-black z-40"
+              className="fixed inset-0 z-40 bg-black"
               onClick={() => setOpen(false)}
             />
 
@@ -48,12 +48,12 @@ const SideMenu = ({ items, open, setOpen, scrolled }: SideMenuProps) => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="fixed  top-0 right-0 h-full w-full max-w-sm md:max-w-md bg-[rgba(var(--white-color))] z-50 shadow-lg flex flex-col"
+              className="fixed  right-0 top-0 z-50 flex h-full w-full max-w-sm flex-col bg-[rgba(var(--white-color))] shadow-lg md:max-w-md"
             >
               {/* Header */}
-              <div className="flex justify-between bg-[rgba(var(--white-color))] p-4 border-b text-black">
-                <img src={Images.FooterLogo} alt="Logo" className="max-w-[50px] object-contain h-auto" />
-                <div className="flex text-center flex-col">
+              <div className="flex justify-between border-b bg-[rgba(var(--white-color))] p-4 text-black">
+                <img src={Images.FooterLogo} alt="Logo" className="h-auto max-w-[50px] object-contain" />
+                <div className="flex flex-col text-center">
                 <a className="text-2xl tracking-[-0.2rem]">Helle Fruergaard</a>
                 <h6>Web Developer</h6>
                 </div>
@@ -62,12 +62,12 @@ const SideMenu = ({ items, open, setOpen, scrolled }: SideMenuProps) => {
                 </button>
               </div>
 
-              <div className=" text-black bg-[rgba(var(--white-color))] rounded-b-md shadow-xl text-[rgba(var(--black-color))]  text-center flex flex-col p-4 gap-4">
+              <div className=" flex flex-col gap-4 rounded-b-md bg-[rgba(var(--white-color))]  p-4 text-center text-[rgba(var(--black-color))] text-black shadow-xl">
                 {items.map((item, index) => (
                   <a
                     key={index}
                     href={item.href}
-                    className="block p-4 border-b text-lg font-medium hover:bg-gray-100 transition-colors duration-200"
+                    className="block border-b p-4 text-lg font-medium transition-colors duration-200 hover:bg-gray-100"
                     onClick={() => setOpen(false)}
                   >
                     {item.label}

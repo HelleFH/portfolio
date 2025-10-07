@@ -43,14 +43,14 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[9995] flex items-center justify-between px-6 h-[7vh] min-h-[60px]
+      className={`fixed left-0 right-0 top-0 z-[9995] flex h-[7vh] min-h-[60px] items-center justify-between px-6
         font-medium tracking-tight transition-all duration-500 ease-in-out
         ${scrolled ? "bg-[rgba(54,75,68,0.95)] backdrop-blur-sm" : "bg-transparent"}
         ${isHidden && !menuOpen ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"}
       `}
     >
       {/* Navbar Content */}
-      <div className="flex items-center justify-between w-full text-[rgba(var(--white-color))]">
+      <div className="flex w-full items-center justify-between text-[rgba(var(--white-color))]">
         {/* Logo */}
         <Link
           to="/"
@@ -65,11 +65,11 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex items-center gap-4 text-[rgba(var(--white-color))] transition-all duration-300">
+        <ul className="hidden items-center gap-4 text-[rgba(var(--white-color))] transition-all duration-300 md:flex">
           <li>
             <Link
               to="/about"
-              className="text-lg px-1 rounded-md transition-colors duration-300 hover:bg-[rgba(0,100,0,0.6)]"
+              className="rounded-md px-1 text-lg transition-colors duration-300 hover:bg-[rgba(0,100,0,0.6)]"
               onClick={() => setMenuOpen(false)}
             >
               About

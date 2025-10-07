@@ -4,14 +4,14 @@ import SocialLinks from "../SocialLinks/SocialLinks";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col md:flex-row justify-between items-center bg-[rgba(var(--white-color))] border-t border-gray-300 p-6 w-full mt-6 font-roboto">
+    <footer className="font-roboto mt-6 flex w-full flex-col items-center justify-between border-t border-gray-300 bg-[rgba(var(--white-color))] p-6 md:flex-row">
       
       {/* Contact Section */}
-      <div className="flex justify-center items-center flex-col gap-2 flex-1 text-center md:text-left">
+      <div className="flex flex-1 flex-col items-center justify-center gap-2 text-center md:text-left">
         <p>Contact me at:</p>
         <a
           href="mailto:hellefruergaardh@gmail.com"
-          className="text-[rgba(var(--dark-color))] hover:text-[rgba(var(--darkgreen))]-600 transition-colors text-lg font-medium"
+          className="hover:text-[rgba(var(--darkgreen))]-600 text-lg font-medium text-[rgba(var(--dark-color))] transition-colors"
         >
           hellefruergaardh@gmail.com
         </a>
@@ -21,13 +21,13 @@ const Footer = () => {
       </div>
 
       {/* Logo Section */}
-      <div className="flex flex-col items-center flex-1 text-center mt-6 md:mt-0">
+      <div className="mt-6 flex flex-1 flex-col items-center text-center md:mt-0">
         <img
           src={Images.FooterLogo}
           alt="Company Logo"
           className="max-w-xs"
         />
-        <p className="text-sm text-[rgba(var(--black-color))]  mt-2">
+        <p className="mt-2 text-sm  text-[rgba(var(--black-color))]">
           &copy; 2025 <strong className="font-cupcakes">Helle Fruergaard</strong>. All rights reserved.
         </p>
       </div>

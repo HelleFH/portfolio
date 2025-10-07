@@ -15,11 +15,11 @@ const Hero = ({ title, subtitle, buttons }) => {
   };
 
   return (
-    <section className="w-full relative flex flex-col justify-center items-start  px-16 min-h-[75vh] text-[rgba(var(--white-color))] overflow-hidden hero">
+    <section className="hero relative flex min-h-[75vh] w-full flex-col  items-start justify-center overflow-hidden px-16 text-[rgba(var(--white-color))]">
       
       {!videoEnded && (
         <video
-          className=" absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+          className=" absolute left-0 top-0 z-[-1] h-full w-full object-cover"
           src={Images.heroVideo}
           autoPlay
           muted
@@ -35,12 +35,12 @@ const Hero = ({ title, subtitle, buttons }) => {
       <div className="absolute inset-0 bg-black/10"></div>
 
       {/* Content */}
-      <div className="relative flex flex-col gap-4 items-start w-full p-12 md:p-16">
-        <p className="mt-[5%] -mb-3 font-light text-l g font-prompt">{subtitle}</p>
-        <h1 className="max-w-[800px] text-5xl md:text-6xl font-light font-inter">{title}</h1>
+      <div className="relative flex w-full flex-col items-start gap-4 p-12 md:p-16">
+        <p className="text-l g font-prompt -mb-3 mt-[5%] font-light">{subtitle}</p>
+        <h1 className="font-inter max-w-[800px] text-5xl font-light text-[rgba(var(--white-color))] md:text-6xl">{title}</h1>
 <p className="max-w-[700px] pt-2">React Developer building clean, responsive interfaces and smooth user experiences. Merging a scientific mindset with creative coding </p>
         {/* Button Container */}
-        <div className="flex flex-rowgap-4 mt-6">
+        <div className="flex-rowgap-4 mt-6 flex">
           {buttons &&
             buttons.map((button, index) => (
               <React.Fragment key={index}>

@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Card from "../Cards/Cards";
-import ProjectModal from "../ProjectModal/ProjectModal";
-import { frontendProjects } from "../../../../data/frontendprojects";
-import { fullStackProjects } from "../../../../data/fullstackprojects";
+import Card from "../Cards/Cards.tsx";
+import ProjectModal from "../ProjectModal/ProjectModal.tsx";
+import { frontendProjects } from "../../../../data/frontendprojects.js";
+import { fullStackProjects } from "../../../../data/fullstackprojects.js";
 import { useLocation } from "react-router-dom";
-import AnimatedSection from "../../../../components/AnimatedSection";
 
 const ProjectsOverview = () => {
-  const [selectedProjectIndex, setSelectedProjectIndex] = useState(null);
+  const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentProjectType, setCurrentProjectType] = useState(null);
+  const [currentProjectType, setCurrentProjectType] = useState<string | null>(null);
 
   const location = useLocation();
   const { selectedProjectIndex: passedIndex, projectType: passedType } =
@@ -23,7 +22,7 @@ const ProjectsOverview = () => {
     }
   }, [passedIndex, passedType]);
 
-  const openModal = (index, type) => {
+  const openModal = (index: number, type: string) => {
     setSelectedProjectIndex(index);
     setCurrentProjectType(type);
     setIsModalOpen(true);
@@ -44,42 +43,26 @@ const ProjectsOverview = () => {
   const handlePrev = () => {
     const projects = getProjects();
     setSelectedProjectIndex((prev) =>
-      prev === 0 ? projects.length - 1 : prev - 1
+      prev === 0 ? projects.length - 1 : (prev || 0) - 1
     );
   };
 
   const handleNext = () => {
     const projects = getProjects();
     setSelectedProjectIndex((prev) =>
-      prev === projects.length - 1 ? 0 : prev + 1
+      prev === projects.length - 1 ? 0 : (prev || 0) + 1
     );
   };
 
   const currentProjects = getProjects();
 
   return (
-    <div className="flex flex-col items-center w-full rounded-lg">
-      {/* Intro Section */}
-      <div
-        id="react-projects"
-        className="w-full max-w-6xl bg-[rgba(var(--white-color))] rounded-lg p-6 md:p-8 text-center mb-6 shadow-sm"
-      >
-        <h2 className="text-3xl md:text-4xl font-semibold text-gray-800">
-          React Projects
-        </h2>
-        <div className="text-left flex flex-col items-center gap-5 p-4">
-          <p>I’m a web and mobile developer who works with React, React Native, TypeScript, and JavaScript. I have a solid background in HTML, CSS, and modern frontend tools like Tailwind and Bootstrap — though I still love writing custom CSS.</p>
-
-        </div>
-        <p className=" text-lg mt-3">
-          Here are some examples of the work I've done in React.
-        </p>
-      </div>
+    <div className=" flex flex-col gap-4 md:gap-0 md:flex-row items-start w-full rounded-lg">
 
       {/* Project Grid */}
       <div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 
-                   w-full max-w-6xl bg-[rgba(var(--white-color))] p-6 md:p-8 rounded-lg shadow-sm mb-16"
+        className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 
+                   w-full bg-[rgba(var(--white-color))] md:p-8 rounded-lg shadow-sm my-10"
       >
         {frontendProjects.map((project, index) => (
           <Card

@@ -2,23 +2,8 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
 import CloseButton from "../Buttons/CloseButton.tsx";
+import { Project } from "../../types/project.ts"
 
-interface Project {
-  id?: number;
-  type?: string;
-  name?: string;
-  descriptionHeader?: string;
-  images?: string[];
-  technologies?: string;
-  projectLink?: string;
-  githubLink?: string;
-  buttonText?: string;
-  githubButtonText?: string;
-  username?: string;
-  password?: string;
-  adminUsername?: string;
-  adminPassword?: string;
-}
 
 interface LoginModalProps {
   show: boolean;
@@ -48,15 +33,15 @@ const [copiedField, setCopiedField] = React.useState<string | null>(null);
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
       {/* Modal box */}
-      <div className="bg-[rgba(var(--white-color))] rounded-lg shadow-xl max-w-md w-full mx-4 overflow-hidden">
+      <div className="mx-4 w-full max-w-md overflow-hidden rounded-lg bg-[rgba(var(--white-color))] shadow-xl">
         {/* Header */}
-        <div className="flex justify-between items-center bg-green-50 px-4 py-3 border-b">
+        <div className="flex items-center justify-between border-b bg-green-50 px-4 py-3">
           <h5 className="text-xl font-semibold">Login Details</h5>
           <CloseButton onClick={onHide} />
         </div>
 
         {/* Body */}
-        <div className="p-4 space-y-4">
+        <div className="space-y-4 p-4">
           {/* User Credentials */}
           {project?.username && (
             <div className="space-y-2">
@@ -95,7 +80,7 @@ const [copiedField, setCopiedField] = React.useState<string | null>(null);
         </div>
 
         {/* Footer */}
-        <div className="bg-gray-100 p-4 border-t"></div>
+        <div className="border-t bg-gray-100 p-4"></div>
 
         {/* Tailwind animation */}
         <style>
@@ -128,7 +113,7 @@ const CredentialRow: React.FC<CredentialRowProps> = ({
   onCopy,
   copied,
 }) => (
-  <p className="flex justify-between items-center bg-gray-100 p-3 rounded hover:bg-gray-200 transition-colors">
+  <p className="flex items-center justify-between rounded bg-gray-100 p-3 transition-colors hover:bg-gray-200">
     <strong className="flex-1">{label}:</strong>
     <span>{value}</span>
     <FontAwesomeIcon
@@ -137,7 +122,7 @@ const CredentialRow: React.FC<CredentialRowProps> = ({
       className="ml-2 cursor-pointer text-gray-600 hover:text-[rgba(var(--black-color))] "
     />
     {copied && (
-      <span className="ml-2 text-green-600 text-sm animate-fadeOut">
+      <span className="animate-fadeOut ml-2 text-sm text-green-600">
         Copied!
       </span>
     )}
