@@ -4,7 +4,7 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Images from "../../assets/images";
 import SideMenu from "../SideMenu/SideMenu.tsx";
 
-const Navbar = () => {
+const Navbar = ({ forceScrolled = false }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -15,8 +15,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      setScrolled(currentScrollY > 50);
+      setScrolled(forceScrolled || currentScrollY > 50);
 
       if (
         currentScrollY > lastScrollY &&
@@ -35,11 +34,14 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
 
+    // Run immediately if forceScrolled
+    if (forceScrolled) setScrolled(true);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       if (scrollTimeout) clearTimeout(scrollTimeout);
     };
-  }, [lastScrollY, scrollTimeout, menuOpen]);
+  }, [lastScrollY, scrollTimeout, menuOpen, forceScrolled]);
 
   return (
     <nav
@@ -78,30 +80,30 @@ const Navbar = () => {
 
           {/* Inline Social Links */}
           <li className="flex items-center gap-3">
-         <a
-  href="https://instagram.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="social-icon"
->
-  <Instagram size={20} />
-</a>
-<a
-  href="https://facebook.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="social-icon"
->
-  <Facebook size={20} />
-</a>
-<a
-  href="https://linkedin.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="social-icon mr-3"
->
-  <Linkedin size={20} />
-</a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon"
+            >
+              <Instagram size={20} />
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon"
+            >
+              <Facebook size={20} />
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon mr-3"
+            >
+              <Linkedin size={20} />
+            </a>
 
           </li>
         </ul>

@@ -4,8 +4,8 @@ import HeroLogo from './images/logo-white.png';
 import heroVideo from './images/hero.mp4';
 import heroVideoHD from './images/herovideo1.mp4';
 import heroVideoMobile from './images/herovideo.mp4';
-import HeroImage from './images/hero-bg.png';
-
+import HeroImage from './images/hero-image.png';
+import CVImage from './images/CV-image.png'
 import HeroImageMobile from './images/heroimage-mobile.png';
 
 
@@ -34,9 +34,26 @@ import ReactIcon from './images/react-icon.png';
 import JSIcon from './images/js-icon.png';
 import CreativeIcon from './images/design-icon.png';
 import LandingPagesScreen from './images/landingpages-screen.png';
-import MobileCalendarScreen from './images/Plantcalendar-screen.png'
+import MobileCalendarScreen from './images/Plantcalendar-screen.png';
+import SentispecImage from './images/Sentispec.png';
+import AccentureImage from './images/Accenture.png';
+import TIImage from './images/TI-education.png'
+import FreelancerImage from './images/Freelancer.png';
+import MaternityImage from './images/Maternity.png';
+import SingaporeImage from './images/Singapore.png';
+import UniversityImage from './images/University.png'
+
 
 const Images = {
+  UniversityImage,
+  SentispecImage,
+  AccentureImage,
+  TIImage,
+  FreelancerImage,
+  MaternityImage,
+  SingaporeImage,
+  CVImage,
+
   FooterLogo,
   LogoWhite,
   HeroLogo,
