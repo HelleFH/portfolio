@@ -41,7 +41,8 @@ import TIImage from './images/TI-education.png'
 import FreelancerImage from './images/Freelancer.png';
 import MaternityImage from './images/Maternity.png';
 import SingaporeImage from './images/Singapore.png';
-import UniversityImage from './images/University.png'
+import UniversityImage from './images/University.png';
+import WebDeveloperImage from './images/webdevelopment.png'
 
 
 const Images = {
@@ -53,6 +54,7 @@ const Images = {
   MaternityImage,
   SingaporeImage,
   CVImage,
+  WebDeveloperImage,
 
   FooterLogo,
   LogoWhite,

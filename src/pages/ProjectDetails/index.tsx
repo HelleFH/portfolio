@@ -3,7 +3,7 @@ import { useParams, useNavigate, useLocation } from "react-router-dom";
 import LoginModal from "../../components/LoginModal/LoginModal.tsx";
 import { useSwipeable } from "react-swipeable";
 import { frontendProjects } from "../../data/frontendprojects";
-import { fullStackProjects } from "../../data/fullstackprojects";
+import { myProjects } from "../../data/myProjects";
 import Layout from "../../components/Layout/Layout.tsx";
 import ProjectButtons from "../../components/ProjectButtons/ProjectButtons";
 import { LogIn } from "lucide-react";
@@ -41,7 +41,7 @@ const ProjectDetail: React.FC = () => {
     (location.state as LocationState) || {};
 
   const projectList: Project[] =
-    type === "frontend" ? frontendProjects : fullStackProjects;
+    type === "frontend" ? frontendProjects : myProjects;
 
   const indexFromId = projectList.findIndex(
     (proj) => proj.id === parseInt(id || "", 10)

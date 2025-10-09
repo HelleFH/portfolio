@@ -40,12 +40,12 @@ const Home: React.FC = () => {
         {/* Projects section */}
         <div className="w-full flex flex-wrap gap-1 items-start justify-center">
           <div className="max-w-[96vw] md:max-w-[30vw]">
-                        <SkillsList />
+            <SkillsList />
 
           </div>
           <div className=" px-4 max-w-[96vw] md:max-w-[60vw]  ml-3">
             <ProjectsIntro />
-                        <ProjectsOverview />
+            <ProjectsOverview />
 
 
           </div>

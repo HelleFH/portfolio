@@ -12,6 +12,7 @@ import Home from "./pages/index/index.tsx";
 import ProjectDetail from "./pages/ProjectDetails/index.tsx";
 import AboutMePage from "./pages/about-me";
 import ExperienceReveal from "./pages/ExperienceReveal/ExperienceReveal.tsx";
+import Projects from "./pages/projects/index.tsx";
 
 import "./index.css";
 
@@ -50,6 +51,19 @@ const App: React.FC = () => {
               transition={{ duration: 0.5 }}
             >
               <AboutMePage />
+            </motion.div>
+          }
+        />
+           <Route
+          path="/projects"
+          element={
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 50 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Projects />
             </motion.div>
           }
         />

@@ -1,31 +1,32 @@
 import React from 'react';
-import AboutMe from './components/about-me/AboutMe';
-import SkillsSection from './components/SkillsSection/SkillsSection'
 import Layout from '../../components/Layout/Layout.tsx';
-import FindMatches from '../../components/ResumeCards/FindMatches.tsx';
-import './index.scss'; 
-import ExperienceReveal from '../ExperienceReveal/ExperienceReveal.tsx';
+import HobbyCarousel from './components/carousel/carousel.tsx';
+import Intro from './components/Intro.tsx';
+import Contact from './components/Contact.tsx';
 
 const AboutMePage = () => {
   return (
-<div className='about-page'>   
+    <div className="about-page">
+      <Layout
+        heroTitle="About Me"
+        heroSubtitle="Helle Fruergaard | Web Developer"
+        buttons={[{ type: 'link', text: 'Projects', path: '/' }]}
+      >
 
-   <Layout
-    heroTitle="About Me"
-          heroSubtitle="Helle Fruergaard | Web Developer"
+        <section className="mx-auto max-w-6xl bg-[rgba(var(--white-color))] p-8">
+          <div className="flex flex-col-reverse gap-8 md:flex-row md:gap-12">
+            <div className='max-w-[400px]'>
+              <HobbyCarousel />
+            </div>
 
-       buttons={[
-        { type: 'link', text: 'Projects', path: '/' },
-      ]}
-  >
+            <div className="flex flex-2 justify-start align-start flex-col w-full md:w-2/3">
 
-        <AboutMe />
-        <SkillsSection />
-        <FindMatches />
-
-    </Layout>
+              <Intro />
+            </div>
+          </div>
+        </section>
+      </Layout>
     </div>
-
   );
 };
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
-import CloseButton from "../Buttons/CloseButton.tsx";
+import CloseButton from "../Buttons/CloseButton.tsx"
 import { Project } from "../../types/project.ts"
 
 

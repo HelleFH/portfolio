@@ -23,7 +23,7 @@ const jobs: Job[] = [
     ],
   },
   {
-    image: Images.MaternityImage,
+    image: Images.WebDeveloperImage,
     title: "Web Development",
     company: "NEXT",
     years: "2022–2024",

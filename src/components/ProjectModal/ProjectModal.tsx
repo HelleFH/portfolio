@@ -3,13 +3,13 @@ import { useSwipeable } from "react-swipeable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { Modal } from "react-bootstrap";
-import ProjectButtons from "../../../../components/ProjectButtons/ProjectButtons";
+import ProjectButtons from "../ProjectButtons/ProjectButtons.jsx";
 import { Link } from "react-router-dom";
 import "./ProjectModal.scss";
 import { FaArrowRight, FaSignInAlt } from "react-icons/fa";
-import CloseButton from "../../../../components/Buttons/CloseButton.tsx";
-import LoginModal from "../../../../components/LoginModal/LoginModal.tsx";
-import { Project } from "../../../../types/project";
+import CloseButton from "../Buttons/CloseButton.tsx";
+import LoginModal from '../../components/LoginModal/LoginModal.tsx'
+import { Project } from "../../types/project.js";
 
 
 interface ProjectModalProps {

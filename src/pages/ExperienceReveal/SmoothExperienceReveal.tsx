@@ -72,10 +72,35 @@ export default function SmoothExperienceReveal({
           <div className="max-w-[80%] text-white p-3 bg-[rgba(var(--soft),0.1)] mx-auto my-20 md:flex-row flex-col flex gap-1 items-center justify-center rounded-xl">
             <div className="pl-5 flex-1 flex flex-col gap-4">
               <h2 className="text-3xl font-['inter']  text-white font-bold">Career & Education</h2>
-              <p className=" mb-10 flex flex-col gap-2 text-[rgba(var(--white))] font-['PangramSans-Medium']  text-left"><span>Here you can find more information about my background.</span>
-                <span>ck here for more information about me and what I do when I'm not working.</span>
-                <span>Or click here for a list of my school and hobby development projects.</span>
-              </p>
+           <p className="mb-10 flex flex-col gap-2 text-[rgba(var(--white))] font-['PangramSans-Medium'] text-left">
+  <span>
+    Here you can find more information about my background.
+  </span>
+  <span>
+    <a
+      href="https://your-about-link.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="whitespace-break-spaces inline text-cyan-400 hover:underline"
+    >
+      Click here
+    </a>{" "}
+    for more information about me and what I do when I'm not working.
+  </span>
+  <span>
+    Or{" "}
+    <a
+      href="https://your-projects-link.com"
+      target="_blank"
+      rel=" noopener noreferrer"
+      className="whitespace-break-spaces inline text-cyan-400 hover:underline"
+    >
+      click here
+    </a>{" "}
+    for a list of my school and hobby development projects.
+  </span>
+</p>
+
 
             </div>
             <div className="flex-1 w-full relative">

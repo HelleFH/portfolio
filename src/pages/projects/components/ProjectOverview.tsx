@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Card from "../../../../components/Cards/Cards.tsx";
-import ProjectModal from "../../../../components/ProjectModal/ProjectModal.tsx";
-import { frontendProjects } from "../../../../data/frontendprojects.js";
-import { myProjects } from "../../../../data/myProjects.js";
+import Card from "../../../components/Cards/Cards.tsx";
+import ProjectModal from "../../../components/ProjectModal/ProjectModal.tsx";
+import { myProjects } from "../../../data/myProjects.js";
 import { useLocation } from "react-router-dom";
 
 const ProjectsOverview = () => {
@@ -36,7 +35,7 @@ const ProjectsOverview = () => {
 
   const getProjects = () => {
     const base =
-      currentProjectType === "frontend" ? frontendProjects : myProjects;
+      currentProjectType === "frontend" ? myProjects : myProjects;
     return base.map((p) => ({ ...p, type: currentProjectType }));
   };
 
@@ -57,14 +56,15 @@ const ProjectsOverview = () => {
   const currentProjects = getProjects();
 
   return (
-    <div className=" flex flex-col gap-4 md:gap-0 md:flex-row items-start w-full rounded-lg">
+    <div>
 
       {/* Project Grid */}
       <div
-        className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 
-                   w-full bg-[rgba(var(--white-color))] md:p-8 rounded-lg shadow-sm my-10"
+        className="grid auto-rows-auto gap-4 md:gap-6 
+             w-full bg-[rgba(var(--white-color))] md:p-8 rounded-lg shadow-sm my-10"
+        style={{ gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))" }}
       >
-        {frontendProjects.map((project, index) => (
+        {myProjects.map((project, index) => (
           <Card
             key={project.id}
             project={project}
