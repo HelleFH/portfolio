@@ -1,9 +1,11 @@
 import React from "react";
+import { skillIcons } from "../../pages/index/components/SkillsList/SkillIcons.tsx";
+import { FaTools } from "react-icons/fa";
 
 interface Project {
   name: string;
   images: string[];
-  technologiesMore: string[];
+  technologies: string[];
 }
 
 interface CardProps {
@@ -17,7 +19,7 @@ const Card: React.FC<CardProps> = ({ project, onClick }) => {
       onClick={onClick}
       className="
         cursor-pointer border border-gray-300
-        bg-gray-50 rounded-lg text-center w-full min-w-[200px]
+        bg-gray-50 rounded-lg text-center w-full min-w-[250px] max-w-[350px]
         transition-all duration-200 ease-in-out
         hover:-translate-y-[1px] hover:shadow-md hover:bg-gray-100
         p-4
@@ -33,18 +35,22 @@ const Card: React.FC<CardProps> = ({ project, onClick }) => {
         {project.name}
       </strong>
 
-      <ul
-        className="
-          list-none flex justify-center flex-wrap gap-2
-          font-sans font-normal w-full px-2 mb-2
-        "
+<ul className="flex flex-wrap items-center justify-center gap-1 mt-4">
+  {project.technologies.map((tech, i) => {
+    const trimmedTech = tech.trim();
+    const icon = skillIcons[trimmedTech] || <FaTools className="text-gray-400" />; 
+    return (
+      <li
+        key={i}
+        className="flex items-center gap-1 px-3 py-1 rounded-lg bg-[rgba(var(--darkgreen),0.1)] font-['lato'] dark:bg-gray-800 text-gray-800 dark:text-gray-100 text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
       >
-        {project.technologiesMore.map((tech, index) => (
-          <li key={index} className=" text-sm relative before:content-['•'] before:mr-2 first:before:content-['']">
-            {tech}
-          </li>
-        ))}
-      </ul>
+        <span className="text-lg">{icon}</span>
+        <span>{trimmedTech}</span>
+      </li>
+    );
+  })}
+</ul>
+
     </div>
   );
 };

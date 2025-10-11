@@ -50,7 +50,7 @@ export default function SmoothExperienceReveal({
     <div
       id="smooth-wrapper"
       ref={smoothWrapperRef}
-      className=" relative bg-cover bg-center bg-no-repeat min-h-screen mt-[7vh] z-[9999]"
+      className=" relative bg-cover bg-center bg-no-repeat min-h-screen  z-[9999]"
       style={{
         backgroundImage: `linear-gradient(
     to bottom,
@@ -64,54 +64,54 @@ export default function SmoothExperienceReveal({
       <div
         id="smooth-content"
         ref={smoothContentRef}
-        className="text-black my-0 mx-auto mb-20  max-w-[1000px]"
+        className="text-black my-0 mx-auto mb-20  w-full"
       >
 
         {/* HEADER */}
-        <header className="flex gap-3 mb-10">
+        <header className="max-w-[1000px] mx-auto flex-col md:flex-row flex gap-3 pt-8 mb-10">
           <div className="max-w-[80%] text-white p-3 bg-[rgba(var(--soft),0.1)] mx-auto my-20 md:flex-row flex-col flex gap-1 items-center justify-center rounded-xl">
             <div className="pl-5 flex-1 flex flex-col gap-4">
               <h2 className="text-3xl font-['inter']  text-white font-bold">Career & Education</h2>
-           <p className="mb-10 flex flex-col gap-2 text-[rgba(var(--white))] font-['PangramSans-Medium'] text-left">
-  <span>
-    Here you can find more information about my background.
-  </span>
-  <span>
-    <a
-      href="https://your-about-link.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="whitespace-break-spaces inline text-cyan-400 hover:underline"
-    >
-      Click here
-    </a>{" "}
-    for more information about me and what I do when I'm not working.
-  </span>
-  <span>
-    Or{" "}
-    <a
-      href="https://your-projects-link.com"
-      target="_blank"
-      rel=" noopener noreferrer"
-      className="whitespace-break-spaces inline text-cyan-400 hover:underline"
-    >
-      click here
-    </a>{" "}
-    for a list of my school and hobby development projects.
-  </span>
-</p>
+              <p className="mb-10 flex flex-col gap-2 text-[rgba(var(--white))] font-['PangramSans-Medium'] text-left">
+                <span>
+                  Here you can find more information about my background.
+                </span>
+                <span>
+                  <a
+                    href="https://your-about-link.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="whitespace-break-spaces inline text-cyan-400 hover:underline"
+                  >
+                    Click here
+                  </a>{" "}
+                  for more information about me and what I do when I'm not working.
+                </span>
+                <span>
+                  Or{" "}
+                  <a
+                    href="https://your-projects-link.com"
+                    target="_blank"
+                    rel=" noopener noreferrer"
+                    className="whitespace-break-spaces inline text-cyan-400 hover:underline"
+                  >
+                    click here
+                  </a>{" "}
+                  for a list of my school and hobby development projects.
+                </span>
+              </p>
 
 
             </div>
-            <div className="flex-1 w-full relative">
+            <div className="relative pr-2">
               <img
-                className="w-full rounded-lg object-cover"
+                className="w-full rounded-lg object-cover max-w-[250px]"
                 src={Images.CVImage}
                 alt="CV preview"
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 rounded-lg bg-[rgba(var(--darkgreen),0.2)]"></div>
+              <div className="absolute inset-0 rounded-lg max-w-[250px] bg-[rgba(var(--darkgreen),0.2)]"></div>
             </div>
           </div>
           <div className="max-w-[40%] min-w-[250px] text-white px-2 bg-[rgba(var(--soft),0.1)] mx-auto my-20 md:flex-row flex-col flex gap-1 items-start justify-center rounded-xl">
@@ -143,7 +143,7 @@ export default function SmoothExperienceReveal({
                 </p>
               </div>
               {job.skills && job.skills.length > 0 && (
-                <div className="mt-8">
+                <div className="mt-8 z-[9999]">
                   <h3 className="text-xl text-[rgba(var(--soft))] text-center font-semibold mb-3 accent-zinc-100 relative">Skills Gained</h3>
                   <ul className="flex flex-wrap gap-2">
                     {job.skills.map((skillKey) => {
@@ -164,7 +164,8 @@ export default function SmoothExperienceReveal({
             </section>
           ))}
         </div>
-        <footer className="text-center py-20 bg-gray-900"> <p className="text-gray-500">End of CV</p> </footer>
+        <footer className="text-center py-20 bg-gray-900 w-full"> <p className="text-gray-500"><a href="/projects">Click here for some examples of my work</a>
+          <a href="/about">Click here to learn more about me</a></p></footer>
 
       </div>
     </div>

@@ -13,7 +13,7 @@ const ProjectsIntro: React.FC = () => {
       </p>
       <p>
         My full-stack projects include a plant growth tracking app
-        (developed for a gardener) and a React-based e-commerce store.
+        and a React-based e-commerce store.
       </p>
       <p>
         I’ve also collaborated on several React Native projects, including an
@@ -22,6 +22,12 @@ const ProjectsIntro: React.FC = () => {
         MongoDB, I’m also proficient in SQL databases. I’m experienced in
         building and integrating RESTful APIs and GraphQL backends.
       </p>
+      <p>You can find some of my recent work below.
+       <a className="inline text-cyan-600 hover:underline whitespace-break-spaces"
+href="/cv">View My CV</a> to find out more about my professional experience.
+
+       Or you can read more about what I do when I'm not at work on my <a className="inline text-cyan-600 hover:underline whitespace-break-spaces" href="/about">About me</a> page
+</p>
     </div>
   );
 };

@@ -36,14 +36,14 @@ const Home: React.FC = () => {
       heroSubtitle="Helle Fruergaard | Web Developer"
       buttons={[{ type: "link", text: "Learn more", path: "/about" }]}
     >
-      <div className="flex flex-wrap gap-4 ">
+      <div className="flex flex-wrap gap-4 max-w-[1400px] mx-auto">
         {/* Projects section */}
         <div className="w-full flex flex-wrap gap-1 items-start justify-center">
-          <div className="max-w-[96vw] md:max-w-[30vw]">
+          <div className="max-w-[96vw] md:max-w-[25vw] mb-10">
             <SkillsList />
 
           </div>
-          <div className=" px-4 max-w-[96vw] md:max-w-[60vw]  ml-3">
+          <div className=" px-4 max-w-[96vw] md:max-w-[50vw]  ml-3">
             <ProjectsIntro />
             <ProjectsOverview />
 

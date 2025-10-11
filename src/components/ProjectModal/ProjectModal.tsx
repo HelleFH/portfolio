@@ -6,10 +6,11 @@ import { Modal } from "react-bootstrap";
 import ProjectButtons from "../ProjectButtons/ProjectButtons.jsx";
 import { Link } from "react-router-dom";
 import "./ProjectModal.scss";
-import { FaArrowRight, FaSignInAlt } from "react-icons/fa";
+import { FaArrowRight, FaSignInAlt, FaTools } from "react-icons/fa";
 import CloseButton from "../Buttons/CloseButton.tsx";
 import LoginModal from '../../components/LoginModal/LoginModal.tsx'
 import { Project } from "../../types/project.js";
+import { skillIcons } from "../../pages/index/components/SkillsList/SkillIcons.tsx";
 
 
 interface ProjectModalProps {
@@ -47,8 +48,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
   }
 
   const project = projects[selectedProjectIndex];
-  const technologies = project.technologies || "";
-
+const technologiesArray: string[] = Array.isArray(project.technologies)
+  ? project.technologies
+  : project.technologies
+  ? project.technologies.split(",").map((t) => t.trim())
+  : [];
   return (
     <Modal show={show} onHide={handleClose} centered className="custom-modal">
       <Modal.Dialog className="login-modal-dialog fade-in">
@@ -75,13 +79,24 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             <h2 className="modal-title">{project.name}</h2>
             <p className="project-description">{project.descriptionHeader}</p>
 
-            <ul className="technologies-list">
-              {technologies.split(",").map((tech, i) => (
-                <li className="tech-item" key={i}>
-                  {tech.trim()}
-                </li>
-              ))}
-            </ul>
+<ul className="flex flex-wrap gap-2 mt-4">
+  {technologiesArray.map((tech, i) => {
+    const icon = skillIcons[tech] || <FaTools />;
+    return (
+      <li
+        key={i}
+        className="flex items-center gap-2 bg-white/10 dark:bg-white/5 px-3 py-1.5 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-colors duration-200"
+      >
+        {icon && <span className="text-lg">{icon}</span>}
+        <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
+          {tech}
+        </span>
+      </li>
+    );
+  })}
+</ul>
+
+
 
             {project && (
               <ProjectButtons

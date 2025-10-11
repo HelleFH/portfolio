@@ -7,7 +7,7 @@ export const myProjects = [
   {
     id: 1,
     name: "A Product Portfolio",
-    technologies: "React",
+    technologies: ["React"],
     images: [Images.PortfolioScreen],
     projectLink: "https://product-page-b2ed.onrender.com/",
     githubLink: "https://github.com/HelleFH/product-page",
@@ -17,24 +17,12 @@ export const myProjects = [
     description: "A dynamic React portfolio page showcasing a visually appealing image grid with a sleek overlay.",
     technologiesMore: ["React", "Bootstrap", "Styled Components", "React Swipable"]
   },
-  {
-    id: 2,
-    name: "React Snippets",
-    technologies: "React, JavaScript",
-    images: [Images.SnippetsScreen],
-    projectLink: "https://hellefh.github.io/react-snippets/",
-    githubLink: "https://github.com/hellefh/react-snippets",
-    buttonText: "View Project",
-    githubButtonText: "GitHub",
-    descriptionHeader: "Various React components",
-    description: "React snippets with a navbar, lightbox gallery, a download button and Tinder-like swipe cards.",
-    technologiesMore: ["JavaScript"]
-  },
+  
 
   {
     "id": 3,
     "name": "MERN Listings",
-    "technologies": "MongoDB, Express, React, Node.js",
+    "technologies": ["MongoDB", "Express", "React", "Node.js"],
     "images": [Images.ListingScreen],
     "projectLink": "https://react-listings-1.onrender.com/",
     "githubLink": "https://github.com/HelleFH/react-listings",
@@ -65,7 +53,7 @@ export const myProjects = [
   {
     "id": 4,
     "name": "MERN Plant Calendar",
-    "technologies": "MongoDB, Express, React, Node.js",
+    "technologies": ["MongoDB", "Express", "React", "Node.js"],
     "images": [Images.CalendarScreen],
     "projectLink": "https://plant-calendar-1-zhbz.onrender.com",
     "githubLink": "https://github.com/HelleFH/Plant-calendar",
@@ -102,7 +90,7 @@ export const myProjects = [
   }, {
     "id": 5,
     "name": "Cloudinary Upload/Delete",
-    "technologies": "MongoDB, Express, Vue, Node.js",
+    "technologies": ["MongoDB", "Express", "Vue", "Node.js"],
     "images": [Images.AiImagesScreen],
     "projectLink": "https://cloudinary-upload-delete-1.onrender.com/",
     "githubLink": "https://github.com/HelleFH/cloudinary-upload-delete",
@@ -136,7 +124,7 @@ export const myProjects = [
   {
     "id": 6,
     "name": "MEVN Cart",
-    "technologies": "MongoDB, Express, Vue, Node.js",
+    "technologies": ["MongoDB", "Express", "Vue", "Node.js"],
     "images": [Images.MEVNCartScreen],
     "projectLink": "https://shopping-cart-master-1-5ylu.onrender.com/",
     "githubLink": "https://github.com/hellefh/shopping-cart",
@@ -175,7 +163,7 @@ export const myProjects = [
   {
     "id": 7,
     "name": "Monty Hall",
-    "technologies": "Flask, JavaScript, HTML, CSS, p5.js",
+    "technologies": ["Flask", "JavaScript", "HTML", "CSS", "p5.js"],
     "images": [Images.MontyHallScreen],
     "projectLink": "https://monty-hall-explained.onrender.com",
     "githubLink": "https://github.com/HelleFH/monty-hall-simulator",
@@ -210,7 +198,7 @@ export const myProjects = [
   {
     id: 8,
     name: "News Site",
-    technologies: "HTML, CSS, JS",
+    technologies:   ["HTML", "CSS", "JavaScript"],
     images: [Images.NewsSiteScreen],
     projectLink: "https://helle-avis-site.onrender.com/",
     githubLink: "https://github.com/HelleFH/Helle-avis-site/tree/main",
@@ -223,7 +211,7 @@ export const myProjects = [
   {
     id: 9,
     name: "Netflix Clone",
-    technologies: "JavaScript",
+    technologies:   ["JavaScript"],
     images: [Images.NetflixScreen],
     projectLink: "https://hellefh.github.io/Netflix-clone-main/",
     githubLink: "https://github.com/HelleFH/Netflix-clone-main",
@@ -236,7 +224,7 @@ export const myProjects = [
   {
     id: 10,
     name: "Lightbox Gallery",
-    technologies: "JQuery",
+    technologies: ["JQuery"],
     images: [Images.DinosaursScreen],
     projectLink: "https://hellefh.github.io/Lightbox-gallery/",
     githubLink: "https://github.com/hellefh/Lightbox-gallery",
@@ -249,7 +237,7 @@ export const myProjects = [
   {
     id: 11,
     name: "Front Page",
-    technologies: "HTML, CSS",
+    technologies:  ["HTML", "CSS"],
     images: [Images.LegeKrogenScreen],
     projectLink: "https://hellefh.github.io/Legekrogen/",
     githubLink: "https://github.com/hellefh/legekrogen",
@@ -263,7 +251,7 @@ export const myProjects = [
   {
     id: 12,
     name: "A Product Portfolio",
-    technologies: "React",
+    technologies:  ["React"],
     images: [Images.PortfolioScreen],
     projectLink: "https://product-page-b2ed.onrender.com/",
     githubLink: "https://github.com/HelleFH/product-page",
@@ -279,7 +267,7 @@ export const myProjects = [
   {
     "id": 13,
     "name": "MEVN Cart",
-    "technologies": "MongoDB, Express, Vue, Node.js",
+    "technologies": ["MongoDB", "Express", "Vue", "Node.js"],
     "images": [Images.MEVNCartScreen],
     "projectLink": "https://shopping-cart-master-1-5ylu.onrender.com/",
     "githubLink": "https://github.com/hellefh/shopping-cart",
@@ -318,7 +306,7 @@ export const myProjects = [
   {
     "id": 14,
     "name": "Monty Hall",
-    "technologies": "Flask, JavaScript, HTML, CSS, p5.js",
+    "technologies": ["Flask", "JavaScript", "HTML", "CSS", "p5.js"],
     "images": [Images.MontyHallScreen],
     "projectLink": "https://monty-hall-explained.onrender.com",
     "githubLink": "https://github.com/HelleFH/monty-hall-simulator",
