@@ -1,6 +1,6 @@
 import React from "react";
 import SmoothExperienceReveal, { Job } from "./SmoothExperienceReveal.tsx";
-import Images from "../../assets/images.jsx";
+import Images from "../../assets/images.tsx";
 import Navbar from "../../components/Navbar/Navbar.jsx";
 import './ExperienceReveal.scss'
 const jobs: Job[] = [

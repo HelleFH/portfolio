@@ -5,7 +5,7 @@ import { useSwipeable } from "react-swipeable";
 import { frontendProjects } from "../../data/frontendprojects";
 import { myProjects } from "../../data/myProjects";
 import Layout from "../../components/Layout/Layout.tsx";
-import ProjectButtons from "../../components/ProjectButtons/ProjectButtons";
+import ProjectButtons from "../../components/ProjectButtons/ProjectButtons.tsx";
 import { LogIn } from "lucide-react";
 import { FaArrowLeft } from "react-icons/fa";
 import "./index.scss";

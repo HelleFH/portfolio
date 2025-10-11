@@ -1,11 +1,17 @@
 import React from "react";
 import { skillIcons } from "../../pages/index/components/SkillsList/SkillIcons.tsx";
 import { FaTools } from "react-icons/fa";
+import ResponsiveImage from "../ResponsiveImage.tsx";
 
 interface Project {
   name: string;
-  images: string[];
   technologies: string[];
+    images: {
+    400: string;
+    800: string;
+    1200: string;
+    1600: string;
+  }[];
 }
 
 interface CardProps {
@@ -25,11 +31,11 @@ const Card: React.FC<CardProps> = ({ project, onClick }) => {
         p-4
       "
     >
-      <img
-        src={project.images[0]}
-        alt={project.name}
-        className="w-full max-w-[150px] mx-auto mb-4"
-      />
+<ResponsiveImage
+  imageSet={project.images[0]} // now works with your responsive objects
+  alt={project.name}
+  className="w-full max-w-[150px] mx-auto mb-4"
+/>
 
       <strong className="block mb-2 text-lg font-semibold text-[rgba(var(--dark-color))]">
         {project.name}

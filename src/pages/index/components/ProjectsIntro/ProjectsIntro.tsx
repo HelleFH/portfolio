@@ -23,10 +23,11 @@ const ProjectsIntro: React.FC = () => {
         building and integrating RESTful APIs and GraphQL backends.
       </p>
       <p>You can find some of my recent work below.
-       <a className="inline text-cyan-600 hover:underline whitespace-break-spaces"
+       <a className="text-link "
 href="/cv">View My CV</a> to find out more about my professional experience.
 
-       Or you can read more about what I do when I'm not at work on my <a className="inline text-cyan-600 hover:underline whitespace-break-spaces" href="/about">About me</a> page
+       Or you can read more about what I do when I'm not at work on my 
+       <a className="text-link" href="/about">About me</a> page
 </p>
     </div>
   );

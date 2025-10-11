@@ -3,7 +3,7 @@ import { skillIcons } from "./SkillIcons.tsx";
 
 const frontendSkills = [
   "HTML", "JavaScript", "CSS/SCSS", "TypeScript", "React", "Vue", "PHP", "Next.js",
-  "Redux", "Firebase", "GraphQL", "REST APIs",
+  "Redux", "Firebase", "GraphQL", "RESTful API",
 ];
 
 const stylingSkills = [

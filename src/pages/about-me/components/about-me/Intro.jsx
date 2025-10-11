@@ -20,7 +20,7 @@ const Intro = () => {
             href="/cv"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline text-cyan-600 hover:underline whitespace-break-spaces"
+            className="text-link "
           >
             You can check out my CV here
           </a>
@@ -38,7 +38,7 @@ const Intro = () => {
             href="https://your-design-media-link.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline text-cyan-600 hover:underline whitespace-break-spaces"
+            className="text-link "
           >
             Click here to see some examples of my design/media work
           </a>
@@ -56,7 +56,7 @@ const Intro = () => {
             href="/projects"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline text-cyan-600 hover:underline whitespace-break-spaces"
+            className="text-link "
           >
             You can see some of my school and hobby projects here
           </a>

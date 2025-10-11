@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Images from "../../assets/images";
+import Images from "../../assets/images.tsx";
 import Button from '../Buttons/Button.tsx'
 import './hero.scss'
 
@@ -15,7 +15,7 @@ const Hero = ({ title, subtitle, buttons }) => {
   };
 
   return (
-  <section className="hero relative flex min-h-[75vh] w-full flex-col items-start justify-center overflow-hidden px-16 text-[rgba(var(--white-color))]">
+  <section className="hero relative flex min-h-[75vh] w-full flex-col items-start justify-center overflow-hidden py-8 md:py-0 px-2 md:px-16 text-[rgba(var(--white-color))]">
   {/* Video background */}
   <video
     className="absolute left-0 top-0 z-[-2] h-full w-full object-cover"

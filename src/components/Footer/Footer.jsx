@@ -1,4 +1,4 @@
-import Images from "../../assets/images";
+import Images from "../../assets/images.tsx";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import SocialLinks from "../SocialLinks/SocialLinks";
 

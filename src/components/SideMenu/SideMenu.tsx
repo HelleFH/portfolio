@@ -2,7 +2,7 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import './sidemenu.scss';
-import Images from "../../assets/images";
+import Images from "../../assets/images.tsx";
 
 interface MenuItem {
   label: string;

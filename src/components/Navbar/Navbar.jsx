@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
-import Images from "../../assets/images";
+import Images from "../../assets/images.tsx";
 import SideMenu from "../SideMenu/SideMenu.tsx";
 
 const Navbar = ({ forceScrolled = false }) => {

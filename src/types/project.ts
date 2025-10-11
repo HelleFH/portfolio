@@ -1,10 +1,11 @@
 export interface Project {
-  id: string; 
+  id: string;
   type: string;
   name: string;
   descriptionHeader: string;
   images: string[];
   technologies?: string;
+  technologiesMore?: string;
   projectLink?: string;
   githubLink?: string;
   buttonText?: string;

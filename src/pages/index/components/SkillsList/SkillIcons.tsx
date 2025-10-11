@@ -5,6 +5,8 @@ import { RiBookFill } from "react-icons/ri";
 import { TbBrandReactNative } from "react-icons/tb";
 import { BiCheckCircle } from "react-icons/bi";
 import { MdTimeline } from "react-icons/md";
+import { SiPhp } from "react-icons/si";
+
 
 import {
   SiHtml5,
@@ -71,6 +73,8 @@ export const skillIcons: Record<string, JSX.Element> = {
   Firebase: <SiFirebase className="text-yellow-500" />,
   GraphQL: <SiGraphql className="text-pink-500" />,
   Cloudinary: <SiCloudinary className="text-sky-400" />,
+  PHP: <SiPhp className="text-indigo-500" />,
+
 
   // --- Dev Tools ---
   Git: <SiGit className="text-red-500" />,
