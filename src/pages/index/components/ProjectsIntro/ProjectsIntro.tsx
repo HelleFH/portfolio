@@ -27,7 +27,7 @@ const ProjectsIntro: React.FC = () => {
         building and integrating RESTful APIs and GraphQL backends.
       </p>
       <p>You can find some of my recent work below.
-        <TextLink to="/cv" openInNewTab>
+        <TextLink to="/CV" openInNewTab>
           View My CV
         </TextLink>
         to find out more about my professional experience.

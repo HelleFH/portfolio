@@ -18,8 +18,8 @@ const Intro = () => {
           I currently work with a company developing an AI-based app and bring
           years of experience in technical support, troubleshooting both
           software and hardware.{" "}
-          <TextLink to="/cv" openInNewTab>
-            You can check out my CV here
+          <TextLink to="/CV" openInNewTab>
+            You can have a look at my CV here
           </TextLink>
           .
         </p>
