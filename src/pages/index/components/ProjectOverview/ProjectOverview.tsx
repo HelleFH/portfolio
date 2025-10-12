@@ -68,7 +68,7 @@ const ProjectsOverview = () => {
       <p>You can view more of my projects, including school and hobby projects,
 
 
-        <TextLink to="/project-overview" openInNewTab>
+        <TextLink to="/project-overview">
           here
         </TextLink>
 

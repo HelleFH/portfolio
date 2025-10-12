@@ -18,7 +18,7 @@ const Intro = () => {
           I currently work with a company developing an AI-based app and bring
           years of experience in technical support, troubleshooting both
           software and hardware.{" "}
-          <TextLink to="/CV" openInNewTab>
+          <TextLink to="/CV">
             You can have a look at my CV here
           </TextLink>
           .
@@ -32,7 +32,7 @@ const Intro = () => {
           craft clear, engaging content and collaborate closely with clients on
           creative projects.{" "}
 
-          <TextLink to="/media" openInNewTab>
+          <TextLink to="/media">
             Click here to see some examples of my design/media work
           </TextLink>
 
@@ -46,7 +46,7 @@ const Intro = () => {
           <p>
             I later trained in web development, gaining hands-on experience with
             HTML, CSS, JavaScript, and React.{" "}
-            <TextLink to="/project-overview" openInNewTab>
+            <TextLink to="/project-overview">
               You can see some of my most recent project as well as school and hobby projects here
             </TextLink>
 
