@@ -1,8 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-const navigate = useNavigate();
 
 const ProjectsIntro: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-1 flex-col items-start gap-4 text-left">
       <h2 className="font-['PangramSans-Medium']  text-2xl font-semibold text-[rgba(var(--dark-color))] md:text-3xl">
