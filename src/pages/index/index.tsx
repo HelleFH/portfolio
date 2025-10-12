@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Layout from "../../components/Layout/Layout.tsx";
+import Layout from "../../components/Layout.tsx";
 import ProjectsOverview from "./components/ProjectOverview/ProjectOverview.tsx";
 import ProjectsIntro from "./components/ProjectsIntro/ProjectsIntro.tsx";
 import SkillsList from "./components/SkillsList/SkillsList.tsx";
@@ -43,7 +43,7 @@ const Home: React.FC = () => {
             <SkillsList />
 
           </div>
-          <div className=" px-4 max-w-[96vw] md:max-w-[50vw]  ml-3">
+          <div className=" px-4 max-w-[96vw] flex flex-col gap-4 md:max-w-[50vw]  ml-3">
             <ProjectsIntro />
             <ProjectsOverview />
 

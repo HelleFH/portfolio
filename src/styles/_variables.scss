@@ -2,13 +2,13 @@
 
   --text-color: #141414;
   --white-color: 245, 245, 245;
+  --black: 26, 26, 26;
 
-
-  --darkgreen:0,100,0;
-  --lightgreen:	128,224,204;
-  --dark-color:	54,75,68;
-  --cyan:	0,150,150;
-  --soft:248,249,247;
+  --darkgreen: 0, 100, 0;
+  --lightgreen: 128, 224, 204;
+  --dark-color: 54, 75, 68;
+  --cyan: 0, 150, 150;
+  --soft: 248, 249, 247;
 
 
   /* Box Shadow */
@@ -36,7 +36,7 @@
 
   --gap: 2rem;
   --small-gap: calc(0.5 * var(--gap));
-  --large-gap:calc(2 * var(--gap));
+  --large-gap: calc(2 * var(--gap));
   --xl-gap: calc(3 * var(--gap));
 
 

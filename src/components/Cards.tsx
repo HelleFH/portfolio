@@ -1,7 +1,7 @@
 import React from "react";
-import { skillIcons } from "../../pages/index/components/SkillsList/SkillIcons.tsx";
+import { skillIcons } from "./Pills/SkillIcons.tsx";
 import { FaTools } from "react-icons/fa";
-import ResponsiveImage from "../ResponsiveImage.tsx";
+import ResponsiveImage from "./ResponsiveImage.tsx";
 
 interface Project {
   name: string;

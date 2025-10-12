@@ -4,7 +4,7 @@ import Images from "../../assets/images.tsx";
 import Button from '../Buttons/Button.tsx'
 import './hero.scss'
 
-const Hero = ({ title, subtitle, buttons }) => {
+const Hero = ({ title, subtitle, intro, buttons }) => {
   const navigate = useNavigate();
   const [videoEnded, setVideoEnded] = useState(false);
 
@@ -15,7 +15,7 @@ const Hero = ({ title, subtitle, buttons }) => {
   };
 
   return (
-  <section className="hero relative flex min-h-[75vh] w-full flex-col items-start justify-center overflow-hidden py-8 md:py-0 px-2 md:px-16 text-[rgba(var(--white-color))]">
+  <section className="hero mb-10 relative flex min-h-[75vh] w-full flex-col items-start justify-center overflow-hidden py-8 md:py-0 px-2 md:px-16 text-[rgba(var(--white-color))]">
   {/* Video background */}
   <video
     className="absolute left-0 top-0 z-[-2] h-full w-full object-cover"
@@ -36,7 +36,7 @@ const Hero = ({ title, subtitle, buttons }) => {
     <p className="text-lg font-light -mb-3 mt-[5%]">{subtitle}</p>
     <h1 className="font-inter text-[rgba(var(--white-color))] max-w-[800px] text-5xl font-light md:text-6xl">{title}</h1>
     <p className="max-w-[700px] pt-2">
-      React Developer building clean, responsive interfaces and smooth user experiences. Merging a scientific mindset with creative coding.
+      {intro}
     </p>
 
     <div className="mt-6 flex flex-row gap-4">

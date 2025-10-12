@@ -1,9 +1,8 @@
 import React, { ReactNode } from "react";
-import Hero from "../Hero/Hero";
-import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer/Footer";
-import AnimatedSection from "../AnimatedSection";
-import "./Layout.scss";
+import Hero from "./Hero/Hero";
+import Navbar from "./Navbar/Navbar";
+import Footer from "./Footer.tsx";
+import AnimatedSection from "./AnimatedSection";
 
 interface ButtonProps {
   type: "link" | "button";
@@ -15,6 +14,7 @@ interface ButtonProps {
 interface LayoutProps {
   heroTitle: string;
   heroSubtitle: string;
+  heroIntro: string;
   buttons?: ButtonProps[];
   showContactUsButton?: boolean;
   children: ReactNode;
@@ -23,18 +23,22 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({
   heroTitle,
   heroSubtitle,
+  heroIntro,
   buttons = [],
   children,
 }) => {
   return (
-    <div className="layout">
+    <div className="flex min-h-screen flex-col justify-start relative mx-auto">
       <Navbar />
       <Hero
         title={heroTitle}
         subtitle={heroSubtitle}
+        intro={heroIntro}
         buttons={buttons}
       />
-      <main className="layout__main-content">{children}</main>
+      <main className="w-full mx-auto box-border flex-grow px-0 md:px-4">
+        {children}
+      </main>
       <AnimatedSection>
         <Footer />
       </AnimatedSection>

@@ -1,5 +1,5 @@
 import React from "react";
-import SmoothExperienceReveal, { Job } from "./SmoothExperienceReveal.tsx";
+import ExperienceReveal, { Job } from "./components/ExperienceReveal.tsx";
 import Images from "../../assets/images.tsx";
 import Navbar from "../../components/Navbar/Navbar.jsx";
 
@@ -10,7 +10,7 @@ const jobs: Job[] = [
     company: "Sentispec",
     years: "2024–Present",
     description:
-      "Technical support, customer success management, and marketing assistance. Developed company website using modern web technologies, contributed to a client portal in TypeScript, and managed troubleshooting.",
+      "Technical support, customer success management, and marketing assistance. Developed company website, contributed to a client portal in TypeScript, and managed troubleshooting.",
     skills: [
       "Technical Support",
       "Customer Service",
@@ -28,7 +28,7 @@ const jobs: Job[] = [
     company: "NEXT",
     years: "2022–2024",
     description:
-      "Studied web development while doing temp work across industries during maternity leave.",
+      "Studied web development while doing temp work across industries.",
     skills: [
       "Web Development",
       "JavaScript",
@@ -41,11 +41,11 @@ const jobs: Job[] = [
   },
   {
     image: Images.MaternityImage,
-    title: "2x Maternity / Temp Work",
+    title: "2 x Maternity / Temp Work",
     company: "Icon Communications / Texas Instruments",
     years: "2019–2024",
     description:
-      "Various temporary roles while on maternity leave, supporting different industries and gaining diverse work experience.",
+      "Various temporary roles while caring for my children when they were small, supporting different industries and gaining diverse work experience.",
     skills: [
       "Adaptability",
       "Time Management",
@@ -72,10 +72,10 @@ const jobs: Job[] = [
   {
     image: Images.FreelancerImage,
     title: "Translator / Copywriter",
-    company: "PokerStars / Freelance",
+    company: "Freelance",
     years: "2012–2018",
     description:
-      "Created translations and copy in English and Danish. Ranked #1 Danish translator and copywriter on Upwork and top 5% for English copywriting.",
+      "Created translations and copy in English and Danish. Achieved #1 ranking for Danish translation and copywriting on Upwork, and ranked in the top 5% for English copywriting. Secured several long-term clients, with PokerStars as my primary client.",
     skills: [
       "Copywriting",
       "Content Creation",
@@ -104,18 +104,18 @@ const jobs: Job[] = [
   {
     image: Images.AccentureImage,
     title: "Nordic HR Team Lead",
-    company: "Icon Communications / Unilever",
+    company: "Accenture",
     years: "2008–2011",
     description:
-      "Led the Scandinavian HR team for Unilever, managing onboarding and system rollouts (Oracle and PeopleSoft). Conducted process documentation and training across Nordic regions.",
-    skills: [
-      "Project Management",
-      "Team Leadership",
-      "Client Relations",
-      "Customer Service",
-      "HR Systems",
-      "Training & Development",
-    ],
+      "Prepared project pre-rollout workshadowing and gathered comprehensive documentation across the Nordics. Led the Scandinavian HR team for Unilever, managing onboarding processes and system rollouts (Oracle and PeopleSoft). Conducted process documentation and delivered training across the Nordic regions.",
+          skills: [
+        "Project Management",
+        "Team Leadership",
+        "Client Relations",
+        "Customer Service",
+        "HR Systems",
+        "Training & Development",
+      ],
   },
   {
     image: Images.SingaporeImage,
@@ -135,11 +135,11 @@ const jobs: Job[] = [
 ];
 
 
-export default function ExperienceReveal() {
+export default function CVPage() {
   return (
 
     <div className="ExperienceRevealContainer">
-      <SmoothExperienceReveal jobs={jobs} />
+      <ExperienceReveal jobs={jobs} />
     </div>
   );
 }

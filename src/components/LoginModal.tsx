@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { Project } from "../../types/project.ts";
+import { Project } from "../types/project.ts";
 
 interface LoginModalProps {
   show: boolean;

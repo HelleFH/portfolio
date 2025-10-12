@@ -4,9 +4,9 @@ import { useSwipeable } from "react-swipeable";
 import { LogIn } from "lucide-react";
 import { FaArrowLeft } from "react-icons/fa";
 
-import Layout from "../../components/Layout/Layout.tsx";
-import LoginModal from "../../components/LoginModal/LoginModal.tsx";
-import ProjectButtons from "../../components/ProjectButtons/ProjectButtons.tsx";
+import Layout from "../../components/Layout.tsx";
+import LoginModal from "../../components/LoginModal.tsx";
+import ProjectButtons from "../../components/ProjectButtons.tsx";
 import ProjectContent from "./ProjectContent.tsx";
 import ProjectNavigation from "./ProjectNavigation.tsx";
 import ResponsiveImage from "../../components/ResponsiveImage.tsx";

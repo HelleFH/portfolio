@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Card from "../../../../components/Cards/Cards.tsx";
-import ProjectModal from "../../../../components/ProjectModal/ProjectModal.tsx";
+import Card from "../../../../components/Cards.tsx";
+import ProjectModal from "../../../../components/ProjectModal.tsx";
 import { frontendProjects } from "../../../../data/frontendprojects.js";
 import { myProjects } from "../../../../data/myProjects.js";
 import { useLocation } from "react-router-dom";
@@ -61,42 +61,49 @@ const ProjectsOverview = () => {
   const currentProjects = getProjects();
 
   return (
-    <div className="flex flex-col gap-4 md:gap-0 md:flex-row items-start w-full rounded-lg">
-      {/* Project Grid */}
-      <div
-        className="grid auto-rows-auto gap-4 md:gap-6 
-                   w-full bg-[rgba(var(--white-color))] p-2 rounded-lg shadow-sm my-10"
-        style={{ gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))" }}
+    <div>
+      <h1 className="font-['PangramSans-Medium'] font-semibold   text-2xl mb-5">My most recent work</h1>
+
+      <p>You can view more of my projects, including school and hobby projects,      
+        <a
+        href="/project-overview"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-link "
       >
-        {frontendProjects.map((project, index) => (
-          <Card
-            key={project.id}
-            project={project}
-            onClick={() => openModal(index, "frontend")}
-          />
-        ))}
+        here
+        
+        </a></p>
+      <div className="flex flex-col gap-4 md:gap-0 md:flex-row items-start w-full rounded-lg">
+        {/* Project Grid */}
+        <div
+          className="grid auto-rows-auto gap-4 md:gap-6 
+                   w-full bg-[rgba(var(--white-color))] p-2 rounded-lg shadow-sm "
+          style={{ gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))" }}
+        >
+          {frontendProjects.map((project, index) => (
+            <Card
+              key={project.id}
+              project={project}
+              onClick={() => openModal(index, "frontend")}
+            />
+          ))}
 
-        {myProjects.map((project, index) => (
-          <Card
-            key={project.id}
-            project={project}
-            onClick={() => openModal(index, "myprojects")}
+        </div>
+
+        {/* Modal */}
+        {isModalOpen && selectedProjectIndex !== null && (
+          <ProjectModal
+            show={isModalOpen}
+            handleClose={closeModal}
+            selectedProjectIndex={selectedProjectIndex}
+            projects={currentProjects}
+            handlePrev={handlePrev}
+            handleNext={handleNext}
+            handleShowLoginDetails={() => console.log("Show login")}
           />
-        ))}
+        )}
       </div>
-
-      {/* Modal */}
-      {isModalOpen && selectedProjectIndex !== null && (
-        <ProjectModal
-          show={isModalOpen}
-          handleClose={closeModal}
-          selectedProjectIndex={selectedProjectIndex}
-          projects={currentProjects} 
-          handlePrev={handlePrev}
-          handleNext={handleNext}
-          handleShowLoginDetails={() => console.log("Show login")}
-        />
-      )}
     </div>
   );
 };

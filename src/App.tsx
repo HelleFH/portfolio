@@ -11,11 +11,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import Home from "./pages/index/index.tsx";
 import ProjectDetail from "./pages/ProjectDetails/index.tsx";
 import AboutMePage from "./pages/about-me";
-import ExperienceReveal from "./pages/ExperienceReveal/ExperienceReveal.tsx";
-import Projects from "./pages/projects/index.tsx";
+import CVPage from "./pages/ExperienceReveal/index.tsx";
 
 import "./index.css";
 import ProjectsAll from "./pages/ProjectsAll/index.tsx";
+import DesignAndMedia from "./pages/DesignAndMedia/index.jsx";
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -55,19 +55,7 @@ const App: React.FC = () => {
             </motion.div>
           }
         />
-           <Route
-          path="/projects"
-          element={
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 50 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Projects />
-            </motion.div>
-          }
-        />
+    
    <Route
           path="/project-overview"
           element={
@@ -81,13 +69,26 @@ const App: React.FC = () => {
             </motion.div>
           }
         />
+           <Route
+          path="/media"
+          element={
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 50 }}
+              transition={{ duration: 0.5 }}
+            >
+              <DesignAndMedia />
+            </motion.div>
+          }
+        />
         <Route
           path="/project/:type/:id"
           element={<ProjectDetail />}
         />
           <Route
           path="/CV"
-          element={<ExperienceReveal />}
+          element={<CVPage />}
         />
       </Routes>
     </AnimatePresence>

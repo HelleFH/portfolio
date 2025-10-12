@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Github, Instagram, Linkedin } from "lucide-react";
 import Images from "../../assets/images.tsx";
-import SideMenu from "../SideMenu/SideMenu.tsx";
-import SocialLinks from "../SocialLinks/SocialLinks.jsx";
+import SideMenu from "../SideMenu.tsx";
+import SocialLinks from "../SocialLinks.tsx";
 
 const Navbar = ({ forceScrolled = false }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -62,7 +62,7 @@ const Navbar = ({ forceScrolled = false }) => {
           <img
             src={Images.FooterLogo}
             alt="Logo"
-            className="w-9"
+            className="w-9 opacity-[0.7]"
           />
           <span className="text-lg font-semibold navbar-link">Helle Fruergaard</span>
         </Link>
@@ -72,16 +72,16 @@ const Navbar = ({ forceScrolled = false }) => {
           <li>
             <Link
               to="/about"
-              className="navbar-link rounded-md px-1 text-lg transition-colors duration-300 hover:bg-[rgba(0,100,0,0.6)]"
+              className="mt-[3px] navbar-link rounded-md px-1 text-lg transition-colors duration-300 hover:bg-[rgba(var(--cyan))]"
               onClick={() => setMenuOpen(false)}
             >
               About
             </Link>
           </li>
-<div className="pr-3">
-          <SocialLinks />
-          
-</div>
+          <div className="pr-3">
+            <SocialLinks color="text-white" hoverColor="hover:text-[rgba(var(--cyan))]" />
+
+          </div>
         </ul>
 
         {/* Mobile Side Menu */}
@@ -91,6 +91,8 @@ const Navbar = ({ forceScrolled = false }) => {
             { label: "About", href: "/about" },
             { label: "CV", href: "/CV" },
             { label: "Projects", href: "/project-overview" },
+            { label: "Design & Media", href: "/media" },
+
           ]}
           open={menuOpen}
           setOpen={setMenuOpen}

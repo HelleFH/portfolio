@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Card from "../../../components/Cards/Cards.tsx";
-import ProjectModal from "../../../components/ProjectModal/ProjectModal.tsx";
+import Card from "../../../components/Cards.tsx";
+import ProjectModal from "../../../components/ProjectModal.tsx";
 import { frontendProjects } from "../../../data/frontendprojects.js";
 import { myProjects } from "../../../data/myProjects.js";
 import { useLocation } from "react-router-dom";
@@ -64,7 +64,9 @@ const ProjectsOverview = () => {
     <div className="flex flex-col gap-12">
       {/* 🧩 FRONTEND PROJECTS */}
       <section>
-                <h2 className="text-2xl font-bold mb-4 text-center">Here's a look at some of my recent work, both professional, school and hobby.</h2>
+<h2 className="text-2xl font-bold mb-4 text-center">
+  Here's a look at some of my recent work, including professional, school, and hobby projects.
+</h2>
 
         <div
           className="grid auto-rows-auto gap-4 md:gap-6 

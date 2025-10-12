@@ -154,40 +154,6 @@ export const myProjects = [
   }
   ,
 
-  {
-    "id": 7,
-    "name": "Monty Hall",
-    "technologies": ["Flask", "JavaScript", "HTML", "CSS", "p5.js"],
-    "images": [Images.MontyHallScreen],
-    "projectLink": "https://monty-hall-explained.onrender.com",
-    "githubLink": "https://github.com/HelleFH/monty-hall-simulator",
-    "buttonText": "View Project",
-    "githubButtonText": "GitHub",
-    "descriptionHeader": "Interactive Monty Hall Simulation and Game",
-    "description": "A dual-experience app where users can simulate the Monty Hall problem statistically using Python and experience it interactively through a JavaScript-based game. Great for exploring probability theory and decision-making under uncertainty.",
-    "technologiesMore": [
-      "Flask",
-      "Python",
-      "JavaScript",
-      "HTML",
-      "CSS",
-      "p5.js",
-      "AJAX",
-      "Canva",
-      "JSON"
-    ],
-    "projectDetails": [
-      "Flask backend that simulates 'stay', 'switch', and 'random' strategies over user-defined trials",
-      "Returns simulation data including win rates and progression history",
-      "JavaScript game built with p5.js for interactive Monty Hall gameplay",
-      "Auto mode option to watch randomized plays in sequence",
-      "Integrated lightweight animation from Canva for added visual appeal",
-      "Intuitive UI prompts for switching/staying decisions",
-      "Statistics persist between sessions using local storage",
-      "Perfect mix of math, logic, and user interaction for learning"
-    ]
-  }
-  ,
 
   {
     id: 8,

@@ -6,14 +6,14 @@ import { FaArrowRight, FaSignInAlt, FaTools } from "react-icons/fa";
 import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import CloseButton from "../Buttons/CloseButton.tsx";
-import ProjectButtons from "../ProjectButtons/ProjectButtons.tsx";
-import LoginModal from "../../components/LoginModal/LoginModal.tsx";
-import { Project } from "../../types/project.js";
-import { skillIcons } from "../../pages/index/components/SkillsList/SkillIcons.tsx";
+import CloseButton from './Buttons/CloseButton.tsx'
+import ProjectButtons from "./ProjectButtons.tsx";
+import LoginModal from "./LoginModal.tsx";
+import { Project } from "../types/project.ts";
+import { skillIcons } from '../components/Pills/SkillIcons.tsx'
 
 interface ProjectModalProps {
-  show: boolean;
+  show: boolean; 
   handleClose: () => void;
   selectedProjectIndex: number | null;
   projects: Project[];

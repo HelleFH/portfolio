@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Buttons/Button.tsx";
+import Button from "./Buttons/Button.tsx";
 
 interface ProjectButtonsProps {
   projectLink: string;
@@ -17,6 +17,8 @@ const ProjectButtons: React.FC<ProjectButtonsProps> = ({
   return (
     <div className="flex gap-2 items-start mt-2">
       <Button
+              fontColor="rgb(var(--soft))"
+
         bgColor="rgb(var(--darkgreen))"
         className="text-white border border-[rgba(var(--darkgreen),0.6)] hover:bg-[rgba(var(--darkgreen),0.9)] transition-colors duration-200"
         onClick={() => window.open(projectLink, "_blank")}

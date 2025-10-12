@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Layout from "../../components/Layout/Layout.tsx";
+import Layout from "../../components/Layout.tsx";
 import ProjectsOverview from "./components/ProjectOverview.tsx";
 
 
@@ -34,6 +34,7 @@ const ProjectsAll: React.FC = () => {
             heroTitle="My Projects"
             heroSubtitle="Helle Fruergaard | Web Developer"
             buttons={[{ type: "link", text: "Learn more", path: "/about" }]}
+            heroIntro=""
         >
             <div className="flex flex-wrap gap-4 ">
                 {/* Projects section */}

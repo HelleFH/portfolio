@@ -1,9 +1,8 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {  Menu, X } from "lucide-react";
-import './sidemenu.scss';
-import Images from "../../assets/images.tsx";
-import SocialLinks from "../SocialLinks/SocialLinks.jsx";
+import { Menu, X } from "lucide-react";
+import Images from "../assets/images.tsx";
+import SocialLinks from "./SocialLinks.tsx";
 
 interface MenuItem {
   label: string;
@@ -11,23 +10,26 @@ interface MenuItem {
 }
 
 interface SideMenuProps {
-  items: { label: string; href: string }[];
+  items: MenuItem[];
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
   scrolled: boolean;
 }
 
-const SideMenu = ({ items, open, setOpen, scrolled }: SideMenuProps) => {
+const SideMenu: React.FC<SideMenuProps> = ({ items, open, setOpen }) => {
   return (
-    <div className="text-[rgba(var(--black-color))] ">
-     
-<button
-  onClick={() => setOpen(!open)}
-  className="rounded-md p-1 transition-colors duration-300  hover:text-[rgba(var(--darkgreen),0.9)]"
->
-  {open ? <X size={24} color="black" className="text-[rgba(var(--black-color))] "/> : <Menu size={24} color="white" />}
-</button>
-
+    <div className="text-[rgba(var(--black-color))]">
+      {/* Burger Icon */}
+      <button
+        onClick={() => setOpen(!open)}
+        className="burger-icon flex h-[30px] items-center rounded-md p-1 text-[#324b4b] transition-transform duration-200 hover:scale-110 hover:text-[rgba(var(--darkgreen),0.9)]"
+      >
+        {open ? (
+          <X size={24} className="text-[rgba(var(--black-color))]" />
+        ) : (
+          <Menu size={24} className="text-white" />
+        )}
+      </button>
 
       {/* Animate menu */}
       <AnimatePresence>
@@ -49,24 +51,28 @@ const SideMenu = ({ items, open, setOpen, scrolled }: SideMenuProps) => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="fixed  right-0 top-0 z-50 flex h-full w-full max-w-sm flex-col bg-[rgba(var(--white-color))] shadow-lg md:max-w-md"
+              className="fixed right-0 top-0 z-50 flex h-full w-full max-w-sm flex-col bg-[rgba(var(--white-color))] shadow-lg md:max-w-md"
             >
               {/* Header */}
               <div className="flex justify-between border-b bg-[rgba(var(--white-color))] p-4 text-black">
-                <img src={Images.FooterLogo} alt="Logo" className="h-auto max-w-[50px] object-contain" />
+                <img
+                  src={Images.FooterLogo}
+                  alt="Logo"
+                  className="h-auto max-w-[50px] object-contain"
+                />
                 <div className="flex flex-col text-center">
-                <a className="text-2xl tracking-[-0.2rem]">Helle Fruergaard</a>
-                <h6>Web Developer</h6>
+                  <span className="text-2xl font-['inter'] tracking-[-0.1rem]">
+                    Helle Fruergaard
+                  </span>
+                  <h6>Web Developer</h6>
                 </div>
                 <button onClick={() => setOpen(false)}>
                   <X size={24} />
                 </button>
-                
               </div>
-         
 
-              <div className=" flex flex-col gap-4 rounded-b-md bg-[rgba(var(--white-color))]  p-4 text-center text-[rgba(var(--black-color))] text-black shadow-xl">
-               
+              {/* Menu Items */}
+              <div className="side-links flex flex-col gap-4 rounded-b-md bg-[rgba(var(--white-color))] p-4 text-center text-[#324b4b] shadow-xl">
                 {items.map((item, index) => (
                   <a
                     key={index}
@@ -77,9 +83,9 @@ const SideMenu = ({ items, open, setOpen, scrolled }: SideMenuProps) => {
                     {item.label}
                   </a>
                 ))}
-                         <SocialLinks onClick={undefined} />
+
+                <SocialLinks />
               </div>
-              
             </motion.div>
           </>
         )}

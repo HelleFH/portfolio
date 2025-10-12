@@ -1,5 +1,5 @@
 import React from "react";
-import { skillIcons } from "./SkillIcons.tsx";
+import { skillIcons } from "../../../../components/Pills/SkillIcons.tsx";
 
 const frontendSkills = [
   "HTML", "JavaScript", "CSS/SCSS", "TypeScript", "React", "Vue", "PHP", "Next.js",

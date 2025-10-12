@@ -3,7 +3,7 @@ import React from "react";
 const ProjectsIntro: React.FC = () => {
   return (
     <div className="flex flex-1 flex-col items-start gap-4 text-left">
-      <h2 className="font-[lato] text-2xl font-semibold text-[rgba(var(--dark-color))] md:text-3xl">
+      <h2 className="font-['PangramSans-Medium']  text-2xl font-semibold text-[rgba(var(--dark-color))] md:text-3xl">
         Experience & Projects
       </h2>
       <p>

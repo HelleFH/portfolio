@@ -35,7 +35,7 @@ const Intro = () => {
           craft clear, engaging content and collaborate closely with clients on
           creative projects.{" "}
           <a
-            href="https://your-design-media-link.com"
+            href="/media"
             target="_blank"
             rel="noopener noreferrer"
             className="text-link "
@@ -48,23 +48,23 @@ const Intro = () => {
 
       {/* Technical focus */}
       <AnimatedSection >
-        <div className="flex flex-col gap-4">
-        <p>
-          I later trained in web development, gaining hands-on experience with
-          HTML, CSS, JavaScript, and React.{" "}
-          <a
-            href="/projects"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-link "
-          >
-            You can see some of my school and hobby projects here
-          </a>
-          . I enjoy combining technical and creative skills to build accessible,
-          user-friendly web experiences.
-        </p>
+        <div className="flex flex-col text-justify gap-4">
+          <p>
+            I later trained in web development, gaining hands-on experience with
+            HTML, CSS, JavaScript, and React.{" "}
+            <a
+              href="/project-overview"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-link "
+            >
+              You can see some of my most recent project as well as school and hobby projects here
+            </a>
+            . I enjoy combining technical and creative skills to build accessible,
+            user-friendly web experiences.
+          </p>
 
-        <p>I live in Christianshavn, Copenhagen, with my family.</p>
+          <p>I live in Christianshavn, Copenhagen, with my family.</p>
         </div>
       </AnimatedSection>
 

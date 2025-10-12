@@ -10,15 +10,15 @@ export default function SoftSkillsMini() {
   ];
 
   return (
-    <section className="max-w-3xl p-4 mx-auto text-[rgba(var(--white),0.9)]">
+    <section className="max-w-3xl p-5 mx-auto text-[rgba(var(--white),0.9)]">
       <h2 className="text-xl font-semibold mb-4 text-[rgba(var(--white))] tracking-wide">
         My Strongest Soft Skills
       </h2>
-      <ul className="space-y-2 text-sm md:text-base">
+      <ul className="space-y-2 gap-2 flex flex-col text-sm md:text-base">
         {skills.map((skill, index) => (
           <li key={index} className="flex items-center gap-2 text-[rgba(var(--white),0.8)]">
             <span className="flex-shrink-0 opacity-80">{skill.icon}</span>
-            <span className="leading-snug">{skill.text}</span>
+            <span className="leading-snug -mt-[3px]">{skill.text}</span>
           </li>
         ))}
       </ul>
