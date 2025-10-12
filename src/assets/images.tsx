@@ -1,7 +1,5 @@
 // Logos, videos, and single-use images
 import FooterLogo from './images/logo.png';
-import LogoWhite from './images/logo-white.png';
-import HeroLogo from './images/logo-white.png';
 import heroVideo from './images/hero.mp4';
 
 import HeroImage400 from './images/hero-image-400.png';
@@ -12,11 +10,8 @@ import CVImage400 from './images/CV-image-400.png';
 import CVImage800 from './images/CV-image-800.png';
 import CVImage1200 from './images/CV-image-1200.png';
 import CVImage1600 from './images/CV-image-1600.png';
-import HeroImageMobile from './images/heroimage-mobile.png';
 
 // Navbar logos
-import NavbarLogo from './images/navbarlogo-white.png';
-import NavbarLogoScrolled from './images/navbarlogo.png';
 // Import multiple resolutions for each screen
 import AiImagesScreen400 from './images/aiimages-screen-400.png';
 import AiImagesScreen800 from './images/aiimages-screen-800.png';
@@ -191,12 +186,7 @@ const ProfileImages = {
 // Single-use / logos / videos
 const MediaAssets = {
   FooterLogo,
-  LogoWhite,
-  HeroLogo,
   heroVideo,
-  HeroImageMobile,
-  NavbarLogo,
-  NavbarLogoScrolled,
 };
 
 // Merge everything into a single export

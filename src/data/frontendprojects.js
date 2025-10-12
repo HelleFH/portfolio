@@ -19,7 +19,7 @@ export const frontendProjects = [
     name: "Sentispec.ai",
     technologies: ["React", "TypeScript", "Tailwind CSS"],
     images: [Images.SentispecScreen],
-    projectLink: "https://sentispec.ai/",
+    projectLink: "https://sentispec.onrender.com/",
     githubLink: "https://github.com/HelleFH/sentispec",
     buttonText: "View Project",
     githubButtonText: "GitHub",
