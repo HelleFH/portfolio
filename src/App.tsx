@@ -98,7 +98,7 @@ const App: React.FC = () => {
 export default function AnimatedApp(): JSX.Element {
   return (
     <Router
-      basename={process.env.NODE_ENV === "production" ? "/myPortfolio" : ""}
+      basename={process.env.NODE_ENV === "production" ? "/portfolio" : ""}
     >
       <App />
     </Router>
