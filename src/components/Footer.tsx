@@ -1,6 +1,7 @@
 import React from "react";
 import Images from "../assets/images.tsx";
 import SocialLinks from "./SocialLinks.tsx";
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   return (
@@ -8,12 +9,12 @@ const Footer: React.FC = () => {
       {/* Contact Section */}
       <div className="flex flex-1 flex-col items-center justify-center gap-2 text-center ">
         <p>Contact me at:</p>
-        <a
-          href="mailto:hellefruergaardh@gmail.com"
+        <Link
+          to="mailto:hellefruergaardh@gmail.com"
           className="text-lg font-medium text-[rgba(var(--dark-color))] transition-colors duration-200 hover:text-[rgba(var(--darkgreen))]"
         >
           hellefruergaardh@gmail.com
-        </a>
+        </ Link> 
         <p>1434 Copenhagen, Denmark</p>
 
 <SocialLinks color="text-[rgba(var(--darkgreen))]" hoverColor="hover:text-[rgba(var(--cyan))]" />

@@ -38,13 +38,9 @@ const ProjectsAll: React.FC = () => {
         >
             <div className="flex flex-wrap gap-4 ">
                 {/* Projects section */}
-                <div className="w-full flex flex-wrap gap-1 items-start justify-center">
                     <div className="w-[96vw] max-w-[1200px]">
                         <ProjectsOverview />
-
-
                     </div>
-                </div>
             </div>
         </Layout>
     );

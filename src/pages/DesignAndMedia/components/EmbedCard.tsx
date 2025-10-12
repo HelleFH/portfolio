@@ -1,5 +1,6 @@
 import React from "react";
 import ResponsiveImage from "../../../components/ResponsiveImage.tsx";
+import { Link } from "react-router-dom";
 
 type EmbedType = "image" | "video" | "figma";
 
@@ -33,7 +34,7 @@ const EmbedCard: React.FC<EmbedCardProps> = ({ type, title, src, link }) => {
           />
         </div>
       ) : (
-        <a href={link} target="_blank" rel="noopener noreferrer" className="mb-4">
+        <Link to={link} target="_blank" rel="noopener noreferrer" className="mb-4">
           {isResponsiveImage ? (
             <ResponsiveImage
               imageSet={src as ResponsiveSrc}
@@ -47,16 +48,16 @@ const EmbedCard: React.FC<EmbedCardProps> = ({ type, title, src, link }) => {
               className="w-full object-contain rounded-lg shadow-md"
             />
           )}
-        </a>
+        </ Link> 
       )}
-      <a
-        href={link}
+      <Link
+        to={link}
         target="_blank"
         rel="noopener noreferrer"
         className="font-bold text-gray-800 hover:underline"
       >
         {title}
-      </a>
+      </ Link> 
     </div>
   );
 };

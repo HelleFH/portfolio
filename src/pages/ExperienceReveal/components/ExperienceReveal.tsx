@@ -6,6 +6,7 @@ import Images from "../../../assets/images.tsx";
 import { SkillsLibrary } from "../../../data/SkillsLibrary.tsx";
 import Navbar from "../../../components/Navbar/Navbar.jsx";
 import SoftSkills from "./SoftSkills.tsx";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -100,26 +101,26 @@ export default function ExperienceReveal({ jobs }: ExperienceRevealProps) {
                 <p className="mb-10 pr-4 text-justify flex flex-col gap-2 text-[rgba(var(--white))] font-['PangramSans-Medium'] ">
                   <span>Here you can find more information about my background.</span>
                   <span>
-                    <a
-                      href="https://your-about-link.com"
+                    <Link
+                      to="/about"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline text-[rgba(var(--lightgreen))] hover:underline  top-[1px]"
                     >
                       Click here
-                    </a>{" "}
+                    </ Link> {" "}
                     for more information about me and what I do when I'm not working.
                   </span>
                   <span>
                     Or go to my {" "}
-                    <a
-                      href="https://your-projects-link.com"
+                    <Link
+                      to="/project-overview"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ml-1 inline top-[1px] text-[rgba(var(--lightgreen))] hover:underline"
                     >
                      Project Page 
-                    </a>{" "}
+                    </ Link> {" "}
                     to explore some of my development work.
                   </span>
                 </p>
@@ -199,9 +200,9 @@ export default function ExperienceReveal({ jobs }: ExperienceRevealProps) {
 
           <footer className="text-center flex flex-col justify-center items-center py-20 bg-gray-900 w-full">
             <img src={Images.FooterLogo} className="max-w-20 absolute opacity-15" />
-            <a className="text-xl text-[rgba(var(--soft))]">Click here for some examples of my work</a>{" "}
-            <a className="text-xl text-[rgba(var(--soft))]">Click here to learn more about me</a>
-            <a className="text-xl text-[rgba(var(--soft))]">Home</a>
+            <Link to="/project-overview" className="text-xl text-[rgba(var(--soft))]">Click here for some examples of my work</ Link> {" "}
+            <Link to="/about" className="text-xl text-[rgba(var(--soft))]">Click here to learn more about me</ Link> 
+            <Link to="/" className="text-xl text-[rgba(var(--soft))]">Home</ Link> 
 
           </footer>
         </div>

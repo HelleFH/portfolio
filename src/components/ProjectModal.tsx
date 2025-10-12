@@ -162,9 +162,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
                 onClick={handleShowLoginDetails}
                 className="flex items-center gap-2 text-[rgba(var(--cyan))]  hover:underline dark:text-gray-200 hover:text-[rgb(var(--cyan))] transition-colors duration-200"
               >
-                <a>
+                <Link>
                 <FaSignInAlt size={14} /> Show Login Details
-                </a>
+                </ Link> 
               </button>
             )}
           </div>

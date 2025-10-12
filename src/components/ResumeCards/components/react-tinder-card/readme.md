@@ -11,11 +11,11 @@ The installation, import and api is identical for both Web and Native.
 ## Demo
 ![](demo.gif)
 
-Try out the interactive demo <a href="https://3djakob.github.io/react-tinder-card-demo/">here.</a>
+Try out the interactive demo <Link href="https://3djakob.github.io/react-tinder-card-demo/">here.</ Link> 
 
-Check out the Web demo repo <a href="https://github.com/3DJakob/react-tinder-card-demo">here.</a>
+Check out the Web demo repo <Link href="https://github.com/3DJakob/react-tinder-card-demo">here.</ Link> 
 
-Check out the Native demo repo <a href="https://github.com/3DJakob/react-native-tinder-card-demo">here.</a>
+Check out the Native demo repo <Link href="https://github.com/3DJakob/react-native-tinder-card-demo">here.</ Link> 
 
 ## Contributing
 Want to contribute? Check out the [contributing.md](https://github.com/3DJakob/react-tinder-card/blob/master/CONTRIBUTING.md).

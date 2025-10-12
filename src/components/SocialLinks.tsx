@@ -1,5 +1,6 @@
 import React from "react";
 import { Github, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface SocialLinksProps {
   onClick?: () => void;
@@ -18,22 +19,22 @@ const SocialLinks: React.FC<SocialLinksProps> = ({
 
   return (
     <li className="flex items-center justify-center gap-3" onClick={onClick}>
-      <a
-        href="https://linkedin.com"
+      <Link
+        to="https://www.linkedin.com/in/helle-fruergaard-577763112/"
         target="_blank"
         rel="noopener noreferrer"
         className={linkBase}
       >
         <Linkedin size={size} />
-      </a>
-      <a
-        href="https://github.com/HelleFH"
+      </ Link> 
+      <Link
+        to="https://github.com/HelleFH"
         target="_blank"
         rel="noopener noreferrer"
         className={linkBase}
       >
         <Github size={size} />
-      </a>
+      </ Link> 
     </li>
   );
 };

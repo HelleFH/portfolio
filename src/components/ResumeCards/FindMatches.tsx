@@ -185,7 +185,7 @@ function FindMatches() {
                   <p>{character.name}, {character.age}</p>
                   <p>{character.occupation}, {character.location}</p>
                   <div className="info-button">
-                    <a
+                    <Link
                       href="#"
                       onClick={(event) => {
                         event.preventDefault();
@@ -193,13 +193,13 @@ function FindMatches() {
                       }}
                     >
                       <FaInfoCircle />
-                    </a>
+                    </ Link> 
                   </div>
                 </div>
               </div>
 
               <div className="card-buttons">
-                <a
+                <Link
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
@@ -207,8 +207,8 @@ function FindMatches() {
                   }}
                 >
                   <FaTimes />
-                </a>
-                <a
+                </ Link> 
+                <Link
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
@@ -216,8 +216,8 @@ function FindMatches() {
                   }}
                 >
                   <FaUndo />
-                </a>
-                <a
+                </ Link> 
+                <Link
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
@@ -225,7 +225,7 @@ function FindMatches() {
                   }}
                 >
                   <FaHeart />
-                </a>
+                </ Link> 
               </div>
             </div>
           </TinderCard>

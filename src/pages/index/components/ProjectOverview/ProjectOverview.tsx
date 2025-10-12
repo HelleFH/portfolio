@@ -3,7 +3,7 @@ import Card from "../../../../components/Cards.tsx";
 import ProjectModal from "../../../../components/ProjectModal.tsx";
 import { frontendProjects } from "../../../../data/frontendprojects.js";
 import { myProjects } from "../../../../data/myProjects.js";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const ProjectsOverview = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
@@ -65,15 +65,15 @@ const ProjectsOverview = () => {
       <h1 className="font-['PangramSans-Medium'] font-semibold   text-2xl mb-5">My most recent work</h1>
 
       <p>You can view more of my projects, including school and hobby projects,      
-        <a
-        href="/project-overview"
+        <Link
+        to="/project-overview"
         target="_blank"
         rel="noopener noreferrer"
         className="text-link "
       >
         here
         
-        </a></p>
+        </ Link> </p>
       <div className="flex flex-col gap-4 md:gap-0 md:flex-row items-start w-full rounded-lg">
         {/* Project Grid */}
         <div

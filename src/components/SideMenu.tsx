@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Images from "../assets/images.tsx";
 import SocialLinks from "./SocialLinks.tsx";
+import { Link } from "react-router-dom";
 
 interface MenuItem {
   label: string;
@@ -74,14 +75,14 @@ const SideMenu: React.FC<SideMenuProps> = ({ items, open, setOpen }) => {
               {/* Menu Items */}
               <div className="side-links flex flex-col gap-4 rounded-b-md bg-[rgba(var(--white-color))] p-4 text-center text-[#324b4b] shadow-xl">
                 {items.map((item, index) => (
-                  <a
+                  <Link
                     key={index}
-                    href={item.href}
+                    to={item.href}
                     className="block border-b p-4 text-lg font-medium transition-colors duration-200 hover:bg-gray-100"
                     onClick={() => setOpen(false)}
                   >
                     {item.label}
-                  </a>
+                  </ Link> 
                 ))}
 
                 <SocialLinks />
