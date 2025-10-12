@@ -27,14 +27,14 @@ const ProjectsIntro: React.FC = () => {
         building and integrating RESTful APIs and GraphQL backends.
       </p>
       <p>You can find some of my recent work below.
-        <TextLink href="/cv" openInNewTab>
+        <TextLink to="/cv" openInNewTab>
           View My CV
         </TextLink>
         to find out more about my professional experience.
 
         Or you can read more about what I do when I'm not at work on my
 
-        <TextLink href="/about">About me
+        <TextLink to="/about">About me
         </ TextLink>  page
       </p>
     </div>

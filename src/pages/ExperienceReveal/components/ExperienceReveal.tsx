@@ -201,9 +201,9 @@ export default function ExperienceReveal({ jobs }: ExperienceRevealProps) {
 
           <footer className="text-center flex flex-col justify-center items-center py-20 bg-gray-900 w-full">
             <img src={Images.FooterLogo} className="max-w-20 absolute mb-10 opacity-20" />
-            <TextLink href="/project-overview" className="text-xl !text-[rgba(var(--soft))]">Click here for some examples of my work</ TextLink> {" "}
-            <TextLink href="/about" className="text-xl !text-[rgba(var(--soft))]">Click here to learn more about me</ TextLink> 
-            <TextLink href="/" className="text-xl !text-[rgba(var(--soft))]">Home</ TextLink> 
+            <TextLink to="/project-overview" className="text-xl !text-[rgba(var(--soft))]">Click here for some examples of my work</ TextLink> {" "}
+            <TextLink to="/about" className="text-xl !text-[rgba(var(--soft))]">Click here to learn more about me</ TextLink> 
+            <TextLink to="/" className="text-xl !text-[rgba(var(--soft))]">Home</ TextLink> 
 
           </footer>
         </div>
