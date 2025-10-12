@@ -48,7 +48,7 @@ const Card: React.FC<CardProps> = ({ project, onClick }) => {
     return (
       <li
         key={i}
-        className="flex font-['lato'] items-center gap-1 px-3 py-1 rounded-lg bg-[rgba(var(--darkgreen),0.1)] dark:bg-gray-800 text-gray-800 dark:text-gray-100 text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            className="flex items-center gap-2 rounded-lg bg-[rgba(var(--lightgreen),0.3)] font-['cup-cakes'] text-sm text-black px-3 py-1 shadow-sm transition hover:bg-indigo-100"
       >
         <span className="text-lg">{icon}</span>
         <span>{trimmedTech}</span>

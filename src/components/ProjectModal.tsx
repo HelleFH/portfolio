@@ -58,7 +58,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
   if (selectedProjectIndex === null || !projects[selectedProjectIndex]) return null;
 
   const project = projects[selectedProjectIndex];
-  
+
   const technologiesArray: string[] = Array.isArray(project.technologiesMore)
     ? project.technologiesMore
     : project.technologiesMore
@@ -130,7 +130,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
               return (
                 <li
                   key={i}
-                  className="flex items-center gap-2 bg-gray-100 dark:bg-white/10 px-3 py-1.5 rounded-x backdrop-blur-sm hover:bg-gray-200 dark:hover:bg-white/20 transition-colors duration-200"
+            className="flex items-center gap-2 rounded-lg bg-[rgba(var(--lightgreen),0.3)] font-['cup-cakes'] text-sm text-black px-3 py-1 shadow-sm transition hover:bg-indigo-100"
                 >
                   <span className="text-lg">{icon}</span>
                   <span className="text-sm font-medium text-gray-900 dark:text-gray-100">

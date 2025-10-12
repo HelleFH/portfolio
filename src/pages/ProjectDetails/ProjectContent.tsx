@@ -16,7 +16,7 @@ const ProjectContent: React.FC<{ project: Project }> = ({ project }) => {
 
 
       {/* Text Section */}
-      <div className="flex flex-col rounded-sm p-5 gap-5  text-left w-full mt-6">
+      <div className="flex flex-col rounded-sm p-5 gap-5  text-center w-full mt-6">
         <div className="bg-white rounded-sm p-4">
           <h4 className="text-2xl font-semibold pb-4">{project.descriptionHeader}</h4>
           <p className="text-lg leading-relaxed">{project.description}</p>

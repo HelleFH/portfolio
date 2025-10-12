@@ -112,26 +112,10 @@ const ProjectDetail: React.FC = () => {
     return <p className="text-center mt-20 text-gray-600">Loading...</p>;
 
   // ✅ Detect if image is a string or responsive set
-  const mainImage = selectedProject.images[0];
-  const imageElement =
-    typeof mainImage === "string" ? (
-      <img
-        src={mainImage}
-        alt={selectedProject.name}
-        className="w-full h-auto object-cover rounded-sm shadow-md"
-        loading="lazy"
-      />
-    ) : (
-      <ResponsiveImage
-        imageSet={mainImage}
-        alt={selectedProject.name}
-        className="w-full h-auto object-cover rounded-sm shadow-md"
-      />
-    );
 
 
   return (
-    <div className="relative min-h-screen overflow-hidden" {...handlers}>
+    <div className="relative  min-h-screen overflow-hidden" {...handlers}>
       {/* Background image */}
       <div
         className="fixed inset-0 z-[-2] bg-cover bg-center bg-no-repeat"
@@ -144,7 +128,7 @@ const ProjectDetail: React.FC = () => {
       {/* Page content */}
       <Navbar forceScrolled={true} />
 
-      <div className="relative z-10 mx-auto flex flex-col items-center w-full max-w-[1000px] p-6 bg-[rgba(255,255,255,0.9)] rounded-sm shadow-lg mt-[4rem] transition-all hover:shadow-2xl">
+      <div className="relative z-10 mx-auto  flex flex-col items-center w-full max-w-[1000px] p-6 bg-[rgba(255,255,255,0.9)] rounded-sm shadow-lg my-[7rem] transition-all hover:shadow-2xl">
         {/* Back Button */}
         <button
           onClick={() => navigate(-1)}
@@ -154,8 +138,18 @@ const ProjectDetail: React.FC = () => {
         </button>
 
         {/* Main Image */}
-        <div className="w-full max-w-2xl overflow-hidden rounded-sm m-4">
-          {imageElement}
+       <div className="flex justify-center mb-4 rounded-sm items-center w-full  bg-white dark:bg-gray-800 p-4">
+          <picture>
+            <source srcSet={selectedProject.images[0][1600]} media="(min-width: 1200px)" />
+            <source srcSet={selectedProject.images[0][1200]} media="(min-width: 800px)" />
+            <source srcSet={selectedProject.images[0][800]} media="(min-width: 400px)" />
+            <img
+              src={selectedProject.images[0][400]}
+              alt={selectedProject.name}
+              className="max-h-[50vh] w-auto object-contain"
+              loading="lazy"
+            />
+          </picture>
         </div>
         <div className=" w-full p-6 rounded-sm bg-[rgba(255,255,255,0.95)]">
           {/* Project Content */}
@@ -167,8 +161,9 @@ const ProjectDetail: React.FC = () => {
           )}
 
           {/* Buttons */}
-          <div className="mt-6">
+          <div className="mt-6 flex w-full justify-center">
             <ProjectButtons
+
               projectLink={selectedProject.projectLink}
               githubLink={selectedProject.githubLink}
               buttonText={selectedProject.buttonText}
