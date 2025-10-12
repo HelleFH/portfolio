@@ -3,8 +3,8 @@ import "./Button.scss";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  bgColor?: string;   // optional custom background color
-  fontColor?: string; // optional custom font color
+  bgColor?: string;   
+  fontColor?: string; 
 }
 
 const Button: React.FC<ButtonProps> = ({

@@ -15,7 +15,7 @@ const Hero = ({ title, subtitle, intro, buttons }) => {
   };
 
   return (
-  <section className="hero mb-10 relative flex min-h-[75vh] w-full flex-col items-start justify-center overflow-hidden py-8 md:py-0 px-2 md:px-16 text-[rgba(var(--white-color))]">
+  <section className="hero mb-10 relative flex min-h-[65vh] md:min-h-[75vh] w-full flex-col items-start justify-center overflow-hidden md:py-0 px-0 md:px-16 text-[rgba(var(--white-color))]">
   {/* Video background */}
   <video
     className="absolute left-0 top-0 z-[-2] h-full w-full object-cover"
@@ -32,7 +32,7 @@ const Hero = ({ title, subtitle, intro, buttons }) => {
   <div className="absolute inset-0 bg-black/20 mix-blend-multiply"></div>
 
   {/* Content */}
-  <div className="relative flex w-full flex-col items-start gap-4 p-12 md:p-16">
+  <div className="relative flex w-full flex-col items-start gap-4 p-8 md:p-16">
     <p className="text-lg font-light -mb-3 mt-[5%]">{subtitle}</p>
     <h1 className="font-inter text-[rgba(var(--white-color))] max-w-[800px] text-5xl font-light md:text-6xl">{title}</h1>
     <p className="max-w-[700px] pt-2">

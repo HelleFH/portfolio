@@ -13,11 +13,11 @@ const AboutMePage = () => {
         heroSubtitle="Helle Fruergaard | Web Developer"
         heroIntro="React Developer building clean, responsive interfaces and smooth user experiences. 
         Merging a scientific mindset with creative coding."
-        buttons={[{ type: 'link', text: 'Projects', path: '/' }]}
+        buttons={[{ type: 'link', text: 'Home', path: '/' }]}
       >
 
         <section className="mx-auto max-w-6xl bg-[rgba(var(--white-color))] p-8">
-          <div className="flex flex-col-reverse gap-8 md:flex-row md:gap-12">
+          <div className="flex flex-col gap-8 md:flex-row md:gap-12">
             <div className="flex flex-2  flex-col w-full md:w-2/3">
               <Intro />
             </div>

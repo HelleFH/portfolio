@@ -56,7 +56,7 @@ const HobbyCarousel: React.FC = () => {
   };
 
   return (
-    <div className="w-full bg-[rgba(var(--darkgreen),0.2)] text-black rounded-2xl shadow-lg max-w-full mx-auto p-8">
+    <div className="w-full bg-[rgba(var(--darkgreen),0.2)] text-black rounded-2xl shadow-lg max-w-full mx-auto px-2 py-8 md:p-8">
       {/* Title */}
       <h1 className="text-3xl font-bold font-[cup-cakes] text-center mb-4">My Hobbies include...</h1>
       <span className="block w-16 h-1 bg-[rgba(var(--cyan))] rounded-full mx-auto mb-8"></span>

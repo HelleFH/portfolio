@@ -4,6 +4,7 @@ import ProjectModal from "../../../../components/ProjectModal.tsx";
 import { frontendProjects } from "../../../../data/frontendprojects.js";
 import { myProjects } from "../../../../data/myProjects.js";
 import { Link, useLocation } from "react-router-dom";
+import TextLink from "../../../../components/Links/TextLink.tsx";
 
 const ProjectsOverview = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
@@ -64,16 +65,15 @@ const ProjectsOverview = () => {
     <div>
       <h1 className="font-['PangramSans-Medium'] font-semibold   text-2xl mb-5">My most recent work</h1>
 
-      <p>You can view more of my projects, including school and hobby projects,      
-        <Link
-        to="/project-overview"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-link "
-      >
-        here
-        
-        </ Link> </p>
+      <p>You can view more of my projects, including school and hobby projects,
+
+
+        <TextLink href="/project-overview" openInNewTab>
+          here
+        </TextLink>
+
+
+      </p>
       <div className="flex flex-col gap-4 md:gap-0 md:flex-row items-start w-full rounded-lg">
         {/* Project Grid */}
         <div

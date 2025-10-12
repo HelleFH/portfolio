@@ -1,27 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FaArrowRight, FaSignInAlt, FaTools } from "react-icons/fa";
-import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import CloseButton from './Buttons/CloseButton.tsx'
 import ProjectButtons from "./ProjectButtons.tsx";
 import LoginModal from "./LoginModal.tsx";
 import { Project } from "../types/project.ts";
 import { skillIcons } from '../components/Pills/SkillIcons.tsx'
+import ReadMoreLink from "./Links/ReadMoreLink.tsx";
+import ShowLoginButton from "./Links/ShowLoginButton.tsx";
 
 interface ProjectModalProps {
-  show: boolean; 
+  show: boolean;
   handleClose: () => void;
   selectedProjectIndex: number | null;
   projects: Project[];
   handlePrev: () => void;
   handleNext: () => void;
-  handleShowLoginDetails?: () => void; // ✅ optional prop
 }
-
 
 const ProjectModal: React.FC<ProjectModalProps> = ({
   show,
@@ -32,6 +30,20 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
   handleNext,
 }) => {
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [visible, setVisible] = useState(show);
+  const [animateOut, setAnimateOut] = useState(false);
+
+  // Handle modal open/close animations
+  useEffect(() => {
+    if (show) {
+      setVisible(true);
+      setAnimateOut(false);
+    } else if (visible) {
+      setAnimateOut(true);
+      const timer = setTimeout(() => setVisible(false), 250); // match fadeOut duration
+      return () => clearTimeout(timer);
+    }
+  }, [show]);
 
   const swipeHandlers = useSwipeable({
     onSwipedLeft: handleNext,
@@ -46,23 +58,25 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
   if (selectedProjectIndex === null || !projects[selectedProjectIndex]) return null;
 
   const project = projects[selectedProjectIndex];
+  
   const technologiesArray: string[] = Array.isArray(project.technologiesMore)
     ? project.technologiesMore
     : project.technologiesMore
-    ? project.technologiesMore.split(",").map((t) => t.trim())
-    : [];
+      ? project.technologiesMore.split(",").map((t) => t.trim())
+      : [];
 
-  return (
+  return visible ? (
     <div
-      className={`fixed inset-0 z-[9997] flex items-center justify-center bg-black/50 ${
-        show ? "animate-fadeIn" : "animate-fadeOut"
-      }`}
+      className={`fixed inset-0 z-[9997] flex items-center justify-center bg-black/50 ${animateOut ? "animate-fadeOut" : "animate-fadeIn"
+        }`}
     >
       <div
         {...swipeHandlers}
-        className="relative bg-white dark:bg-gray-900 rounded-2xl shadow-xl w-[95vw] max-w-4xl overflow-hidden flex flex-col md:flex-row transition-all duration-300"
+        className={`relative bg-white dark:bg-gray-900 rounded-2xl shadow-xl w-[95vw] max-w-4xl overflow-hidden flex flex-col md:flex-row transition-all duration-300 transform ${animateOut ? "scale-95 opacity-0" : "scale-100 opacity-100"
+          }`}
       >
-      <button
+        {/* Close Button */}
+        <button
           onClick={handleClose}
           className="absolute top-4 right-4 z-20 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white p-2 rounded-full dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
         >
@@ -78,29 +92,19 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         </div>
 
         {/* Image */}
-<div className="flex justify-center items-center w-full md:w-1/2 bg-white dark:bg-gray-800 p-4">
-  <picture>
-    <source
-      srcSet={project.images[0][1600]}
-      media="(min-width: 1200px)"
-    />
-    <source
-      srcSet={project.images[0][1200]}
-      media="(min-width: 800px)"
-    />
-    <source
-      srcSet={project.images[0][800]}
-      media="(min-width: 400px)"
-    />
-    <img
-      src={project.images[0][400]} // fallback / smallest size
-      alt={project.name}
-      className="max-h-[300px] w-auto object-contain"
-      loading="lazy"
-    />
-  </picture>
-</div>
-
+        <div className="flex justify-center items-center w-full md:w-1/2 bg-white dark:bg-gray-800 p-4">
+          <picture>
+            <source srcSet={project.images[0][1600]} media="(min-width: 1200px)" />
+            <source srcSet={project.images[0][1200]} media="(min-width: 800px)" />
+            <source srcSet={project.images[0][800]} media="(min-width: 400px)" />
+            <img
+              src={project.images[0][400]}
+              alt={project.name}
+              className="max-h-[300px] w-auto object-contain"
+              loading="lazy"
+            />
+          </picture>
+        </div>
 
         {/* Chevron Right */}
         <div
@@ -148,24 +152,16 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
           <div className="flex items-center flex-row justify-center gap-4 mt-4 dark:text-gray-200">
             <Link
               to={`/project/${project.type}/${project.id}`}
-              state={{
-                selectedProjectIndex,
-                projectType: project.type,
-              }}
-              className="flex items-center gap-2 text-[rgba(var(--cyan))] hover:underline transition-colors duration-200"
+              state={{ selectedProjectIndex, projectType: project.type }}
             >
-              Read More <FaArrowRight size={14} />
+              <ReadMoreLink fontColor="rgba(var(--cyan))">
+                Read More
+              </ReadMoreLink>
             </Link>
 
             {project.username && (
-              <button
-                onClick={handleShowLoginDetails}
-                className="flex items-center gap-2 text-[rgba(var(--cyan))]  hover:underline dark:text-gray-200 hover:text-[rgb(var(--cyan))] transition-colors duration-200"
-              >
-                <Link>
-                <FaSignInAlt size={14} /> Show Login Details
-                </ Link> 
-              </button>
+              <ShowLoginButton onClick={() => setShowLoginModal(true)} />
+
             )}
           </div>
         </div>
@@ -184,7 +180,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         />
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default ProjectModal;

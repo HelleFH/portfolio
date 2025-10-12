@@ -1,5 +1,6 @@
 import AnimatedSection from "../../../../components/AnimatedSection";
 import { Link } from "react-router-dom";
+import TextLink from "../../../../components/Links/TextLink.tsx";
 
 const Intro = () => {
   return (
@@ -17,14 +18,9 @@ const Intro = () => {
           I currently work with a company developing an AI-based app and bring
           years of experience in technical support, troubleshooting both
           software and hardware.{" "}
-          <Link
-            href="/cv"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-link "
-          >
+          <TextLink href="/cv" openInNewTab>
             You can check out my CV here
-          </ Link> 
+          </TextLink>
           .
         </p>
       </AnimatedSection>
@@ -35,14 +31,11 @@ const Intro = () => {
           My background as a freelance copywriter and translator taught me to
           craft clear, engaging content and collaborate closely with clients on
           creative projects.{" "}
-          <Link
-            to="/media"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-link "
-          >
+
+          <TextLink href="/media" openInNewTab>
             Click here to see some examples of my design/media work
-          </ Link> 
+          </TextLink>
+
           .
         </p>
       </AnimatedSection>
@@ -53,14 +46,10 @@ const Intro = () => {
           <p>
             I later trained in web development, gaining hands-on experience with
             HTML, CSS, JavaScript, and React.{" "}
-            <Link
-              to="/project-overview"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-link "
-            >
+            <TextLink href="/project-overview" openInNewTab>
               You can see some of my most recent project as well as school and hobby projects here
-            </ Link> 
+            </TextLink>
+
             . I enjoy combining technical and creative skills to build accessible,
             user-friendly web experiences.
           </p>

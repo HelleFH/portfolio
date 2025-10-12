@@ -7,7 +7,7 @@ const ProjectDetailsList: React.FC<{ details: string[] }> = ({ details }) => (
       {details.map((detail, i) => (
         <li
           key={i}
-          className="relative pl-6 text-gray-700 before:content-['✦'] before:absolute before:left-0 before:text-teal-500"
+          className="relative pl-6  before:content-['✦'] before:absolute before:left-0 before:text-teal-500"
         >
           {detail}
         </li>

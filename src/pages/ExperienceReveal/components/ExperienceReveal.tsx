@@ -7,6 +7,7 @@ import { SkillsLibrary } from "../../../data/SkillsLibrary.tsx";
 import Navbar from "../../../components/Navbar/Navbar.jsx";
 import SoftSkills from "./SoftSkills.tsx";
 import { Link } from "react-router-dom";
+import TextLink from "../../../components/Links/TextLink.tsx";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -94,11 +95,11 @@ export default function ExperienceReveal({ jobs }: ExperienceRevealProps) {
         >
 
           {/* HEADER */}
-          <header className="max-w-[1000px] mx-auto flex-col md:flex-row flex gap-3 pt-[6rem] pb-[4rem]">
-            <div className=" max-w-[80%] text-white p-3 bg-[rgba(var(--soft),0.1)] mx-auto my-20 md:flex-row flex-col flex gap-3 items-center justify-center rounded-xl">
+          <header className="max-w-[1000px] mx-auto flex-col md:flex-row flex gap-3 p-0 md:pt-[6rem] md:pb-[4rem]">
+            <div className=" max-w-[96%] md:max-w-[80%] text-white p-3 bg-[rgba(var(--dark-color),0.5)] mx-auto my-20 md:flex-row flex-col flex gap-3 items-center justify-center rounded-xl">
               <div className="pl-5 flex-1 flex flex-col gap-4">
                 <h2 className="text-3xl font-['inter'] text-white font-bold">Career & Education</h2>
-                <p className="mb-10 pr-4 text-justify flex flex-col gap-2 text-[rgba(var(--white))] font-['PangramSans-Medium'] ">
+                <p className="mb-1 md:mb-10 pr-4 text-justify flex flex-col gap-2 text-[rgba(var(--white))] font-['PangramSans-Medium'] ">
                   <span>Here you can find more information about my background.</span>
                   <span>
                     <Link
@@ -140,13 +141,13 @@ export default function ExperienceReveal({ jobs }: ExperienceRevealProps) {
                 <div className="absolute inset-0 rounded-lg max-w-[250px] bg-[rgba(var(--darkgreen),0.2)]"></div>
               </div>
             </div>
-            <div className="max-w-[45%] min-w-[300px] text-white px-2 bg-[rgba(var(--soft),0.1)] mx-auto my-20 md:flex-row flex-col flex gap-1 items-start justify-center rounded-xl">
+            <div className="mb-[10rem] md:mb-0 max-w-[96%] md:max-w-[45%] min-w-[300px] text-white px-2 bg-[rgba(var(--dark-color),0.5)]  mx-auto my-2 md:my-20 md:flex-row flex-col flex gap-1 items-start justify-center rounded-xl">
               <SoftSkills />
             </div>
           </header>
 
           {/* JOB SECTIONS */}
-          <div className="my-1 bg-[rgba(var(--dark-color),0.6)] p-10 w-full max-w-[1000px] mx-auto rounded-xl">
+          <div className="my-1 bg-[rgba(var(--dark-color),0.6)] p-1 md:p-10 w-full max-w-[1000px] mx-auto rounded-xl">
             {jobs.map((job, index) => {
               const imageUrl =
                 typeof job.image === "string"
@@ -199,10 +200,10 @@ export default function ExperienceReveal({ jobs }: ExperienceRevealProps) {
           </div>
 
           <footer className="text-center flex flex-col justify-center items-center py-20 bg-gray-900 w-full">
-            <img src={Images.FooterLogo} className="max-w-20 absolute opacity-15" />
-            <Link to="/project-overview" className="text-xl text-[rgba(var(--soft))]">Click here for some examples of my work</ Link> {" "}
-            <Link to="/about" className="text-xl text-[rgba(var(--soft))]">Click here to learn more about me</ Link> 
-            <Link to="/" className="text-xl text-[rgba(var(--soft))]">Home</ Link> 
+            <img src={Images.FooterLogo} className="max-w-20 absolute mb-10 opacity-20" />
+            <TextLink href="/project-overview" className="text-xl !text-[rgba(var(--soft))]">Click here for some examples of my work</ TextLink> {" "}
+            <TextLink href="/about" className="text-xl !text-[rgba(var(--soft))]">Click here to learn more about me</ TextLink> 
+            <TextLink href="/" className="text-xl !text-[rgba(var(--soft))]">Home</ TextLink> 
 
           </footer>
         </div>

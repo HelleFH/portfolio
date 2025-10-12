@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import TextLink from "../../../../components/Links/TextLink.tsx";
 
 const ProjectsIntro: React.FC = () => {
   const navigate = useNavigate();
@@ -26,12 +27,16 @@ const ProjectsIntro: React.FC = () => {
         building and integrating RESTful APIs and GraphQL backends.
       </p>
       <p>You can find some of my recent work below.
-       <Link className="text-link" to="/CV">
-       View My CV</ Link>  to find out more about my professional experience.
+        <TextLink href="/cv" openInNewTab>
+          View My CV
+        </TextLink>
+        to find out more about my professional experience.
 
-       Or you can read more about what I do when I'm not at work on my 
-       <Link className="text-link" to="/about">About me</ Link>  page
-</p>
+        Or you can read more about what I do when I'm not at work on my
+
+        <TextLink href="/about">About me
+        </ TextLink>  page
+      </p>
     </div>
   );
 };

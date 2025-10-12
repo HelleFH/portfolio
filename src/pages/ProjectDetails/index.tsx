@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useSwipeable } from "react-swipeable";
 import { LogIn } from "lucide-react";
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft, FaSignInAlt } from "react-icons/fa";
 
 import Layout from "../../components/Layout.tsx";
 import LoginModal from "../../components/LoginModal.tsx";
@@ -17,6 +17,7 @@ import "./index.scss";
 import React from "react";
 import Images from "../../assets/images.tsx";
 import Navbar from "../../components/Navbar/Navbar.jsx";
+import ShowLoginButton from "../../components/Links/ShowLoginButton.tsx";
 
 interface ResponsiveImageSet {
   400: string;
@@ -86,19 +87,19 @@ const ProjectDetail: React.FC = () => {
   };
   const [heroBg, setHeroBg] = React.useState(Images.hero[800]);
 
-React.useEffect(() => {
-  const updateHero = () => {
-    const w = window.innerWidth;
-    if (w < 600) setHeroBg(Images.hero[400]);
-    else if (w < 1000) setHeroBg(Images.hero[800]);
-    else if (w < 1600) setHeroBg(Images.hero[1200]);
-    else setHeroBg(Images.hero[1600]);
-  };
+  React.useEffect(() => {
+    const updateHero = () => {
+      const w = window.innerWidth;
+      if (w < 600) setHeroBg(Images.hero[400]);
+      else if (w < 1000) setHeroBg(Images.hero[800]);
+      else if (w < 1600) setHeroBg(Images.hero[1200]);
+      else setHeroBg(Images.hero[1600]);
+    };
 
-  updateHero();
-  window.addEventListener("resize", updateHero);
-  return () => window.removeEventListener("resize", updateHero);
-}, []);
+    updateHero();
+    window.addEventListener("resize", updateHero);
+    return () => window.removeEventListener("resize", updateHero);
+  }, []);
 
 
   const handlers = useSwipeable({
@@ -117,61 +118,52 @@ React.useEffect(() => {
       <img
         src={mainImage}
         alt={selectedProject.name}
-        className="w-full h-auto object-cover rounded-lg shadow-md"
+        className="w-full h-auto object-cover rounded-sm shadow-md"
         loading="lazy"
       />
     ) : (
       <ResponsiveImage
         imageSet={mainImage}
         alt={selectedProject.name}
-        className="w-full h-auto object-cover rounded-lg shadow-md"
+        className="w-full h-auto object-cover rounded-sm shadow-md"
       />
     );
-    
+
 
   return (
-    <div
-  className="relative bg-cover bg-center bg-no-repeat p-[10rem] min-h-screen z-[9999]"
-      {...handlers}
-       style={{
-    backgroundImage: `linear-gradient(
-      to bottom,
-      rgba(var(--dark-color), 0.85) 0%,
-      rgba(var(--dark-color), 0.85) 60%,
-      rgba(var(--soft), 0.9) 100%
-    ), url(${heroBg})`,
-  }}
-    >
+    <div className="relative min-h-screen overflow-hidden" {...handlers}>
+      {/* Background image */}
+      <div
+        className="fixed inset-0 z-[-2] bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
 
+      {/* Gradient overlay */}
+      <div className="fixed inset-0 z-[-1] bg-gradient-to-b from-[rgba(var(--dark-color),0.9)] via-[rgba(var(--dark-color),0.9)] to-[rgba(var(--soft),0.6)]" />
+
+      {/* Page content */}
       <Navbar forceScrolled={true} />
 
-        <div className="mx-auto relative flex flex-col items-center w-full max-w-3xl p-6 bg-[rgba(var(--soft),0.9)] rounded-xl shadow-lg z-10 transition-all hover:shadow-2xl">
-          {/* Back Button */}
-          <button
-            onClick={() =>
-            navigate(-1)}
-           
-            className="font-[cup-cakes] tracking-tighter flex items-center gap-2 text-gray-600 hover:text-[rgba(var(--darkgreen))]-800 transition-colors duration-300 self-start"
-          >
-            <FaArrowLeft size={14} /> Back to Projects
-          </button>
+      <div className="relative z-10 mx-auto flex flex-col items-center w-full max-w-[1000px] p-6 bg-[rgba(255,255,255,0.9)] rounded-sm shadow-lg mt-[4rem] transition-all hover:shadow-2xl">
+        {/* Back Button */}
+        <button
+          onClick={() => navigate(-1)}
+          className="font-[cup-cakes] tracking-tighter flex items-center gap-2  hover:text-[rgba(var(--darkgreen))]-800 transition-colors duration-300 self-start"
+        >
+          <FaArrowLeft size={14} /> Back to Projects
+        </button>
 
-          {/* Main Image (Responsive) */}
-          <div className="w-full max-w-2xl overflow-hidden rounded-lg mt-4">
-            {imageElement}
-          </div>
-
-          {/* Main Project Content */}
+        {/* Main Image */}
+        <div className="w-full max-w-2xl overflow-hidden rounded-sm m-4">
+          {imageElement}
+        </div>
+        <div className=" w-full p-6 rounded-sm bg-[rgba(255,255,255,0.95)]">
+          {/* Project Content */}
           <ProjectContent project={selectedProject} />
 
           {/* Login Details */}
           {selectedProject.username && (
-            <div
-              className="flex items-center gap-2 mt-6 text-[rgba(var(--darkgreen))]-700 hover:text-[rgba(var(--darkgreen))]-900 cursor-pointer"
-              onClick={() => setShowLoginModal(true)}
-            >
-              <LogIn size={18} /> Show Login Details
-            </div>
+            <ShowLoginButton onClick={() => setShowLoginModal(true)} />
           )}
 
           {/* Buttons */}
@@ -192,17 +184,19 @@ React.useEffect(() => {
         </div>
 
         {/* Login Modal */}
-<LoginModal
-  show={showLoginModal}
-  onHide={() => setShowLoginModal(false)}
-  project={selectedProject}
-  handleCopyToClipboard={(text: string) => {
-    navigator.clipboard.writeText(text);
-    alert("Copied to clipboard");
-  }}
-/>
+        <LoginModal
+          show={showLoginModal}
+          onHide={() => setShowLoginModal(false)}
+          project={selectedProject}
+          handleCopyToClipboard={(text: string) => {
+            navigator.clipboard.writeText(text);
+            alert("Copied to clipboard");
+          }}
+        />
+      </div>
     </div>
   );
+
 };
 
 export default ProjectDetail;

@@ -85,17 +85,12 @@ a {
 
 }
 
-a:not(nav a, footer a):visited {
 
-  color: rgba(var(--darkgreen)) !important;
-
-}
 
 .navbar-link {
 
   color: white;
 }
-
 .navbar-link:visited {
   color: white !important;
 }

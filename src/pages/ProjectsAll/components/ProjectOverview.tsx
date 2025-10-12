@@ -4,6 +4,7 @@ import ProjectModal from "../../../components/ProjectModal.tsx";
 import { frontendProjects } from "../../../data/frontendprojects.js";
 import { myProjects } from "../../../data/myProjects.js";
 import { useLocation } from "react-router-dom";
+import TextLink from "../../../components/Links/TextLink.tsx";
 
 const ProjectsOverview = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
@@ -61,12 +62,21 @@ const ProjectsOverview = () => {
 
   // ---- RENDER ----
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col w-full justify-center items-center gap-12">
       {/* 🧩 FRONTEND PROJECTS */}
       <section>
-<h2 className="text-2xl font-bold mb-4 text-center">
-  Here's a look at some of my recent work, including professional, school, and hobby projects.
-</h2>
+        <h2 className="text-2xl font-bold mb-4 text-center">
+          Here's a look at some of web development work, including professional, school, and hobby projects.
+          To learn more about my experience and profile, please see
+          <TextLink href="/CV" className="mr-1 text-2xl">
+            my CV
+          </TextLink>
+          or my
+          <TextLink href="/about" className=" text-2xl">
+            About Me  </TextLink>
+          page.
+
+        </h2>
 
         <div
           className="grid auto-rows-auto gap-4 md:gap-6 
@@ -80,7 +90,7 @@ const ProjectsOverview = () => {
               onClick={() => openModal(index, "frontend")}
             />
           ))}
-     
+
           {myProjects.map((project, index) => (
             <Card
               key={project.id}
