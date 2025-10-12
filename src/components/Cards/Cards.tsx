@@ -41,14 +41,14 @@ const Card: React.FC<CardProps> = ({ project, onClick }) => {
         {project.name}
       </strong>
 
-<ul className="flex flex-wrap items-center justify-center gap-1 mt-4">
+<ul className="flex flex-wrap  items-center justify-center gap-1 mt-4">
   {project.technologies.map((tech, i) => {
     const trimmedTech = tech.trim();
     const icon = skillIcons[trimmedTech] || <FaTools className="text-gray-400" />; 
     return (
       <li
         key={i}
-        className="flex items-center gap-1 px-3 py-1 rounded-lg bg-[rgba(var(--darkgreen),0.1)] font-['lato'] dark:bg-gray-800 text-gray-800 dark:text-gray-100 text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+        className="flex font-['lato'] items-center gap-1 px-3 py-1 rounded-lg bg-[rgba(var(--darkgreen),0.1)] dark:bg-gray-800 text-gray-800 dark:text-gray-100 text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
       >
         <span className="text-lg">{icon}</span>
         <span>{trimmedTech}</span>

@@ -79,7 +79,8 @@ const ProjectsOverview = () => {
           show={isModalOpen}
           handleClose={closeModal}
           selectedProjectIndex={selectedProjectIndex}
-          projects={currentProjects}
+            projects={myProjects.map(p => ({ ...p, type: "myprojects" }))}
+
           handlePrev={handlePrev}
           handleNext={handleNext}
           handleShowLoginDetails={() => console.log("Show login")}

@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Github, Instagram, Linkedin } from "lucide-react";
 import Images from "../../assets/images.tsx";
 import SideMenu from "../SideMenu/SideMenu.tsx";
+import SocialLinks from "../SocialLinks/SocialLinks.jsx";
 
 const Navbar = ({ forceScrolled = false }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -63,7 +64,7 @@ const Navbar = ({ forceScrolled = false }) => {
             alt="Logo"
             className="w-9"
           />
-          <span className="text-lg font-semibold">Helle Fruergaard</span>
+          <span className="text-lg font-semibold navbar-link">Helle Fruergaard</span>
         </Link>
 
         {/* Desktop Links */}
@@ -71,50 +72,25 @@ const Navbar = ({ forceScrolled = false }) => {
           <li>
             <Link
               to="/about"
-              className="rounded-md px-1 text-lg transition-colors duration-300 hover:bg-[rgba(0,100,0,0.6)]"
+              className="navbar-link rounded-md px-1 text-lg transition-colors duration-300 hover:bg-[rgba(0,100,0,0.6)]"
               onClick={() => setMenuOpen(false)}
             >
               About
             </Link>
           </li>
-
-          {/* Inline Social Links */}
-          <li className="flex items-center gap-3">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-icon"
-            >
-              <Instagram size={20} />
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-icon"
-            >
-              <Facebook size={20} />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-icon mr-3"
-            >
-              <Linkedin size={20} />
-            </a>
-
-          </li>
+<div className="pr-3">
+          <SocialLinks />
+          
+</div>
         </ul>
 
         {/* Mobile Side Menu */}
         <SideMenu
           items={[
-            { label: "Home", href: "#" },
-            { label: "About", href: "#about" },
-            { label: "Services", href: "#services" },
-            { label: "Contact", href: "#contact" },
+            { label: "Home", href: "/" },
+            { label: "About", href: "/about" },
+            { label: "CV", href: "/CV" },
+            { label: "Projects", href: "/project-overview" },
           ]}
           open={menuOpen}
           setOpen={setMenuOpen}

@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCopy } from "@fortawesome/free-solid-svg-icons";
-import CloseButton from "../Buttons/CloseButton.tsx"
-import { Project } from "../../types/project.ts"
-
+import { faCopy, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { Project } from "../../types/project.ts";
 
 interface LoginModalProps {
   show: boolean;
@@ -19,7 +17,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
   onHide,
   project,
 }) => {
-const [copiedField, setCopiedField] = React.useState<string | null>(null);
+  const [copiedField, setCopiedField] = useState<string | null>(null);
 
   const handleCopy = (text: string | undefined, field: string) => {
     if (!text) return;
@@ -31,13 +29,26 @@ const [copiedField, setCopiedField] = React.useState<string | null>(null);
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-50"
+      onClick={onHide} // clicking backdrop closes modal
+    >
       {/* Modal box */}
-      <div className="mx-4 w-full max-w-md overflow-hidden rounded-lg bg-[rgba(var(--white-color))] shadow-xl">
+      <div
+        className="relative mx-4 w-full max-w-md overflow-hidden rounded-lg bg-[rgba(var(--white-color))] shadow-xl"
+        onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
+      >
+        {/* Floating Close Button */}
+        <button
+          onClick={onHide}
+          className="absolute top-3 right-3 text-gray-700 hover:text-gray-900 p-1"
+        >
+          <FontAwesomeIcon icon={faTimes} size="lg" />
+        </button>
+
         {/* Header */}
-        <div className="flex items-center justify-between border-b bg-green-50 px-4 py-3">
+        <div className="border-b bg-green-50 px-4 py-3">
           <h5 className="text-xl font-semibold">Login Details</h5>
-          <CloseButton onClick={onHide} />
         </div>
 
         {/* Body */}
@@ -66,13 +77,17 @@ const [copiedField, setCopiedField] = React.useState<string | null>(null);
               <CredentialRow
                 label="Admin"
                 value={project.adminUsername}
-                onCopy={() => handleCopy(project.adminUsername, "adminUsername")}
+                onCopy={() =>
+                  handleCopy(project.adminUsername, "adminUsername")
+                }
                 copied={copiedField === "adminUsername"}
               />
               <CredentialRow
                 label="Password"
                 value={project.adminPassword}
-                onCopy={() => handleCopy(project.adminPassword, "adminPassword")}
+                onCopy={() =>
+                  handleCopy(project.adminPassword, "adminPassword")
+                }
                 copied={copiedField === "adminPassword"}
               />
             </div>
@@ -119,7 +134,7 @@ const CredentialRow: React.FC<CredentialRowProps> = ({
     <FontAwesomeIcon
       icon={faCopy}
       onClick={onCopy}
-      className="ml-2 cursor-pointer text-gray-600 hover:text-[rgba(var(--black-color))] "
+      className="ml-2 cursor-pointer text-gray-600 hover:text-[rgba(var(--black-color))]"
     />
     {copied && (
       <span className="animate-fadeOut ml-2 text-sm text-green-600">

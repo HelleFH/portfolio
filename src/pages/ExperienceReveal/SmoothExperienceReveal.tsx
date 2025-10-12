@@ -206,7 +206,7 @@ React.useEffect(() => {
 })}
 
         </div>
-        <footer className="text-center py-20 bg-gray-900 w-full"> <p className="text-gray-500"><a href="/projects">Click here for some examples of my work</a>
+        <footer className="text-center py-20 bg-gray-900 w-full"> <p className="text-gray-500"><a className="" href="/projects">Click here for some examples of my work</a>
           <a href="/about">Click here to learn more about me</a></p></footer>
 
       </div>

@@ -1,29 +1,32 @@
 // SocialLinks.js
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import './SocialLinks.scss';
+import { Github, Linkedin, Menu} from "lucide-react";
+
 const SocialLinks = ({ onClick }) => {
   return (
-    <div className="social-links-container">
-      <a
-        href="https://www.linkedin.com/in/helle-fruergaard-577763112/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="social-link"
-      >
-        <FontAwesomeIcon icon={faLinkedin} size="lg" />
-      </a>
-
-      <a
-        href="https://github.com/HelleFH"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="social-link"
-        onClick={onClick}
-      >
-        <FontAwesomeIcon icon={faGithub} size="lg" />
-      </a>
-    </div>
+          <li className="flex items-center justify-center gap-3">
+                        
+                          
+                            <a
+                              href="https://linkedin.com" 
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="social-link w-5 m-0"
+                            >
+                              <Linkedin size={20} />
+                            </a>
+                                   <a
+                              href="https://github.com/HelleFH"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="social-link  w-5 m-0"
+                            >
+                              <Github size={20} />
+                            </a>
+                
+                
+                          </li>
   );
 };
 

@@ -76,11 +76,13 @@ body {
 
 
 .slick-dots {margin-top:0 !important;}
-a:visited
+a:not(.navbar-link,.social-link):visited
  {
-  color: inherit !important;
+  color: rgba(var(--darkgreen)) !important;
 
 }
+.navbar-link  {color:white;}
+.navbar-link:visited {color:white}
 
 h1,
 h2,
@@ -142,6 +144,7 @@ a:visited,
 a:active {
   color: inherit;
 }
+
 
 #hs-overlay-cta-92296409586 {
   display: none !important;

@@ -68,11 +68,9 @@ export const myProjects = [
       "Express",
       "React",
       "Node.js",
-      "Axios",
       "RESTful API",
       "Bcryptjs",
       "Cloudinary",
-      "Multer",
       "Vite",
       "Moment"
     ],
@@ -105,8 +103,6 @@ export const myProjects = [
       "Node.js",
       "Cloudinary",
       "RESTful API",
-      "Multer",
-      "Dotenv",
       "Axios"
     ],
     "projectDetails": [
@@ -140,10 +136,8 @@ export const myProjects = [
       "Vue",
       "Node.js",
       "RESTful API",
-      "Multer",
       "Zustand",
       "Formik",
-      "Yup",
       "Bcrypt",
       "Jsonwebtoken"
     ],
@@ -179,7 +173,7 @@ export const myProjects = [
       "CSS",
       "p5.js",
       "AJAX",
-      "Canva (animation)",
+      "Canva",
       "JSON"
     ],
     "projectDetails": [
@@ -283,7 +277,6 @@ export const myProjects = [
       "Vue",
       "Node.js",
       "RESTful API",
-      "Multer",
       "Zustand",
       "Formik",
       "Yup",
@@ -322,7 +315,7 @@ export const myProjects = [
       "CSS",
       "p5.js",
       "AJAX",
-      "Canva (animation)",
+      "Canva",
       "JSON"
     ],
     "projectDetails": [

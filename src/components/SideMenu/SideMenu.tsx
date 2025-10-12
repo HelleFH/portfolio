@@ -1,8 +1,9 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import {  Menu, X } from "lucide-react";
 import './sidemenu.scss';
 import Images from "../../assets/images.tsx";
+import SocialLinks from "../SocialLinks/SocialLinks.jsx";
 
 interface MenuItem {
   label: string;
@@ -60,9 +61,12 @@ const SideMenu = ({ items, open, setOpen, scrolled }: SideMenuProps) => {
                 <button onClick={() => setOpen(false)}>
                   <X size={24} />
                 </button>
+                
               </div>
+         
 
               <div className=" flex flex-col gap-4 rounded-b-md bg-[rgba(var(--white-color))]  p-4 text-center text-[rgba(var(--black-color))] text-black shadow-xl">
+               
                 {items.map((item, index) => (
                   <a
                     key={index}
@@ -73,7 +77,9 @@ const SideMenu = ({ items, open, setOpen, scrolled }: SideMenuProps) => {
                     {item.label}
                   </a>
                 ))}
+                         <SocialLinks onClick={undefined} />
               </div>
+              
             </motion.div>
           </>
         )}

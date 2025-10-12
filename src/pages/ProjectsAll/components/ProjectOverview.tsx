@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Card from "../../../../components/Cards/Cards.tsx";
-import ProjectModal from "../../../../components/ProjectModal/ProjectModal.tsx";
-import { frontendProjects } from "../../../../data/frontendprojects.js";
-import { myProjects } from "../../../../data/myProjects.js";
+import Card from "../../../components/Cards/Cards.tsx";
+import ProjectModal from "../../../components/ProjectModal/ProjectModal.tsx";
+import { frontendProjects } from "../../../data/frontendprojects.js";
+import { myProjects } from "../../../data/myProjects.js";
 import { useLocation } from "react-router-dom";
 
 const ProjectsOverview = () => {
@@ -14,7 +14,7 @@ const ProjectsOverview = () => {
   const { selectedProjectIndex: passedIndex, projectType: passedType } =
     location.state || {};
 
-  // Restore modal state when navigated from ProjectDetail
+  // Open modal when coming from "Read More"
   useEffect(() => {
     if (passedIndex !== undefined && passedType) {
       setSelectedProjectIndex(passedIndex);
@@ -23,7 +23,7 @@ const ProjectsOverview = () => {
     }
   }, [passedIndex, passedType]);
 
-  // Open modal for clicked project
+  // ---- OPEN / CLOSE MODAL ----
   const openModal = (index: number, type: string) => {
     setSelectedProjectIndex(index);
     setCurrentProjectType(type);
@@ -36,12 +36,11 @@ const ProjectsOverview = () => {
     setCurrentProjectType(null);
   };
 
-  // Get correct project list based on type
+  // ---- GET PROJECTS BASED ON TYPE ----
   const getProjects = () => {
-    if (currentProjectType === "frontend") {
-      return frontendProjects.map((p) => ({ ...p, type: "frontend" }));
-    }
-    return myProjects.map((p) => ({ ...p, type: "myprojects" }));
+    const base =
+      currentProjectType === "frontend" ? frontendProjects : myProjects;
+    return base.map((p) => ({ ...p, type: currentProjectType }));
   };
 
   const handlePrev = () => {
@@ -60,41 +59,45 @@ const ProjectsOverview = () => {
 
   const currentProjects = getProjects();
 
+  // ---- RENDER ----
   return (
-    <div className="flex flex-col gap-4 md:gap-0 md:flex-row items-start w-full rounded-lg">
-      {/* Project Grid */}
-      <div
-        className="grid auto-rows-auto gap-4 md:gap-6 
-                   w-full bg-[rgba(var(--white-color))] p-2 rounded-lg shadow-sm my-10"
-        style={{ gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))" }}
-      >
-        {frontendProjects.map((project, index) => (
-          <Card
-            key={project.id}
-            project={project}
-            onClick={() => openModal(index, "frontend")}
-          />
-        ))}
+    <div className="flex flex-col gap-12">
+      {/* 🧩 FRONTEND PROJECTS */}
+      <section>
+                <h2 className="text-2xl font-bold mb-4 text-center">Here's a look at some of my recent work, both professional, school and hobby.</h2>
 
-        {myProjects.map((project, index) => (
-          <Card
-            key={project.id}
-            project={project}
-            onClick={() => openModal(index, "myprojects")}
-          />
-        ))}
-      </div>
+        <div
+          className="grid auto-rows-auto gap-4 md:gap-6 
+                    w-full bg-[rgba(var(--white-color))] md:p-8 rounded-lg shadow-sm"
+          style={{ gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))" }}
+        >
+          {frontendProjects.map((project, index) => (
+            <Card
+              key={project.id}
+              project={project}
+              onClick={() => openModal(index, "frontend")}
+            />
+          ))}
+     
+          {myProjects.map((project, index) => (
+            <Card
+              key={project.id}
+              project={project}
+              onClick={() => openModal(index, "myprojects")}
+            />
+          ))}
+        </div>
+      </section>
 
-      {/* Modal */}
+      {/* 🪟 MODAL */}
       {isModalOpen && selectedProjectIndex !== null && (
         <ProjectModal
           show={isModalOpen}
           handleClose={closeModal}
           selectedProjectIndex={selectedProjectIndex}
-          projects={currentProjects} 
+          projects={currentProjects}
           handlePrev={handlePrev}
           handleNext={handleNext}
-          handleShowLoginDetails={() => console.log("Show login")}
         />
       )}
     </div>

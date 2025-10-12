@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faChevronRight, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FaArrowRight, FaSignInAlt, FaTools } from "react-icons/fa";
 import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -19,7 +19,9 @@ interface ProjectModalProps {
   projects: Project[];
   handlePrev: () => void;
   handleNext: () => void;
+  handleShowLoginDetails?: () => void; // ✅ optional prop
 }
+
 
 const ProjectModal: React.FC<ProjectModalProps> = ({
   show,
@@ -60,10 +62,12 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         {...swipeHandlers}
         className="relative bg-white dark:bg-gray-900 rounded-2xl shadow-xl w-[95vw] max-w-4xl overflow-hidden flex flex-col md:flex-row transition-all duration-300"
       >
-        {/* Close button */}
-        <div className="absolute top-4 right-4 z-20">
-          <CloseButton onClick={handleClose} />
-        </div>
+      <button
+          onClick={handleClose}
+          className="absolute top-4 right-4 z-20 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white p-2 rounded-full dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+        >
+          <FontAwesomeIcon icon={faTimes} size="lg" />
+        </button>
 
         {/* Chevron Left */}
         <div
@@ -116,7 +120,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
           </p>
 
           {/* Tech list */}
-          <ul className="flex flex-wrap gap-2 mt-2">
+          <ul className="font-['lato'] flex flex-wrap gap-2 mt-2">
             {technologiesArray.map((tech, i) => {
               const icon = skillIcons[tech] || <FaTools />;
               return (
@@ -141,14 +145,14 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
           />
 
           {/* Links */}
-          <div className="flex items-center gap-4 flex-wrap mt-4 text-gray-800 dark:text-gray-200">
+          <div className="flex items-center flex-row justify-center gap-4 mt-4 dark:text-gray-200">
             <Link
               to={`/project/${project.type}/${project.id}`}
               state={{
                 selectedProjectIndex,
                 projectType: project.type,
               }}
-              className="flex items-center gap-2 hover:text-[rgb(var(--cyan))] transition-colors duration-200"
+              className="flex items-center gap-2 text-[rgba(var(--cyan))] hover:underline transition-colors duration-200"
             >
               Read More <FaArrowRight size={14} />
             </Link>
@@ -156,9 +160,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             {project.username && (
               <button
                 onClick={handleShowLoginDetails}
-                className="flex items-center gap-2 text-gray-700 dark:text-gray-200 hover:text-[rgb(var(--cyan))] transition-colors duration-200"
+                className="flex items-center gap-2 text-[rgba(var(--cyan))]  hover:underline dark:text-gray-200 hover:text-[rgb(var(--cyan))] transition-colors duration-200"
               >
+                <a>
                 <FaSignInAlt size={14} /> Show Login Details
+                </a>
               </button>
             )}
           </div>

@@ -15,6 +15,7 @@ import ExperienceReveal from "./pages/ExperienceReveal/ExperienceReveal.tsx";
 import Projects from "./pages/projects/index.tsx";
 
 import "./index.css";
+import ProjectsAll from "./pages/ProjectsAll/index.tsx";
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -67,7 +68,19 @@ const App: React.FC = () => {
             </motion.div>
           }
         />
-
+   <Route
+          path="/project-overview"
+          element={
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 50 }}
+              transition={{ duration: 0.5 }}
+            >
+              <ProjectsAll />
+            </motion.div>
+          }
+        />
         <Route
           path="/project/:type/:id"
           element={<ProjectDetail />}

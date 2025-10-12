@@ -85,7 +85,6 @@ export const skillIcons: Record<string, JSX.Element> = {
   Redux: <SiRedux className="text-purple-600" />,
   Vite: <SiVite className="text-yellow-400" />,
   Nodemon: <SiNodedotjs className="text-green-600" />,
-  Multer: <SiExpress className="text-gray-700" />,
   "RESTful API": <SiSwagger className="text-blue-500" />,
   "React Swipable": <SiReact className="text-cyan-400" />,
   Axios: <SiAxios className="text-blue-500" />,
@@ -110,7 +109,6 @@ export const skillIcons: Record<string, JSX.Element> = {
   // --- Design Tools ---
   Canva: <SiCanva className="text-blue-400" />,
   Figma: <SiFigma className="text-pink-400" />,
-  "Canva (animation)": <SiCanva className="text-blue-400" />,
 
   // --- Mobile ---
   Expo: <SiExpo className="text-black" />,
