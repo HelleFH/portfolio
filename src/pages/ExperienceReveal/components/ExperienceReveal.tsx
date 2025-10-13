@@ -141,7 +141,7 @@ export default function ExperienceReveal({ jobs }: ExperienceRevealProps) {
                 <div className="absolute inset-0 rounded-lg max-w-[250px] bg-[rgba(var(--darkgreen),0.2)]"></div>
               </div>
             </div>
-            <div className="mb-[10rem] md:mb-0 max-w-[96%] md:max-w-[45%] min-w-[300px] text-white px-2 bg-[rgba(var(--dark-color),0.5)]  mx-auto my-2 md:my-20 md:flex-row flex-col flex gap-1 items-start justify-center rounded-xl">
+            <div className="mb-[10rem]  max-w-[96%] md:max-w-[45%] min-w-[300px] text-white px-2 bg-[rgba(var(--dark-color),0.5)]  mx-auto my-2 md:my-20 md:flex-row flex-col flex gap-1 items-start justify-center rounded-xl">
               <SoftSkills />
             </div>
           </header>

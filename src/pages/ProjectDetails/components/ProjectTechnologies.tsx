@@ -1,6 +1,6 @@
 import React from "react";
 import { FaTools } from "react-icons/fa";
-import { skillIcons } from "../../components/Pills/SkillIcons.tsx"; 
+import { skillIcons } from "../../../components/Pills/SkillIcons.tsx"; 
 
 interface ProjectTechnologiesProps {
   technologies: string[];
