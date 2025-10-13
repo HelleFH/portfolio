@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import Hero from "./Hero/Hero";
-import Navbar from "./Navbar/Navbar";
+import Navbar from "./Navbar/Navbar.tsx";
 import Footer from "./Footer.tsx";
 import AnimatedSection from "./AnimatedSection";
 

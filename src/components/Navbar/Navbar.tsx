@@ -1,18 +1,31 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Github, Instagram, Linkedin } from "lucide-react";
+
 import Images from "../../assets/images.tsx";
 import SideMenu from "../SideMenu.tsx";
 import SocialLinks from "../SocialLinks.tsx";
 
-const Navbar = ({ forceScrolled = false }) => {
-  const [scrolled, setScrolled] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [scrollTimeout, setScrollTimeout] = useState(null);
-  const [menuOpen, setMenuOpen] = useState(false);
+// ✅ Define props properly
+interface NavbarProps {
+  forceScrolled?: boolean;
+}
 
-  // Scroll detection logic to change navbar style based on scroll
+// ✅ Helper to normalize relative image paths
+const normalizeImagePath = (path: string): string => {
+  if (!path) return "";
+  if (path.startsWith("./")) return path.replace("./", "/");
+  return path;
+};
+
+const Navbar: React.FC<NavbarProps> = ({ forceScrolled = false }) => {
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  const [isHidden, setIsHidden] = useState<boolean>(false);
+  const [lastScrollY, setLastScrollY] = useState<number>(0);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const scrollTimeout = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // ✅ Scroll detection logic
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -23,9 +36,8 @@ const Navbar = ({ forceScrolled = false }) => {
         !menuOpen &&
         currentScrollY > window.innerHeight * 0.07
       ) {
-        if (scrollTimeout) clearTimeout(scrollTimeout);
-        const timeoutId = setTimeout(() => setIsHidden(true), 2000);
-        setScrollTimeout(timeoutId);
+        if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+        scrollTimeout.current = setTimeout(() => setIsHidden(true), 2000);
       } else {
         setIsHidden(false);
       }
@@ -34,15 +46,13 @@ const Navbar = ({ forceScrolled = false }) => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Run immediately if forceScrolled
     if (forceScrolled) setScrolled(true);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      if (scrollTimeout) clearTimeout(scrollTimeout);
+      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
     };
-  }, [lastScrollY, scrollTimeout, menuOpen, forceScrolled]);
+  }, [lastScrollY, menuOpen, forceScrolled]);
 
   return (
     <nav
@@ -52,23 +62,25 @@ const Navbar = ({ forceScrolled = false }) => {
         ${isHidden && !menuOpen ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"}
       `}
     >
-      {/* Navbar Content */}
       <div className="flex w-full items-center justify-between text-[rgba(var(--white-color))]">
-        {/* Logo */}
+        {/* ✅ Logo */}
         <Link
           to="/"
-          className="flex items-center justify-start gap-2 text-[rgba(var(--white-color))] no-underline transition-transform duration-300 "
+          className="flex items-center justify-start gap-2 text-[rgba(var(--white-color))] no-underline transition-transform duration-300"
+          onClick={() => setMenuOpen(false)}
         >
           <img
-            src={Images.FooterLogo}
+            src={normalizeImagePath(Images.FooterLogo)}
             alt="Logo"
             className="w-9 opacity-[0.7]"
           />
-          <span className="text-lg font-semibold navbar-link">Helle Fruergaard</span>
+          <span className="text-lg font-semibold navbar-link">
+            Helle Fruergaard
+          </span>
         </Link>
 
-        {/* Desktop Links */}
-        <ul className="hidden items-center gap-4 text-[rgba(var(--white-color))] transition-all duration-300 md:flex">
+        {/* ✅ Desktop Links */}
+        <ul className="hidden md:flex items-center gap-4 text-[rgba(var(--white-color))] transition-all duration-300">
           <li>
             <Link
               to="/about"
@@ -80,11 +92,10 @@ const Navbar = ({ forceScrolled = false }) => {
           </li>
           <div className="pr-3">
             <SocialLinks color="text-white" hoverColor="hover:text-[rgba(var(--cyan))]" />
-
           </div>
         </ul>
 
-        {/* Mobile Side Menu */}
+        {/* ✅ Mobile Side Menu */}
         <SideMenu
           items={[
             { label: "Home", href: "/" },
@@ -92,11 +103,9 @@ const Navbar = ({ forceScrolled = false }) => {
             { label: "CV", href: "/CV" },
             { label: "Projects", href: "/project-overview" },
             { label: "Design & Media", href: "/media" },
-
           ]}
           open={menuOpen}
-          setOpen={setMenuOpen}
-        />
+          setOpen={setMenuOpen} scrolled={false}        />
       </div>
     </nav>
   );

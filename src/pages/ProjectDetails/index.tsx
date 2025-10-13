@@ -1,22 +1,19 @@
-import { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useSwipeable } from "react-swipeable";
-import { LogIn } from "lucide-react";
-import { FaArrowLeft, FaSignInAlt } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 
 import Layout from "../../components/Layout.tsx";
 import LoginModal from "../../components/LoginModal.tsx";
 import ProjectButtons from "../../components/ProjectButtons.tsx";
 import ProjectContent from "./components/ProjectContent.tsx";
 import ProjectNavigation from "./components/ProjectNavigation.tsx";
-import ResponsiveImage from "../../components/ResponsiveImage.tsx";
 import { frontendProjects } from "../../data/frontendprojects";
 import { myProjects } from "../../data/myProjects";
 
 import "./index.scss";
-import React from "react";
 import Images from "../../assets/images.tsx";
-import Navbar from "../../components/Navbar/Navbar.jsx";
+import Navbar from "../../components/Navbar/Navbar.tsx";
 import ShowLoginButton from "../../components/Links/ShowLoginButton.tsx";
 
 interface ResponsiveImageSet {
@@ -47,6 +44,13 @@ interface LocationState {
   projectType?: string;
   scrollY?: number;
 }
+
+// ✅ Helper to normalize image paths
+const normalizeImagePath = (path: string): string => {
+  if (!path) return "";
+  if (path.startsWith("./")) return path.replace("./", "/");
+  return path;
+};
 
 const ProjectDetail: React.FC = () => {
   const { id, type } = useParams<{ id: string; type: string }>();
@@ -85,22 +89,25 @@ const ProjectDetail: React.FC = () => {
       state: { scrollY: window.scrollY },
     });
   };
-  const [heroBg, setHeroBg] = React.useState(Images.hero[800]);
 
-  React.useEffect(() => {
+  // ✅ Normalize hero image path
+  const [heroBg, setHeroBg] = useState<string>(
+    normalizeImagePath(Images.hero[800])
+  );
+
+  useEffect(() => {
     const updateHero = () => {
       const w = window.innerWidth;
-      if (w < 600) setHeroBg(Images.hero[400]);
-      else if (w < 1000) setHeroBg(Images.hero[800]);
-      else if (w < 1600) setHeroBg(Images.hero[1200]);
-      else setHeroBg(Images.hero[1600]);
+      if (w < 600) setHeroBg(normalizeImagePath(Images.hero[400]));
+      else if (w < 1000) setHeroBg(normalizeImagePath(Images.hero[800]));
+      else if (w < 1600) setHeroBg(normalizeImagePath(Images.hero[1200]));
+      else setHeroBg(normalizeImagePath(Images.hero[1600]));
     };
 
     updateHero();
     window.addEventListener("resize", updateHero);
     return () => window.removeEventListener("resize", updateHero);
   }, []);
-
 
   const handlers = useSwipeable({
     onSwipedLeft: () => navigateToProject(currentIndex + 1),
@@ -111,16 +118,9 @@ const ProjectDetail: React.FC = () => {
   if (!selectedProject)
     return <p className="text-center mt-20 text-gray-600">Loading...</p>;
 
-  // ✅ Detect if image is a string or responsive set
-
-const normalizeImagePath = (path: string): string => {
-  if (!path) return "";
-  if (path.startsWith("./")) return path.replace("./", "/");
-  return path;
-};
   return (
-    <div className="relative  min-h-screen overflow-hidden" {...handlers}>
-      {/* Background image */}
+    <div className="relative min-h-screen overflow-hidden" {...handlers}>
+      {/* ✅ Background image */}
       <div
         className="fixed inset-0 z-[-2] bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg})` }}
@@ -132,31 +132,48 @@ const normalizeImagePath = (path: string): string => {
       {/* Page content */}
       <Navbar forceScrolled={true} />
 
-      <div className="relative z-10 mx-auto  flex flex-col items-center w-full max-w-[1000px] p-6 bg-[rgba(255,255,255,0.9)] rounded-sm shadow-lg my-[7rem] transition-all hover:shadow-2xl">
+      <div className="relative z-10 mx-auto flex flex-col items-center w-full max-w-[1000px] p-6 bg-[rgba(255,255,255,0.9)] rounded-sm shadow-lg my-[7rem] transition-all hover:shadow-2xl">
         {/* Back Button */}
         <button
           onClick={() => navigate(-1)}
-          className="font-[cup-cakes] tracking-tighter flex items-center gap-2  hover:text-[rgba(var(--darkgreen))]-800 transition-colors duration-300 self-start"
+          className="font-[cup-cakes] tracking-tighter flex items-center gap-2 hover:text-[rgba(var(--darkgreen))]-800 transition-colors duration-300 self-start"
         >
           <FaArrowLeft size={14} /> Back to Projects
         </button>
 
         {/* Main Image */}
-       <div className="flex justify-center mb-4 rounded-sm items-center w-full  bg-white dark:bg-gray-800 p-4">
-    <picture>
-  <source srcSet={normalizeImagePath(selectedProject.images[0][1600])} media="(min-width: 1200px)" />
-  <source srcSet={normalizeImagePath(selectedProject.images[0][1200])} media="(min-width: 800px)" />
-  <source srcSet={normalizeImagePath(selectedProject.images[0][800])} media="(min-width: 400px)" />
-  <img
-    src={normalizeImagePath(selectedProject.images[0][400])}
-    alt={selectedProject.name}
-    className="max-h-[50vh] w-auto object-contain"
-    loading="lazy"
-  />
-</picture>
-
+        <div className="flex justify-center mb-4 rounded-sm items-center w-full bg-white dark:bg-gray-800 p-4">
+          <picture>
+            <source
+              srcSet={normalizeImagePath(
+                (selectedProject.images[0] as ResponsiveImageSet)[1600]
+              )}
+              media="(min-width: 1200px)"
+            />
+            <source
+              srcSet={normalizeImagePath(
+                (selectedProject.images[0] as ResponsiveImageSet)[1200]
+              )}
+              media="(min-width: 800px)"
+            />
+            <source
+              srcSet={normalizeImagePath(
+                (selectedProject.images[0] as ResponsiveImageSet)[800]
+              )}
+              media="(min-width: 400px)"
+            />
+            <img
+              src={normalizeImagePath(
+                (selectedProject.images[0] as ResponsiveImageSet)[400]
+              )}
+              alt={selectedProject.name}
+              className="max-h-[50vh] w-auto object-contain"
+              loading="lazy"
+            />
+          </picture>
         </div>
-        <div className=" w-full p-6 rounded-sm bg-[rgba(255,255,255,0.95)]">
+
+        <div className="w-full rounded-sm bg-[rgba(255,255,255,0.95)]">
           {/* Project Content */}
           <ProjectContent project={selectedProject} />
 
@@ -165,16 +182,7 @@ const normalizeImagePath = (path: string): string => {
             <ShowLoginButton onClick={() => setShowLoginModal(true)} />
           )}
 
-          {/* Buttons */}
-          <div className="mt-6 flex w-full justify-center">
-            <ProjectButtons
-
-              projectLink={selectedProject.projectLink}
-              githubLink={selectedProject.githubLink}
-              buttonText={selectedProject.buttonText}
-              githubButtonText={selectedProject.githubButtonText}
-            />
-          </div>
+      
 
           {/* Navigation Arrows */}
           <ProjectNavigation
@@ -196,7 +204,6 @@ const normalizeImagePath = (path: string): string => {
       </div>
     </div>
   );
-
 };
 
 export default ProjectDetail;

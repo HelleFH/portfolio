@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import Images from "../../../assets/images.tsx";
 import { SkillsLibrary } from "../../../data/SkillsLibrary.tsx";
-import Navbar from "../../../components/Navbar/Navbar.jsx";
+import Navbar from "../../../components/Navbar/Navbar.tsx";
 import SoftSkills from "./SoftSkills.tsx";
 import { Link } from "react-router-dom";
 import TextLink from "../../../components/Links/TextLink.tsx";

@@ -13,7 +13,7 @@ const ProjectTechnologies: React.FC<ProjectTechnologiesProps> = ({ technologies 
   return (
     <>
     
-      <h4 className="mx-auto text-xl font-semibold mt-4">Technologies Used</h4>
+      <h4 className="mx-auto text-xl font-semibold">Technologies Used</h4>
       <ul className="mx-auto flex flex-wrap gap-3 font-semibold uppercase text-gray-700 text-sm">
         {technologiesArray.map((tech, i) => {
           const icon = skillIcons[tech] || <FaTools />;

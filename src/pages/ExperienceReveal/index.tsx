@@ -1,7 +1,7 @@
 import React from "react";
 import ExperienceReveal, { Job } from "./components/ExperienceReveal.tsx";
 import Images from "../../assets/images.tsx";
-import Navbar from "../../components/Navbar/Navbar.jsx";
+import Navbar from "../../components/Navbar/Navbar.tsx";
 
 const jobs: Job[] = [
   {
