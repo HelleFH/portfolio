@@ -113,7 +113,11 @@ const ProjectDetail: React.FC = () => {
 
   // ✅ Detect if image is a string or responsive set
 
-
+const normalizeImagePath = (path: string): string => {
+  if (!path) return "";
+  if (path.startsWith("./")) return path.replace("./", "/");
+  return path;
+};
   return (
     <div className="relative  min-h-screen overflow-hidden" {...handlers}>
       {/* Background image */}
@@ -139,17 +143,18 @@ const ProjectDetail: React.FC = () => {
 
         {/* Main Image */}
        <div className="flex justify-center mb-4 rounded-sm items-center w-full  bg-white dark:bg-gray-800 p-4">
-          <picture>
-            <source srcSet={selectedProject.images[0][1600]} media="(min-width: 1200px)" />
-            <source srcSet={selectedProject.images[0][1200]} media="(min-width: 800px)" />
-            <source srcSet={selectedProject.images[0][800]} media="(min-width: 400px)" />
-            <img
-              src={selectedProject.images[0][400]}
-              alt={selectedProject.name}
-              className="max-h-[50vh] w-auto object-contain"
-              loading="lazy"
-            />
-          </picture>
+    <picture>
+  <source srcSet={normalizeImagePath(selectedProject.images[0][1600])} media="(min-width: 1200px)" />
+  <source srcSet={normalizeImagePath(selectedProject.images[0][1200])} media="(min-width: 800px)" />
+  <source srcSet={normalizeImagePath(selectedProject.images[0][800])} media="(min-width: 400px)" />
+  <img
+    src={normalizeImagePath(selectedProject.images[0][400])}
+    alt={selectedProject.name}
+    className="max-h-[50vh] w-auto object-contain"
+    loading="lazy"
+  />
+</picture>
+
         </div>
         <div className=" w-full p-6 rounded-sm bg-[rgba(255,255,255,0.95)]">
           {/* Project Content */}
