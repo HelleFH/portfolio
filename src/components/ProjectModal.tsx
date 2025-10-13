@@ -3,7 +3,7 @@ import { useSwipeable } from "react-swipeable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FaArrowRight, FaSignInAlt, FaTools } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import ProjectButtons from "./ProjectButtons.tsx";
 import LoginModal from "./LoginModal.tsx";
@@ -11,6 +11,7 @@ import { Project } from "../types/project.ts";
 import { skillIcons } from '../components/Pills/SkillIcons.tsx'
 import ReadMoreLink from "./Links/ReadMoreLink.tsx";
 import ShowLoginButton from "./Links/ShowLoginButton.tsx";
+
 
 interface ProjectModalProps {
   show: boolean;
@@ -64,6 +65,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
     : project.technologiesMore
       ? project.technologiesMore.split(",").map((t) => t.trim())
       : [];
+
+  const location = useLocation();
+
 
   return visible ? (
     <div
@@ -160,7 +164,10 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             <Link
               className="justify-end md:w-fit"
               to={`/project/${project.type}/${project.id}`}
-              state={{ projectType: project.type }}
+              state={{
+                projectType: project.type,
+                from: location.pathname,  // ✅ always store where modal was opened
+              }}
             >
               <ReadMoreLink fontColor="rgba(var(--cyan))">Read More</ReadMoreLink>
             </Link>

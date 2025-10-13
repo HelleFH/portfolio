@@ -118,6 +118,13 @@ const ProjectDetail: React.FC = () => {
   if (!selectedProject)
     return <p className="text-center mt-20 text-gray-600">Loading...</p>;
 
+  useEffect(() => {
+    const state = location.state as { scrollY?: number };
+    if (state?.scrollY) {
+      setTimeout(() => window.scrollTo(0, state.scrollY || 0), 100);
+    }
+  }, []);
+
   return (
     <div className="relative min-h-screen overflow-hidden" {...handlers}>
       {/* ✅ Background image */}
@@ -135,7 +142,14 @@ const ProjectDetail: React.FC = () => {
       <div className="relative z-10 mx-auto flex flex-col items-center w-full max-w-[1000px] p-6 bg-[rgba(255,255,255,0.9)] rounded-sm shadow-lg my-[7rem] transition-all hover:shadow-2xl">
         {/* Back Button */}
         <button
-          onClick={() => navigate(-1)}
+       onClick={() => {
+  const state = location.state as { from?: string };
+  if (state?.from) {
+    navigate(state.from);
+  } else {
+    navigate("/"); // fallback if 'from' isn't set
+  }
+}}
           className="font-[cup-cakes] tracking-tighter flex items-center gap-2 hover:text-[rgba(var(--darkgreen))]-800 transition-colors duration-300 self-start"
         >
           <FaArrowLeft size={14} /> Back to Projects
@@ -182,7 +196,7 @@ const ProjectDetail: React.FC = () => {
             <ShowLoginButton onClick={() => setShowLoginModal(true)} />
           )}
 
-      
+
 
           {/* Navigation Arrows */}
           <ProjectNavigation
