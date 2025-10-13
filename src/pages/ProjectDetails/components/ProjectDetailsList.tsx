@@ -3,7 +3,7 @@ const ProjectDetailsList: React.FC<{ details: string[] }> = ({ details }) => (
     <h4 className="text-center text-xl font-semibold mt-4">
       Project Features
     </h4>
-    <ul className="mx-auto text-left px-4 list-none  w-full rounded-sm bg-[rgba(255,255,255,0.95)]space-y-2">
+    <ul className="mx-auto text-left px-4 list-none w-fit rounded-sm  space-y-2">
       {details.map((detail, i) => (
         <li
           key={i}
