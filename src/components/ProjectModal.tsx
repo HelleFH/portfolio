@@ -151,7 +151,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
           {/* Links */}
           <div className="flex items-center flex-row w-full justify-center gap-4 mt-4 dark:text-gray-200">
 
-<div className="w-full flex justify-start md:justify-end items-end">            {project.username && (
+            <div className="w-full flex justify-start md:justify-end items-end">            {project.username && (
               <ShowLoginButton onClick={() => setShowLoginModal(true)} />
 
             )}
@@ -160,11 +160,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             <Link
               className="justify-end md:w-fit"
               to={`/project/${project.type}/${project.id}`}
-              state={{ selectedProjectIndex, projectType: project.type }}
+              state={{ projectType: project.type }}
             >
-              <ReadMoreLink fontColor="rgba(var(--cyan))">
-                Read More
-              </ReadMoreLink>
+              <ReadMoreLink fontColor="rgba(var(--cyan))">Read More</ReadMoreLink>
             </Link>
           </div>
         </div>

@@ -1,11 +1,8 @@
-
 import Images from '../assets/images.tsx';
 
-
 export const myProjects = [
-
   {
-    id: 1,
+    id: 5,
     name: "A Product Portfolio",
     technologies: ["React"],
     images: [Images.PortfolioScreen],
@@ -17,20 +14,18 @@ export const myProjects = [
     description: "A dynamic React portfolio page showcasing a visually appealing image grid with a sleek overlay.",
     technologiesMore: ["React", "Bootstrap", "Styled Components", "React Swipable"]
   },
-  
-
   {
-    "id": 3,
-    "name": "MERN Listings",
-    "technologies": ["MongoDB", "Express", "React", "Node.js"],
-    "images": [Images.ListingScreen],
-    "projectLink": "https://react-listings-1.onrender.com/",
-    "githubLink": "https://github.com/HelleFH/react-listings",
-    "buttonText": "View Project",
-    "githubButtonText": "GitHub",
-    "descriptionHeader": "Holiday Home Listings App using the MERN Stack",
-    "description": "A full-stack listings application built with the MERN stack. Users can create, update, and delete listings including image uploads, titles, descriptions, and location information. The app uses React for the frontend with Bootstrap styling, and a Node.js/Express backend connected to a MongoDB database.",
-    "technologiesMore": [
+    id: 6,
+    name: "MERN Listings",
+    technologies: ["MongoDB", "Express", "React", "Node.js"],
+    images: [Images.ListingScreen],
+    projectLink: "https://react-listings-1.onrender.com/",
+    githubLink: "https://github.com/HelleFH/react-listings",
+    buttonText: "View Project",
+    githubButtonText: "GitHub",
+    descriptionHeader: "Holiday Home Listings App using the MERN Stack",
+    description: "A full-stack listings application built with the MERN stack. Users can create, update, and delete listings including image uploads, titles, descriptions, and location information. The app uses React for the frontend with Bootstrap styling, and a Node.js/Express backend connected to a MongoDB database.",
+    technologiesMore: [
       "Vite",
       "Bootstrap",
       "Nodemon",
@@ -41,7 +36,7 @@ export const myProjects = [
       "RESTful API",
       "Cloudinary"
     ],
-    "projectDetails": [
+    projectDetails: [
       "Users can upload, edit, and delete holiday home listings in real time",
       "Integrated with Cloudinary for image upload and hosting",
       "Responsive frontend built with React and styled using Bootstrap",
@@ -51,19 +46,19 @@ export const myProjects = [
     ]
   },
   {
-    "id": 4,
-    "name": "MERN Plant Calendar",
-    "technologies": ["MongoDB", "Express", "React", "Node.js"],
-    "images": [Images.CalendarScreen],
-    "projectLink": "https://plant-calendar-1-zhbz.onrender.com",
-    "githubLink": "https://github.com/HelleFH/Plant-calendar",
-    "buttonText": "View Project",
-    "githubButtonText": "GitHub",
-    "descriptionHeader": "Plant Calendar and Reminder System with MERN Stack",
-    "description": "Work in progress! This app helps users manage plant collections by adding, tracking, and updating plant care tasks. Users can also search for plants via external API.",
-    "username": "Hellefruergaard@plantcalendar.com",
-    "password": "fruergaard",
-    "technologiesMore": [
+    id: 7,
+    name: "MERN Plant Calendar",
+    technologies: ["MongoDB", "Express", "React", "Node.js"],
+    images: [Images.CalendarScreen],
+    projectLink: "https://plant-calendar-1-zhbz.onrender.com",
+    githubLink: "https://github.com/HelleFH/Plant-calendar",
+    buttonText: "View Project",
+    githubButtonText: "GitHub",
+    descriptionHeader: "Plant Calendar and Reminder System with MERN Stack",
+    description: "Work in progress! This app helps users manage plant collections by adding, tracking, and updating plant care tasks. Users can also search for plants via external API.",
+    adminUsername: "Hellefruergaard@plantcalendar.com",
+    adminPassword: "fruergaard",
+    technologiesMore: [
       "MongoDB",
       "Express",
       "React",
@@ -74,7 +69,7 @@ export const myProjects = [
       "Vite",
       "Moment"
     ],
-    "projectDetails": [
+    projectDetails: [
       "User authentication: Sign up, login, logout",
       "Secure password hashing with Bcryptjs",
       "Add new plants with name, species, acquisition date, and photos",
@@ -85,18 +80,19 @@ export const myProjects = [
       "View timeline of updates per plant for historical tracking",
       "Built with Vite and styled using MUI and custom SCSS"
     ]
-  }, {
-    "id": 5,
-    "name": "Cloudinary Upload/Delete",
-    "technologies": ["MongoDB", "Express", "Vue", "Node.js"],
-    "images": [Images.AiImagesScreen],
-    "projectLink": "https://cloudinary-upload-delete-1.onrender.com/",
-    "githubLink": "https://github.com/HelleFH/cloudinary-upload-delete",
-    "buttonText": "View Project",
-    "githubButtonText": "GitHub",
-    "descriptionHeader": "Image Management App using Vue.js and Cloudinary",
-    "description": "A full-stack image management application built with Vue and Express. Users can upload and delete images via Cloudinary API integration. Secure deletion is handled through unique delete tokens, ensuring safe media operations.",
-    "technologiesMore": [
+  },
+  {
+    id: 8,
+    name: "Cloudinary Upload/Delete",
+    technologies: ["MongoDB", "Express", "Vue", "Node.js"],
+    images: [Images.AiImagesScreen],
+    projectLink: "https://cloudinary-upload-delete-1.onrender.com/",
+    githubLink: "https://github.com/HelleFH/cloudinary-upload-delete",
+    buttonText: "View Project",
+    githubButtonText: "GitHub",
+    descriptionHeader: "Image Management App using Vue.js and Cloudinary",
+    description: "A full-stack image management application built with Vue and Express. Users can upload and delete images via Cloudinary API integration. Secure deletion is handled through unique delete tokens, ensuring safe media operations.",
+    technologiesMore: [
       "MongoDB",
       "Express",
       "Vue",
@@ -105,7 +101,7 @@ export const myProjects = [
       "RESTful API",
       "Axios"
     ],
-    "projectDetails": [
+    projectDetails: [
       "Vue frontend for intuitive image uploads and deletions",
       "Cloudinary API used for image hosting, token-based deletion",
       "Express.js server with Multer middleware for handling file uploads",
@@ -114,23 +110,21 @@ export const myProjects = [
       "Clean, responsive UI with visual image previews",
       "Built with scalability and simplicity in mind"
     ]
-  }
-  ,
-
+  },
   {
-    "id": 6,
-    "name": "MEVN Cart",
-    "technologies": ["MongoDB", "Express", "Vue", "Node.js"],
-    "images": [Images.MEVNCartScreen],
-    "projectLink": "https://shopping-cart-master-1-5ylu.onrender.com/",
-    "githubLink": "https://github.com/hellefh/shopping-cart",
-    "buttonText": "View Project",
-    "githubButtonText": "GitHub",
-    "descriptionHeader": "MEVN Stack Shopping Cart with Cart Storage and User Authentication",
-    "description": "A full-stack shopping cart app built with the MEVN stack. Users can sign up, log in securely, and manage a persistent shopping cart. Includes real-time form validation, cart updates, and detailed product pages.",
-    "username": "hellefruergaard@mevn-shop.com",
-    "password": "password123",
-    "technologiesMore": [
+    id: 9,
+    name: "MEVN Cart",
+    technologies: ["MongoDB", "Express", "Vue", "Node.js"],
+    images: [Images.MEVNCartScreen],
+    projectLink: "https://shopping-cart-master-1-5ylu.onrender.com/",
+    githubLink: "https://github.com/hellefh/shopping-cart",
+    buttonText: "View Project",
+    githubButtonText: "GitHub",
+    descriptionHeader: "MEVN Stack Shopping Cart with Cart Storage and User Authentication",
+    description: "A full-stack shopping cart app built with the MEVN stack. Users can sign up, log in securely, and manage a persistent shopping cart. Includes real-time form validation, cart updates, and detailed product pages.",
+    adminUsername: "hellefruergaard@mevn-shop.com",
+    adminPassword: "password123",
+    technologiesMore: [
       "MongoDB",
       "Express",
       "Vue",
@@ -141,7 +135,7 @@ export const myProjects = [
       "Bcrypt",
       "Jsonwebtoken"
     ],
-    "projectDetails": [
+    projectDetails: [
       "User authentication (signup, login, logout)",
       "Secure password handling with Bcrypt",
       "JWT-based session management",
@@ -151,14 +145,11 @@ export const myProjects = [
       "State managed with Zustand",
       "Vue and TailwindCSS for responsive UI"
     ]
-  }
-  ,
-
-
+  },
   {
-    id: 8,
+    id: 10,
     name: "News Site",
-    technologies:   ["HTML", "CSS", "JavaScript"],
+    technologies: ["HTML", "CSS", "JavaScript"],
     images: [Images.NewsSiteScreen],
     projectLink: "https://helle-avis-site.onrender.com/",
     githubLink: "https://github.com/HelleFH/Helle-avis-site/tree/main",
@@ -169,9 +160,9 @@ export const myProjects = [
     technologiesMore: ["JavaScript"]
   },
   {
-    id: 9,
+    id: 11,
     name: "Netflix Clone",
-    technologies:   ["JavaScript"],
+    technologies: ["JavaScript"],
     images: [Images.NetflixScreen],
     projectLink: "https://hellefh.github.io/Netflix-clone-main/",
     githubLink: "https://github.com/HelleFH/Netflix-clone-main",
@@ -182,7 +173,7 @@ export const myProjects = [
     technologiesMore: ["JavaScript"]
   },
   {
-    id: 10,
+    id: 12,
     name: "Lightbox Gallery",
     technologies: ["JQuery"],
     images: [Images.DinosaursScreen],
@@ -195,9 +186,9 @@ export const myProjects = [
     technologiesMore: ["JQuery"]
   },
   {
-    id: 11,
+    id: 13,
     name: "Front Page",
-    technologies:  ["HTML", "CSS"],
+    technologies: ["HTML", "CSS"],
     images: [Images.LegeKrogenScreen],
     projectLink: "https://hellefh.github.io/Legekrogen/",
     githubLink: "https://github.com/hellefh/legekrogen",
@@ -207,11 +198,10 @@ export const myProjects = [
     description: "CSS and HTML for a webshop. It showcases a basic online shop layout with product listings.",
     technologiesMore: ["HTML", "CSS"]
   },
-
   {
-    id: 12,
+    id: 14,
     name: "A Product Portfolio",
-    technologies:  ["React"],
+    technologies: ["React"],
     images: [Images.PortfolioScreen],
     projectLink: "https://product-page-b2ed.onrender.com/",
     githubLink: "https://github.com/HelleFH/product-page",
@@ -221,23 +211,20 @@ export const myProjects = [
     description: "A dynamic React portfolio page showcasing a visually appealing image grid with a sleek overlay.",
     technologiesMore: ["React", "Bootstrap", "Styled Components", "React Swipable"]
   },
-
-
-
   {
-    "id": 13,
-    "name": "MEVN Cart",
-    "technologies": ["MongoDB", "Express", "Vue", "Node.js"],
-    "images": [Images.MEVNCartScreen],
-    "projectLink": "https://shopping-cart-master-1-5ylu.onrender.com/",
-    "githubLink": "https://github.com/hellefh/shopping-cart",
-    "buttonText": "View Project",
-    "githubButtonText": "GitHub",
-    "descriptionHeader": "MEVN Stack Shopping Cart with Cart Storage and User Authentication",
-    "description": "A full-stack shopping cart app built with the MEVN stack. Users can sign up, log in securely, and manage a persistent shopping cart. Includes real-time form validation, cart updates, and detailed product pages.",
-    "username": "hellefruergaard@mevn-shop.com",
-    "password": "password123",
-    "technologiesMore": [
+    id: 15,
+    name: "MEVN Cart",
+    technologies: ["MongoDB", "Express", "Vue", "Node.js"],
+    images: [Images.MEVNCartScreen],
+    projectLink: "https://shopping-cart-master-1-5ylu.onrender.com/",
+    githubLink: "https://github.com/hellefh/shopping-cart",
+    buttonText: "View Project",
+    githubButtonText: "GitHub",
+    descriptionHeader: "MEVN Stack Shopping Cart with Cart Storage and User Authentication",
+    description: "A full-stack shopping cart app built with the MEVN stack. Users can sign up, log in securely, and manage a persistent shopping cart. Includes real-time form validation, cart updates, and detailed product pages.",
+    adminUsername: "hellefruergaard@mevn-shop.com",
+    adminPassword: "password123",
+    technologiesMore: [
       "MongoDB",
       "Express",
       "Vue",
@@ -249,7 +236,7 @@ export const myProjects = [
       "Bcrypt",
       "Jsonwebtoken"
     ],
-    "projectDetails": [
+    projectDetails: [
       "User authentication (signup, login, logout)",
       "Secure password handling with Bcrypt",
       "JWT-based session management",
@@ -259,21 +246,19 @@ export const myProjects = [
       "State managed with Zustand",
       "Vue and TailwindCSS for responsive UI"
     ]
-  }
-  ,
-
+  },
   {
-    "id": 14,
-    "name": "Monty Hall",
-    "technologies": ["Flask", "JavaScript", "HTML", "CSS", "p5.js"],
-    "images": [Images.MontyHallScreen],
-    "projectLink": "https://monty-hall-explained.onrender.com",
-    "githubLink": "https://github.com/HelleFH/monty-hall-simulator",
-    "buttonText": "View Project",
-    "githubButtonText": "GitHub",
-    "descriptionHeader": "Interactive Monty Hall Simulation and Game",
-    "description": "A dual-experience app where users can simulate the Monty Hall problem statistically using Python and experience it interactively through a JavaScript-based game. Great for exploring probability theory and decision-making under uncertainty.",
-    "technologiesMore": [
+    id: 16,
+    name: "Monty Hall",
+    technologies: ["Flask", "JavaScript", "HTML", "CSS", "p5.js"],
+    images: [Images.MontyHallScreen],
+    projectLink: "https://monty-hall-explained.onrender.com",
+    githubLink: "https://github.com/HelleFH/monty-hall-simulator",
+    buttonText: "View Project",
+    githubButtonText: "GitHub",
+    descriptionHeader: "Interactive Monty Hall Simulation and Game",
+    description: "A dual-experience app where users can simulate the Monty Hall problem statistically using Python and experience it interactively through a JavaScript-based game. Great for exploring probability theory and decision-making under uncertainty.",
+    technologiesMore: [
       "Flask",
       "Python",
       "JavaScript",
@@ -284,7 +269,7 @@ export const myProjects = [
       "Canva",
       "JSON"
     ],
-    "projectDetails": [
+    projectDetails: [
       "Flask backend that simulates 'stay', 'switch', and 'random' strategies over user-defined trials",
       "Returns simulation data including win rates and progression history",
       "JavaScript game built with p5.js for interactive Monty Hall gameplay",
@@ -295,6 +280,4 @@ export const myProjects = [
       "Perfect mix of math, logic, and user interaction for learning"
     ]
   }
-
-
 ];

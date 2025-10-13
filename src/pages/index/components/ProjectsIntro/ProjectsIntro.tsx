@@ -6,7 +6,7 @@ const ProjectsIntro: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-1 flex-col items-start gap-4 text-left">
+    <div className="flex flex-1 flex-col items-start gap-4 text-justify">
       <h2 className="font-['PangramSans-Medium']  text-2xl font-semibold text-[rgba(var(--dark-color))] md:text-3xl">
         Experience & Projects
       </h2>

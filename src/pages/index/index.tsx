@@ -45,15 +45,12 @@ const Home: React.FC = () => {
             <SkillsList />
 
           </div>
-          <div className=" px-4 max-w-[96vw] flex flex-col gap-4 md:max-w-[50vw]  ml-3">
+          <div className=" px-4 max-w-[96vw] flex flex-col gap-4 md:max-w-[50vw]">
             <ProjectsIntro />
             <ProjectsOverview />
-
-
           </div>
         </div>
 
-        {/* Skills section */}
       </div>
     </Layout>
   );

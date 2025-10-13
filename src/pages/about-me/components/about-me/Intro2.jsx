@@ -5,7 +5,7 @@ const Intro2 = () => {
 
     <AnimatedSection>
       <section>
-        <div className="flex flex-col gap-2 text-justify">
+        <div className="flex flex-col gap-4 text-justify">
 
           <p>Beyond coding, I’m fascinated by marketing, branding, and how technology can support business growth.
             I’ve contributed to LinkedIn campaigns, explored upselling strategies, and identified ways to improve user

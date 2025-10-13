@@ -65,7 +65,7 @@ const ProjectsOverview = () => {
     <div>
       <h1 className="font-['PangramSans-Medium'] font-semibold   text-2xl mb-5">My most recent work</h1>
 
-      <p>You can view more of my projects, including school and hobby projects,
+      <p>Here's some of my recent projects. You can view more of my projects, including school and hobby projects,
 
 
         <TextLink to="/project-overview">
@@ -74,7 +74,7 @@ const ProjectsOverview = () => {
 
 
       </p>
-      <div className="flex flex-col gap-4 md:gap-0 md:flex-row items-start w-full rounded-lg">
+      <div className="mt-5 flex flex-col gap-4 md:gap-0 md:flex-row items-start w-full rounded-lg">
         {/* Project Grid */}
         <div
           className="grid auto-rows-auto gap-4 md:gap-6 

@@ -13,6 +13,7 @@ const Intro = () => {
       </div>
 
       {/* Current work */}
+      <div className="text-justify flex flex-col gap-4">
       <AnimatedSection>
         <p>
           I currently work with a company developing an AI-based app and bring
@@ -79,7 +80,7 @@ const Intro = () => {
           </p>
         </div>
       </AnimatedSection>
-
+</div>
     </section>
   );
 };
