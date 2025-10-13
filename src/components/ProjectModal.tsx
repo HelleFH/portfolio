@@ -2,16 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { FaArrowRight, FaSignInAlt, FaTools } from "react-icons/fa";
+import { FaTools } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 
 import ProjectButtons from "./ProjectButtons.tsx";
 import LoginModal from "./LoginModal.tsx";
 import { Project } from "../types/project.ts";
-import { skillIcons } from '../components/Pills/SkillIcons.tsx'
+import { skillIcons } from '../components/Pills/SkillIcons.tsx';
 import ReadMoreLink from "./Links/ReadMoreLink.tsx";
 import ShowLoginButton from "./Links/ShowLoginButton.tsx";
-
 
 interface ProjectModalProps {
   show: boolean;
@@ -30,6 +29,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
   handlePrev,
   handleNext,
 }) => {
+  const location = useLocation(); // ✅ Hooks at top-level
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [visible, setVisible] = useState(show);
   const [animateOut, setAnimateOut] = useState(false);
@@ -44,7 +44,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
       const timer = setTimeout(() => setVisible(false), 250); // match fadeOut duration
       return () => clearTimeout(timer);
     }
-  }, [show]);
+  }, [show, visible]);
 
   const swipeHandlers = useSwipeable({
     onSwipedLeft: handleNext,
@@ -53,11 +53,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
     trackMouse: true,
   });
 
-  const handleShowLoginDetails = () => setShowLoginModal(true);
-  const handleHideLoginDetails = () => setShowLoginModal(false);
-
   if (selectedProjectIndex === null || !projects[selectedProjectIndex]) return null;
-
   const project = projects[selectedProjectIndex];
 
   const technologiesArray: string[] = Array.isArray(project.technologiesMore)
@@ -65,9 +61,6 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
     : project.technologiesMore
       ? project.technologiesMore.split(",").map((t) => t.trim())
       : [];
-
-  const location = useLocation();
-
 
   return visible ? (
     <div
@@ -154,20 +147,17 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
 
           {/* Links */}
           <div className="flex items-center flex-row w-full justify-center gap-4 mt-4 dark:text-gray-200">
-
-            <div className="w-full flex justify-start md:justify-end items-end">            {project.username && (
-              <ShowLoginButton onClick={() => setShowLoginModal(true)} />
-
-            )}
+            <div className="w-full flex justify-start md:justify-end items-end">
+              {project.username && (
+                <ShowLoginButton onClick={() => setShowLoginModal(true)} />
+              )}
             </div>
 
+            {/* Read More Link passes 'from' page */}
             <Link
               className="justify-end md:w-fit"
               to={`/project/${project.type}/${project.id}`}
-              state={{
-                projectType: project.type,
-                from: location.pathname,  // ✅ always store where modal was opened
-              }}
+              state={{ projectType: project.type, from: location.pathname }}
             >
               <ReadMoreLink fontColor="rgba(var(--cyan))">Read More</ReadMoreLink>
             </Link>
@@ -177,7 +167,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         {/* Login modal */}
         <LoginModal
           show={showLoginModal}
-          onHide={handleHideLoginDetails}
+          onHide={() => setShowLoginModal(false)}
           project={project}
           backdropClassName="login-modal-backdrop"
           dialogClassName="project-login-modal"
@@ -187,6 +177,23 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
           }}
         />
       </div>
+
+      {/* Tailwind animation */}
+      <style>
+        {`
+          @keyframes fadeOut {
+            0% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; }
+          }
+          .animate-fadeOut {
+            animation: fadeOut 0.25s forwards;
+          }
+          .animate-fadeIn {
+            animation: fadeOut 0.25s reverse forwards;
+          }
+        `}
+      </style>
     </div>
   ) : null;
 };

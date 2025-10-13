@@ -94,6 +94,12 @@ const ProjectDetail: React.FC = () => {
   const [heroBg, setHeroBg] = useState<string>(
     normalizeImagePath(Images.hero[800])
   );
+    useEffect(() => {
+    const state = location.state as { scrollY?: number };
+    if (state?.scrollY) {
+      setTimeout(() => window.scrollTo(0, state.scrollY || 0), 100);
+    }
+  }, []);
 
   useEffect(() => {
     const updateHero = () => {
@@ -118,12 +124,7 @@ const ProjectDetail: React.FC = () => {
   if (!selectedProject)
     return <p className="text-center mt-20 text-gray-600">Loading...</p>;
 
-  useEffect(() => {
-    const state = location.state as { scrollY?: number };
-    if (state?.scrollY) {
-      setTimeout(() => window.scrollTo(0, state.scrollY || 0), 100);
-    }
-  }, []);
+
 
   return (
     <div className="relative min-h-screen overflow-hidden" {...handlers}>
