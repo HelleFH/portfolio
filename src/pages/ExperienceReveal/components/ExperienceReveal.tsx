@@ -101,7 +101,7 @@ export default function ExperienceReveal({ jobs }: ExperienceRevealProps) {
               <div className="pl-5 flex-1 flex flex-col gap-4">
                 <h2 className="text-3xl font-['inter'] text-white font-bold">Career & Education</h2>
                 <p className="mb-1 md:mb-10 pr-4 text-justify flex flex-col gap-2 text-[rgba(var(--white))] font-['PangramSans-Medium'] ">
-                  <span>Here you can find more information about my background.</span>
+                  <span>Here you can find more information about professional experience and education.</span>
                   <span>
                     <Link
                       to="/about"
