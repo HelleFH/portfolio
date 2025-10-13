@@ -42,7 +42,7 @@ const jobs: Job[] = [
   {
     image: Images.MaternityImage,
     title: "2 x Maternity / Temp Work",
-    company: "Icon Communications / Texas Instruments",
+    company: "Moment, Altid Vikar",
     years: "2019–2024",
     description:
       "Various temporary roles while caring for my children when they were small, supporting different industries and gaining diverse work experience.",
