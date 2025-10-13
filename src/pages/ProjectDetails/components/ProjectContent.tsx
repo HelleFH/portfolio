@@ -22,6 +22,7 @@ interface ProjectContentProps {
 
 const ProjectContent: React.FC<ProjectContentProps> = ({ project }) => {
   return (
+    
     <div className="flex flex-col items-center gap-6 rounded-sm p-3 md:p-5 text-center w-full mt-6">
       {/* Project Description */}
       <div className="bg-white rounded-sm shadow-sm">

@@ -8,6 +8,7 @@ import Navbar from "../../../components/Navbar/Navbar.tsx";
 import SoftSkills from "./SoftSkills.tsx";
 import { Link } from "react-router-dom";
 import TextLink from "../../../components/Links/TextLink.tsx";
+import { ArrowRight, FolderOpen, Home, Info } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -71,7 +72,7 @@ export default function ExperienceReveal({ jobs }: ExperienceRevealProps) {
 
   return (
     <div className="relative min-h-screen">
-                <Navbar forceScrolled={true} />
+      <Navbar forceScrolled={true} />
 
       {/* Fixed Hero Background */}
       <div
@@ -80,7 +81,7 @@ export default function ExperienceReveal({ jobs }: ExperienceRevealProps) {
       />
 
       {/* Gradient overlay */}
-      <div className="fixed inset-0 z-[-1] bg-gradient-to-b from-[rgba(var(--dark-color),0.9)] via-[rgba(var(--dark-color),0.9)] to-[rgba(var(--soft),0.6)]" />
+      <div className="fixed inset-0 z-[-1] bg-gradient-to-b from-[rgba(var(--dark-color),0.9)] via-[rgba(var(--dark-color),0.9)] to-[rgba(var(--dark-color),0.6)]" />
 
       {/* ScrollSmoother wrapper */}
       <div
@@ -120,7 +121,7 @@ export default function ExperienceReveal({ jobs }: ExperienceRevealProps) {
                       rel="noopener noreferrer"
                       className="ml-1 inline top-[1px] text-[rgba(var(--lightgreen))] hover:underline"
                     >
-                     Project Page 
+                      Project Page
                     </ Link> {" "}
                     to explore some of my development work.
                   </span>
@@ -201,10 +202,29 @@ export default function ExperienceReveal({ jobs }: ExperienceRevealProps) {
 
           <footer className="text-center flex flex-col justify-center items-center py-20 bg-gray-900 w-full">
             <img src={Images.FooterLogo} className="max-w-20 absolute mb-10 opacity-20" />
-            <TextLink to="/project-overview" className="text-xl !text-[rgba(var(--soft))]">Click here for some examples of my work</ TextLink> {" "}
-            <TextLink to="/about" className="text-xl !text-[rgba(var(--soft))]">Click here to learn more about me</ TextLink> 
-            <TextLink to="/" className="text-xl !text-[rgba(var(--soft))]">Home</ TextLink> 
+            <TextLink
+              to="/project-overview"
+              className="text-xl !text-[rgba(var(--soft))] flex items-center gap-2"
+            >
+              <ArrowRight className="w-5 h-5 text-[rgba(var(--lightgreen))]" />
+              Click here for some examples of my work
+            </TextLink>
 
+            <TextLink
+              to="/about"
+              className="text-xl !text-[rgba(var(--soft))] flex items-center gap-2"
+            >
+              <ArrowRight className="w-5 h-5 text-[rgba(var(--lightgreen))]" />
+              Click here to learn more about me
+            </TextLink>
+
+            <TextLink
+              to="/"
+              className="text-xl !text-[rgba(var(--soft))] flex items-center gap-2"
+            >
+              <Home className="w-5 h-5 text-[rgba(var(--lightgreen))]" />
+              Home
+            </TextLink>
           </footer>
         </div>
       </div>
