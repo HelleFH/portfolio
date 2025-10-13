@@ -130,7 +130,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
               return (
                 <li
                   key={i}
-            className="flex items-center gap-2 rounded-lg bg-[rgba(var(--lightgreen),0.3)] font-['cup-cakes'] text-sm text-black px-3 py-1 shadow-sm transition hover:bg-indigo-100"
+                  className="flex items-center gap-2 rounded-lg bg-[rgba(var(--lightgreen),0.3)] font-['cup-cakes'] text-sm text-black px-3 py-1 shadow-sm transition hover:bg-indigo-100"
                 >
                   <span className="text-lg">{icon}</span>
                   <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
@@ -149,8 +149,16 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
           />
 
           {/* Links */}
-          <div className="flex items-center flex-row justify-center gap-4 mt-4 dark:text-gray-200">
+          <div className="flex items-center flex-row w-full justify-center gap-4 mt-4 dark:text-gray-200">
+
+<div className="w-full flex justify-start md:justify-end items-end">            {project.username && (
+              <ShowLoginButton onClick={() => setShowLoginModal(true)} />
+
+            )}
+            </div>
+
             <Link
+              className="justify-end md:w-fit"
               to={`/project/${project.type}/${project.id}`}
               state={{ selectedProjectIndex, projectType: project.type }}
             >
@@ -158,11 +166,6 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
                 Read More
               </ReadMoreLink>
             </Link>
-
-            {project.username && (
-              <ShowLoginButton onClick={() => setShowLoginModal(true)} />
-
-            )}
           </div>
         </div>
 

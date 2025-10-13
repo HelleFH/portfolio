@@ -15,8 +15,8 @@ const Hero = ({ title, subtitle, intro, buttons }) => {
   };
 
   return (
-  <section className="hero mb-10 relative flex min-h-[65vh] md:min-h-[75vh] w-full flex-col items-start justify-center overflow-hidden md:py-0 px-0 md:px-16 text-[rgba(var(--white-color))]">
-  {/* Video background */}
+  <section className="hero mb-10 relative flex min-h-[65vh] md:min-h-[75vh] w-full flex-col items-start justify-center py-[5rem] overflow-hidden md:py-0 px-0 md:px-16 text-[rgba(var(--white-color))]">
+  {/* Video background */}0
   <video
     className="absolute left-0 top-0 z-[-2] h-full w-full object-cover"
     src={Images.heroVideo}
