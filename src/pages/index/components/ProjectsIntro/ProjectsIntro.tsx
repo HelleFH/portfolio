@@ -32,7 +32,7 @@ const ProjectsIntro: React.FC = () => {
         </TextLink>
         to find out more about my professional experience.
 
-        Or you can read more about what I do when I'm not at work on my
+        Or you can read more about my background on my
 
         <TextLink to="/about">About me
         </ TextLink>  page

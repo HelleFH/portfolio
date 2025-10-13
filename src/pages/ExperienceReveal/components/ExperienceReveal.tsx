@@ -111,7 +111,7 @@ export default function ExperienceReveal({ jobs }: ExperienceRevealProps) {
                     >
                       Click here
                     </ Link> {" "}
-                    for more information about me and what I do when I'm not working.
+                    for more information about me and my background.
                   </span>
                   <span>
                     Or go to my {" "}
