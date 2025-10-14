@@ -90,6 +90,8 @@ export const SkillsLibrary: Record<string, SkillItem> = {
   "GitHub": { name: "GitHub", icon: <SiGithub /> },
   "WordPress": { name: "WordPress", icon: <SiWordpress /> },
   "Web Development": { name: "Web Development", icon: <FaLaptopCode /> },
+  "React Native": { name: "React Native", icon: <FaReact /> }, 
+
 
   // --- Design & Creative ---
   "UI/UX Design": { name: "UI/UX Design", icon: <MdDesignServices /> },
@@ -131,6 +133,8 @@ export const SkillsLibrary: Record<string, SkillItem> = {
   "Event Planning": { name: "Event Planning", icon: <MdDesignServices /> },
   "Administrative Support": { name: "Administrative Support", icon: <FaClipboardList /> },
   "Organisation": { name: "Organisation", icon: <FaClipboardList /> },
+  "Customer Success Management": { name: "Customer Success Management", icon: <FaHeadset /> },
+
 
   // --- Communication & Languages ---
   "Languages": { name: "Languages", icon: <MdLanguage /> },
@@ -147,4 +151,6 @@ export const SkillsLibrary: Record<string, SkillItem> = {
   "Google Workspace": { name: "Google Workspace", icon: <FaGlobe /> },
   "Microsoft Office": { name: "Microsoft Office", icon: <FaClipboardList /> },
   "Time Management": { name: "Time Management", icon: <FaClipboardList /> },
+  "ZenDesk": { name: "ZenDesk", icon: <MdSupportAgent /> },
+
 };

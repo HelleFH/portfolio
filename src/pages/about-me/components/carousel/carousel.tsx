@@ -80,7 +80,7 @@ const SkillCarousel: React.FC = () => {
           <div key={skill.ID} className="px-2">
             <div className="flex flex-col items-center text-center max-w-3xl mx-auto space-y-2">
               {/* Icon */}
-              <div className="text-6xl">{skill.icon}</div>
+              <div className="text-6xl mt-2">{skill.icon}</div>
 
               {/* Skill Title */}
               <h4 className="text-[rgba(var(--dark-green))] font-bold text-lg">{skill.title}</h4>
@@ -98,7 +98,7 @@ const SkillCarousel: React.FC = () => {
       <style>{`
         .slick-dots {
           position: relative;
-          margin-top: 2rem;
+            padding-bottom:1rem;
         }
         .slick-dots li button:before {
           color: white;

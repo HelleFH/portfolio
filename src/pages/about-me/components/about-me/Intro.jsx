@@ -45,7 +45,7 @@ const Intro = () => {
       <AnimatedSection >
         <div className="flex flex-col text-justify gap-4">
           <p>
-            I later trained in web development, gaining hands-on experience with
+           I have completed a course in web development, gaining hands-on experience with
             HTML, CSS, JavaScript, and React.{" "}
             <TextLink to="/project-overview">
               You can see some of my most recent project as well as school and hobby projects here

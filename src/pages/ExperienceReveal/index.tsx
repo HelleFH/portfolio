@@ -13,13 +13,11 @@ const jobs: Job[] = [
       "Technical support, customer success management, and marketing assistance. Developed company website, contributed to a client portal in TypeScript, and managed troubleshooting.",
     skills: [
       "Technical Support",
-      "Customer Service",
+      "Customer Success Management",
       "Hardware Support",
       "Project Management",
       "Content Creation",
-      "React",
-      "Next.js",
-      "TypeScript",
+      "React Native",
     ],
   },
   {
@@ -36,7 +34,7 @@ const jobs: Job[] = [
       "HTML",
       "CSS",
       "Problem Solving",
-      "Time Management",
+      "Cybersecurity"
     ],
   },
   {
@@ -52,6 +50,7 @@ const jobs: Job[] = [
       "Organisational Skills",
       "Communication",
       "Problem Solving",
+  
     ],
   },
   {
@@ -83,6 +82,7 @@ const jobs: Job[] = [
       "SEO Optimization",
       "Language Skills",
       "Attention to Detail",
+      "WordPress",
     ],
   },
   {
@@ -99,6 +99,8 @@ const jobs: Job[] = [
       "Customer Service",
       "Training",
       "Problem Solving",
+      "ZenDesk",
+      
     ],
   },
   {
@@ -115,6 +117,7 @@ const jobs: Job[] = [
         "Customer Service",
         "HR Systems",
         "Training & Development",
+      
       ],
   },
   {
