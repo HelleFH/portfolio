@@ -25,34 +25,45 @@ const Navbar: React.FC<NavbarProps> = ({ forceScrolled = false }) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const scrollTimeout = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // ✅ Scroll detection logic
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setScrolled(forceScrolled || currentScrollY > 50);
+useEffect(() => {
+  let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
+  let lastY = window.scrollY;
 
-      if (
-        currentScrollY > lastScrollY &&
-        !menuOpen &&
-        currentScrollY > window.innerHeight * 0.07
-      ) {
-        if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
-        scrollTimeout.current = setTimeout(() => setIsHidden(true), 2000);
-      } else {
-        setIsHidden(false);
-      }
+  const handleScroll = () => {
+    const currentY = window.scrollY;
+    const isScrollingDown = currentY > lastY;
 
-      setLastScrollY(currentScrollY);
-    };
+    // Mark as scrolled (adds background, etc.)
+    setScrolled(forceScrolled || currentY > 50);
 
-    window.addEventListener("scroll", handleScroll);
-    if (forceScrolled) setScrolled(true);
+    // Don't hide if we're near the top
+    if (currentY < 100) {
+      setIsHidden(false);
+    } else if (isScrollingDown && !menuOpen) {
+      // User is scrolling down — reset timer and hide after delay
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        setIsHidden(true);
+      }, 1500);
+    } else {
+      // Scrolling up or menu open — show navbar
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      setIsHidden(false);
+    }
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
-    };
-  }, [lastScrollY, menuOpen, forceScrolled]);
+    lastY = currentY;
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  if (forceScrolled) setScrolled(true);
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+    if (scrollTimeout) clearTimeout(scrollTimeout);
+  };
+}, [menuOpen, forceScrolled]);
+
 
   return (
     <nav
