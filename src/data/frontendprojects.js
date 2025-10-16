@@ -63,8 +63,8 @@ export const frontendProjects = [
     githubButtonText: "GitHub",
     descriptionHeader: "Mobile Plant Calendar & Reminder App with React Native",
     description: "Mobile version of the Plant Calendar app. Designed for users to manage plant care directly from their phones — including reminders, photo logging, and progress tracking.",
-    adminUsername: "Hellefruergaard@plantcalendar.com",
-    adminPassword: "fruergaard",
+    username: "Hellefruergaard@plantcalendar.com",
+    password: "fruergaard",
     technologiesMore: [
       "React Native",
       "Expo",

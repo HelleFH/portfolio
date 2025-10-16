@@ -56,8 +56,8 @@ export const myProjects = [
     githubButtonText: "GitHub",
     descriptionHeader: "Plant Calendar and Reminder System with MERN Stack",
     description: "Work in progress! This app helps users manage plant collections by adding, tracking, and updating plant care tasks. Users can also search for plants via external API.",
-    adminUsername: "Hellefruergaard@plantcalendar.com",
-    adminPassword: "fruergaard",
+    username: "Hellefruergaard@plantcalendar.com",
+    password: "fruergaard",
     technologiesMore: [
       "MongoDB",
       "Express",
@@ -122,8 +122,8 @@ export const myProjects = [
     githubButtonText: "GitHub",
     descriptionHeader: "MEVN Stack Shopping Cart with Cart Storage and User Authentication",
     description: "A full-stack shopping cart app built with the MEVN stack. Users can sign up, log in securely, and manage a persistent shopping cart. Includes real-time form validation, cart updates, and detailed product pages.",
-    adminUsername: "hellefruergaard@mevn-shop.com",
-    adminPassword: "password123",
+    username: "hellefruergaard@mevn-shop.com",
+    password : "password123",
     technologiesMore: [
       "MongoDB",
       "Express",
@@ -222,8 +222,8 @@ export const myProjects = [
     githubButtonText: "GitHub",
     descriptionHeader: "MEVN Stack Shopping Cart with Cart Storage and User Authentication",
     description: "A full-stack shopping cart app built with the MEVN stack. Users can sign up, log in securely, and manage a persistent shopping cart. Includes real-time form validation, cart updates, and detailed product pages.",
-    adminUsername: "hellefruergaard@mevn-shop.com",
-    adminPassword: "password123",
+    username: "hellefruergaard@mevn-shop.com",
+    password: "password123",
     technologiesMore: [
       "MongoDB",
       "Express",
