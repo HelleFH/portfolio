@@ -4,22 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FaTools } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
-
 import ProjectButtons from "./ProjectButtons.tsx";
 import LoginModal from "./LoginModal.tsx";
-import { Project } from "../types/project.ts";
 import { skillIcons } from '../components/Pills/SkillIcons.tsx';
 import ReadMoreLink from "./Links/ReadMoreLink.tsx";
 import ShowLoginButton from "./Links/ShowLoginButton.tsx";
+import { ProjectModalProps } from "../types/projectModal.ts";
 
-interface ProjectModalProps {
-  show: boolean;
-  handleClose: () => void;
-  selectedProjectIndex: number | null;
-  projects: Project[];
-  handlePrev: () => void;
-  handleNext: () => void;
-}
 
 const ProjectModal: React.FC<ProjectModalProps> = ({
   show,
@@ -156,8 +147,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             {/* Read More Link passes 'from' page */}
             <Link
               className="justify-end md:w-fit"
-              to={`/project/${project.type}/${project.id}`}
-              state={{ projectType: project.type, from: location.pathname }}
+              to={`/projects/${project.name}`}
+              state={{  from: location.pathname }}
             >
               <ReadMoreLink fontColor="rgba(var(--cyan))">Read More</ReadMoreLink>
             </Link>

@@ -2,15 +2,8 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Project } from "../types/project.ts";
+import { CredentialRowProps } from "../types/credentialRow.ts";
 
-interface LoginModalProps {
-  show: boolean;
-  onHide: () => void;
-  project: Project;
-  backdropClassName?: string;
-  dialogClassName?: string;
-  handleCopyToClipboard?: (text: string) => void;
-}
 
 const LoginModal: React.FC<LoginModalProps> = ({
   show,
@@ -115,12 +108,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
   );
 };
 
-interface CredentialRowProps {
-  label: string;
-  value?: string;
-  onCopy: () => void;
-  copied: boolean;
-}
+
 
 const CredentialRow: React.FC<CredentialRowProps> = ({
   label,

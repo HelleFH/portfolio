@@ -2,7 +2,6 @@ import React from 'react';
 import Layout from '../../components/Layout.tsx';
 import HobbyCarousel from './components/carousel/carousel.tsx';
 import Intro from './components/about-me/Intro.jsx';
-import Contact from './components/Contact.tsx';
 import Intro2 from './components/about-me/Intro2.jsx';
 
 const AboutMePage = () => {

@@ -2,16 +2,8 @@ import React from "react";
 import EmbedCard from "./EmbedCard.tsx";
 import Images from "../../../assets/images.tsx";
 import AnimatedSection from "../../../components/AnimatedSection.jsx";
+import { Embed } from "../../../types/embed.ts";
 
-type EmbedType = "image" | "video" | "figma";
-
-interface Embed {
-  id: number;
-  type: EmbedType;
-  title: string;
-  src: string | { 400: string; 800: string; 1200: string; 1600: string };
-  link: string;
-}
 
 const embeds: Embed[] = [
   {

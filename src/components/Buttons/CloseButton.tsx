@@ -3,15 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
 import CloseButton from "../Buttons/CloseButton.tsx";
 import { Project } from "../../types/project.ts";
+import { LoginModalProps } from "../../types/loginModal.ts";
 
-interface LoginModalProps {
-  show: boolean;
-  onHide: () => void;
-  project: Project;
-  backdropClassName?: string;
-  dialogClassName?: string;
-  handleCopyToClipboard?: (text: string) => void;
-}
+
 
 const LoginModal: React.FC<LoginModalProps> = ({
   show,

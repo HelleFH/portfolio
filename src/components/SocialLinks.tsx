@@ -1,13 +1,7 @@
 import React from "react";
 import { Github, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
-
-interface SocialLinksProps {
-  onClick?: () => void;
-  color?: string;       // base icon color
-  hoverColor?: string;  // hover icon color
-  size?: number;        // optional icon size
-}
+import { SocialLinksProps } from "../types/socialLinks";
 
 const SocialLinks: React.FC<SocialLinksProps> = ({
   onClick,

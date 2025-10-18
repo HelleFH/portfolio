@@ -1,11 +1,8 @@
 import React, { ButtonHTMLAttributes } from "react";
 import { FaSignInAlt } from "react-icons/fa";
+import { ShowLoginButtonProps } from "../../types/showLoginButton";
 
-interface ShowLoginButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  label?: string;
-  fontColor?: string;
-  showIcon?: boolean;
-}
+
 
 const ShowLoginButton: React.FC<ShowLoginButtonProps> = ({
   label = "Show Login Details",

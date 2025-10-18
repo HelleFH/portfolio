@@ -9,7 +9,7 @@ const ProjectsAll: React.FC = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        document.title = "Helle Fruergaard | Portfolio";
+        document.title = "Helle Fruergaard | Projects";
     }, []);
 
     useEffect(() => {

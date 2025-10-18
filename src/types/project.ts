@@ -1,10 +1,10 @@
 export interface Project {
+  projectDetails: string[];
   adminUsername: string | undefined;
   adminPassword: string | undefined;
   id: number;
   name: string;
-  type?: string; // ✅ make this optional (or required if you want)
-  technologies: string[];
+  technologies?: string[];
   images: {
     400: string;
     800: string;
@@ -14,10 +14,14 @@ export interface Project {
   projectLink: string;
   githubLink: string;
   buttonText: string;
+  slug?: string;
   githubButtonText: string;
   descriptionHeader?: string;
   description?: string;
   username?: string;
   password?: string;
   technologiesMore?: string[] | string;
+
+ 
+
 }

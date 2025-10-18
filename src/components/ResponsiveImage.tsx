@@ -1,15 +1,7 @@
 import React from "react";
+import { ResponsiveImageProps } from "../types/responsiveImage";
 
-interface ResponsiveImageProps {
-  imageSet: {
-    400: string;
-    800: string;
-    1200: string;
-    1600: string;
-  };
-  alt: string;
-  className?: string;
-}
+
 
 const ResponsiveImage: React.FC<ResponsiveImageProps> = ({ imageSet, alt, className }) => {
   return (

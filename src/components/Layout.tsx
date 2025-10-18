@@ -3,22 +3,8 @@ import Hero from "./Hero/Hero";
 import Navbar from "./Navbar/Navbar.tsx";
 import Footer from "./Footer.tsx";
 import AnimatedSection from "./AnimatedSection";
+import { LayoutProps } from "../types/layout.ts";
 
-interface ButtonProps {
-  type: "link" | "button";
-  text: string;
-  path?: string;
-  onClick?: () => void;
-}
-
-interface LayoutProps {
-  heroTitle: string;
-  heroSubtitle: string;
-  heroIntro: string;
-  buttons?: ButtonProps[];
-  showContactUsButton?: boolean;
-  children: ReactNode;
-}
 
 const Layout: React.FC<LayoutProps> = ({
   heroTitle,

@@ -58,7 +58,6 @@ export interface SkillItem {
   icon: JSX.Element;
 }
 
-// ✅ Complete centralized skill definitions (merged with CV skills)
 export const SkillsLibrary: Record<string, SkillItem> = {
   // --- Core Technical Skills ---
   "Technical Support": { name: "Technical Support", icon: <FaUserCog /> },

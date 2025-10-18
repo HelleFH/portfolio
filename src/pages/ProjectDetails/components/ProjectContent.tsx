@@ -2,23 +2,7 @@ import React from "react";
 import ProjectButtons from "../../../components/ProjectButtons.tsx";
 import ProjectDetailsList from "./ProjectDetailsList.tsx";
 import ProjectTechnologies from "./ProjectTechnologies.tsx";
-
-interface Project {
-  id?: number;
-  name: string;
-  descriptionHeader: string;
-  description: string;
-  projectDetails?: string[];
-  technologiesMore?: string[];
-  projectLink?: string;
-  githubLink?: string;
-  buttonText?: string;
-  githubButtonText?: string;
-}
-
-interface ProjectContentProps {
-  project: Project;
-}
+import { ProjectContentProps } from "../../../types/projectContent.ts";
 
 const ProjectContent: React.FC<ProjectContentProps> = ({ project }) => {
   return (

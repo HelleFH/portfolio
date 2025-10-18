@@ -4,18 +4,8 @@ import { Menu, X } from "lucide-react";
 import Images from "../assets/images.tsx";
 import SocialLinks from "./SocialLinks.tsx";
 import { Link } from "react-router-dom";
+import { SideMenuProps } from "../types/sideMenu.ts";
 
-interface MenuItem {
-  label: string;
-  href: string;
-}
-
-interface SideMenuProps {
-  items: MenuItem[];
-  open: boolean;
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  scrolled: boolean;
-}
 
 const SideMenu: React.FC<SideMenuProps> = ({ items, open, setOpen }) => {
   return (

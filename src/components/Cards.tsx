@@ -2,22 +2,9 @@ import React from "react";
 import { skillIcons } from "./Pills/SkillIcons.tsx";
 import { FaTools } from "react-icons/fa";
 import ResponsiveImage from "./ResponsiveImage.tsx";
+import { CardProps } from "../types/card.ts";
 
-interface Project {
-  name: string;
-  technologies: string[];
-    images: {
-    400: string;
-    800: string;
-    1200: string;
-    1600: string;
-  }[];
-}
 
-interface CardProps {
-  project: Project;
-  onClick: () => void;
-}
 
 const Card: React.FC<CardProps> = ({ project, onClick }) => {
   return (

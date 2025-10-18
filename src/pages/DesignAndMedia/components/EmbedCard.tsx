@@ -1,22 +1,9 @@
 import React from "react";
 import ResponsiveImage from "../../../components/ResponsiveImage.tsx";
 import { Link } from "react-router-dom";
+import { EmbedCardProps } from "../../../types/embedCard.ts";
+import { ResponsiveSrc } from "../../../types/resposiveSrc.ts";
 
-type EmbedType = "image" | "video" | "figma";
-
-interface ResponsiveSrc {
-  400: string;
-  800: string;
-  1200: string;
-  1600: string;
-}
-
-interface EmbedCardProps {
-  type: EmbedType;
-  title: string;
-  src: string | ResponsiveSrc;
-  link: string;
-}
 
 const EmbedCard: React.FC<EmbedCardProps> = ({ type, title, src, link }) => {
   const isResponsiveImage = typeof src !== "string";

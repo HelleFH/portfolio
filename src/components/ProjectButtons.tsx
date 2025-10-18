@@ -1,12 +1,7 @@
 import React from "react";
 import Button from "./Buttons/Button.tsx";
+import { ProjectButtonsProps } from "../types/projectButtons.ts";
 
-interface ProjectButtonsProps {
-  projectLink: string;
-  githubLink: string;
-  buttonText: string;
-  githubButtonText: string;
-}
 
 const ProjectButtons: React.FC<ProjectButtonsProps> = ({
   projectLink,

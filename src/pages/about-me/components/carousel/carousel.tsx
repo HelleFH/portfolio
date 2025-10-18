@@ -2,13 +2,8 @@ import React from "react";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { SkillSlide } from "../../../../types/skillSlide";
 
-interface SkillSlide {
-  ID: number;
-  title: string;
-  description: string;
-  icon: string;
-}
 
 const skillData: SkillSlide[] = [
   {

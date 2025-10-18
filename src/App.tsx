@@ -83,7 +83,7 @@ const App: React.FC = () => {
           }
         />
         <Route
-          path="/project/:type/:id"
+          path="/projects/:name"
           element={<ProjectDetail />}
         />
           <Route

@@ -5,13 +5,10 @@ import { Facebook, Github, Instagram, Linkedin } from "lucide-react";
 import Images from "../../assets/images.tsx";
 import SideMenu from "../SideMenu.tsx";
 import SocialLinks from "../SocialLinks.tsx";
+import { NavbarProps } from "../../types/navBar.ts";
 
-// ✅ Define props properly
-interface NavbarProps {
-  forceScrolled?: boolean;
-}
 
-// ✅ Helper to normalize relative image paths
+
 const normalizeImagePath = (path: string): string => {
   if (!path) return "";
   if (path.startsWith("./")) return path.replace("./", "/");

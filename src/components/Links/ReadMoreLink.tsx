@@ -1,11 +1,8 @@
 import React, { ButtonHTMLAttributes } from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { ReadMoreLinkProps } from "../../types/readMoreLink";
 
-interface ReadMoreLinkProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children?: React.ReactNode;
-  fontColor?: string;
-  showIcon?: boolean;
-}
+
 
 const ReadMoreLink: React.FC<ReadMoreLinkProps> = ({
   children = "Read More",

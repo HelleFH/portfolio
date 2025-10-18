@@ -1,10 +1,8 @@
 import React from "react";
 import { FaTools } from "react-icons/fa";
 import { skillIcons } from "../../../components/Pills/SkillIcons.tsx"; 
+import { ProjectTechnologiesProps } from "../../../types/projectTechnologies.ts";
 
-interface ProjectTechnologiesProps {
-  technologies: string[];
-}
 
 const ProjectTechnologies: React.FC<ProjectTechnologiesProps> = ({ technologies }) => {
   // Ensure we have an array
