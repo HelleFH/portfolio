@@ -143,15 +143,18 @@ const selectedProject = projectList[currentIndex];
               loading="lazy"
             />
           </picture>
+          
         </div>
+    <div className="scale-125 mb-2">
+       {selectedProject.username && (
+            <ShowLoginButton onClick={() => setShowLoginModal(true)} />
+          )}
+    </div>
 
         <div className="w-full rounded-sm bg-[rgba(255,255,255,0.95)]">
           <ProjectContent project={selectedProject} />
 
-          {selectedProject.username && (
-            <ShowLoginButton onClick={() => setShowLoginModal(true)} />
-          )}
-
+     
           <ProjectNavigation
             onPrev={() => navigateToProject(currentIndex - 1)}
             onNext={() => navigateToProject(currentIndex + 1)}

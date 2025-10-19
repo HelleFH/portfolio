@@ -174,7 +174,7 @@ export const projects = [
   },
   {
     id: 8,
-    name: "Cloudinary Upload/Delete",
+    name: "Cloudinary Upload-Delete",
     technologies: ["MongoDB", "Express", "Vue", "Node.js"],
     images: [Images.AiImagesScreen],
     projectLink: "https://cloudinary-upload-delete-1.onrender.com/",

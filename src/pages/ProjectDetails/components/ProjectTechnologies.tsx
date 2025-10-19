@@ -5,14 +5,13 @@ import { ProjectTechnologiesProps } from "../../../types/projectTechnologies.ts"
 
 
 const ProjectTechnologies: React.FC<ProjectTechnologiesProps> = ({ technologies }) => {
-  // Ensure we have an array
   const technologiesArray: string[] = Array.isArray(technologies) ? technologies : [];
 
   return (
     <>
-    
-      <h4 className="mx-auto text-xl font-semibold">Technologies Used</h4>
-      <ul className="mx-auto flex flex-wrap gap-3 font-semibold uppercase text-gray-700 text-sm">
+    <div className="w-full">
+      <h4 className="mx-auto mb-6 text-xl font-semibold">Technologies</h4>
+      <ul className="max-w-[700px] justify-center mx-auto flex flex-wrap gap-3 font-semibold uppercase text-gray-700 text-sm">
         {technologiesArray.map((tech, i) => {
           const icon = skillIcons[tech] || <FaTools />;
           return (
@@ -26,6 +25,7 @@ const ProjectTechnologies: React.FC<ProjectTechnologiesProps> = ({ technologies 
           );
         })}
       </ul>
+      </div>
     </>
   );
 };

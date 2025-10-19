@@ -53,14 +53,14 @@ const ProjectsOverview = () => {
   return (
     <div className="flex flex-col w-full justify-center items-center gap-12">
       <section>
-        <h2 className="text-2xl font-bold mb-4 text-center">
+        <h2 className="text-lg font-bold mb-4 text-center">
           Here's a look at some of my web development work, including professional, school, and hobby projects.
           To learn more about my experience and profile, please see{" "}
-          <TextLink to="/CV" className="mr-1 text-2xl">
+          <TextLink to="/CV" className="mr-1 text-lg">
             my CV
           </TextLink>
           or my{" "}
-          <TextLink to="/about" className="text-2xl">
+          <TextLink to="/about" className="text-lg">
             About Me
           </TextLink>{" "}
           page.

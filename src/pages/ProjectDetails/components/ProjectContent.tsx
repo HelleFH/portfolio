@@ -5,15 +5,15 @@ import ProjectTechnologies from "./ProjectTechnologies.tsx";
 import { ProjectContentProps } from "../../../types/projectContent.ts";
 
 const ProjectContent: React.FC<ProjectContentProps> = ({ project }) => {
-  return (
+  return (  
     
-    <div className="flex flex-col items-center gap-6 rounded-sm p-3 md:p-5 text-center w-full mt-6">
+    <div className="flex flex-col items-center justify-center gap-8 rounded-sm p-3 md:p-5 text-center w-full mt-6">
       {/* Project Description */}
       <div className="bg-white rounded-sm shadow-sm">
         <h4 className="text-2xl font-semibold pb-4">
           {project.descriptionHeader}
         </h4>
-        <p className="text-lg leading-relaxed">{project.description}</p>
+        <p className="text-lg leading-relaxed pb-10">{project.description}</p>
       </div>
 
       {/* Project Details */}
