@@ -38,7 +38,7 @@ const Home: React.FC = () => {
       heroIntro="React Developer building clean, responsive interfaces and smooth user experiences. Merging a scientific mindset with creative coding.
 "
     >
-      <div className="flex flex-wrap gap-4 max-w-[1400px] mx-auto">
+      <div className="flex flex-wrap gap-4 max-w-[1600px] mx-auto">
         {/* Projects section */}
         <div className="w-full flex flex-wrap gap-1 items-start justify-center">
           <div className="max-w-[96vw] md:max-w-[25vw] mb-10">

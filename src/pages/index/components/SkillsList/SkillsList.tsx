@@ -35,7 +35,7 @@ const SkillsList: React.FC = () => {
   return (
     <div className="mx-auto w-full max-w-4xl  px-6 ">
       <h2 className="mb-2 font-[lato] text-2xl font-semibold text-[rgba(var(--dark-color))] md:text-3xl">
-        My Skills</h2>
+        Technologies</h2>
       <div className="flex flex-col gap-8 md:grid-cols-3">
         {renderList("Frontend", frontendSkills)}
         {renderList("Styling & Design", stylingSkills)}
