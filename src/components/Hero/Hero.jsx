@@ -20,9 +20,9 @@ const Hero = ({ title, subtitle, intro, buttons }) => {
     const tryPlay = async () => {
       try {
         await video.play();
-        setVideoVisible(true);
+        setVideoVisible(true); // show video only if it plays
       } catch (err) {
-        console.log("Autoplay blocked — keeping video hidden.");
+        console.log("Autoplay blocked — showing fallback image.");
         setVideoVisible(false);
       }
     };
@@ -31,7 +31,16 @@ const Hero = ({ title, subtitle, intro, buttons }) => {
   }, []);
 
   return (
-    <section className="hero mb-10 relative flex min-h-[65vh] md:min-h-[75vh] w-full flex-col items-start justify-center py-[5rem] overflow-hidden md:py-0 px-0 md:px-16 text-[rgba(var(--white-color))]">
+    <section
+      className="hero mb-10 relative flex min-h-[65vh] md:min-h-[75vh] w-full flex-col items-start justify-center py-[5rem] overflow-hidden md:py-0 px-0 md:px-16 text-[rgba(var(--white-color))]"
+      style={{
+        backgroundImage: !videoVisible
+          ? `url(${Images.heroImage400})`
+          : "none",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       {/* Video background */}
       <video
         ref={videoRef}
@@ -42,8 +51,6 @@ const Hero = ({ title, subtitle, intro, buttons }) => {
         muted
         playsInline
         preload="auto"
-        loop
-        poster={Images.heroImage400}
       />
 
       {/* Gradient overlays */}
