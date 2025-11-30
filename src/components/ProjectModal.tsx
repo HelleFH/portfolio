@@ -73,7 +73,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
 
         {/* Chevron Left */}
         <div
-          className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full cursor-pointer transition-transform duration-150 hover:scale-105"
+          className="absolute flex items-center justify-center left-3 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white p-2 rounded-[100%] w-[40px] h-[40px] cursor-pointer transition-transform duration-150 hover:scale-105"
           onClick={handlePrev}
         >
           <FontAwesomeIcon icon={faChevronLeft} />
@@ -96,7 +96,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
 
         {/* Chevron Right */}
         <div
-          className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full cursor-pointer transition-transform duration-150 hover:scale-105"
+          className="absolute flex items-center justify-center w-[40px] h-[40px] right-3 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full cursor-pointer transition-transform duration-150 hover:scale-105"
           onClick={handleNext}
         >
           <FontAwesomeIcon icon={faChevronRight} />
@@ -162,7 +162,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
           project={project}
           backdropClassName="login-modal-backdrop"
           dialogClassName="project-login-modal"
-          handleCopyToClipboard={(text) => {
+          handleCopyToClipboard={(text: string) => {
             navigator.clipboard.writeText(text);
             alert("Copied to clipboard");
           }}
