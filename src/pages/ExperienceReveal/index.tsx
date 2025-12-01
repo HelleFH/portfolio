@@ -120,21 +120,7 @@ const jobs: Job[] = [
       
       ],
   },
-  {
-    image: Images.SingaporeImage,
-    title: "Executive Assistant",
-    company: "Maersk",
-    years: "2006–2008",
-    description:
-      "Planned and assisted at seminars across South East Asia. Organised travel, town hall meetings, and other events while gaining valuable administrative experience.",
-    skills: [
-      "Event Planning",
-      "Administrative Support",
-      "Organisation",
-      "Communication",
-      "Problem Solving",
-    ],
-  },
+ 
 ];
 
 
