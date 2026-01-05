@@ -1,8 +1,22 @@
 import Images from '../assets/images.tsx';
 
 export const projects = [
-  {
+    {
     id: 1,
+    name: "The Adaptation Assembly",
+     technologies: ["React"],
+    images: [Images.AdaptationAssemblyScreen],
+    projectLink: "https://theadaptationassembly.com",
+    githubLink: "https://github.com/HelleFH/sentispec",
+    buttonText: "View Project",
+    githubButtonText: "GitHub",
+    descriptionHeader: "A Film List Website",
+    description: "This is a React-based static website.",
+    technologiesMore: ["React", "YouTube integration", "Tailwind"],
+    frontpage: true 
+  },
+  {
+    id: 2,
     name: "Cloudporteurope.com",
      technologies: ["React"],
     images: [Images.CloudPortScreen],
@@ -16,7 +30,7 @@ export const projects = [
     frontpage: true 
   },
   {
-    id: 2,
+    id: 3,
     name: "Sentispec.ai",
     technologies: ["React", "TypeScript", "Tailwind CSS"],
     images: [Images.SentispecScreen],
@@ -31,7 +45,7 @@ export const projects = [
 
   },
   {
-    id: 3,
+    id: 4,
     name: "React Store",
     technologies: ["Firebase", "React"],
     images: [Images.ClothesStoreScreen],
@@ -57,7 +71,7 @@ export const projects = [
     frontpage: true 
   },
   {
-    id: 4,
+    id: 5,
     name: "Native Plant Calendar",
     technologies: ["React Native", "Node.js", "Express", "MongoDB"],
     images: [Images.MobileCalendarScreen],
@@ -93,7 +107,7 @@ export const projects = [
     frontpage: true 
   },
    {
-    id: 5,
+    id: 6,
     name: "A Product Portfolio",
     technologies: ["React"],
     images: [Images.PortfolioScreen],
@@ -106,7 +120,7 @@ export const projects = [
     technologiesMore: ["React", "Bootstrap", "Styled Components", "React Swipable"]
   },
   {
-    id: 6,
+    id: 7,
     name: "MERN Listings",
     technologies: ["MongoDB", "Express", "React", "Node.js"],
     images: [Images.ListingScreen],
@@ -137,7 +151,7 @@ export const projects = [
     ]
   },
   {
-    id: 7,
+    id: 8,
     name: "MERN Plant Calendar",
     technologies: ["MongoDB", "Express", "React", "Node.js"],
     images: [Images.CalendarScreen],
@@ -173,7 +187,7 @@ export const projects = [
     ]
   },
   {
-    id: 8,
+    id: 9,
     name: "Cloudinary Upload-Delete",
     technologies: ["MongoDB", "Express", "Vue", "Node.js"],
     images: [Images.AiImagesScreen],
@@ -203,7 +217,7 @@ export const projects = [
     ]
   },
   {
-    id: 9,
+    id: 10,
     name: "MEVN Cart",
     technologies: ["MongoDB", "Express", "Vue", "Node.js"],
     images: [Images.MEVNCartScreen],
@@ -238,7 +252,7 @@ export const projects = [
     ]
   },
   {
-    id: 10,
+    id: 11,
     name: "News Site",
     technologies: ["HTML", "CSS", "JavaScript"],
     images: [Images.NewsSiteScreen],
@@ -251,7 +265,7 @@ export const projects = [
     technologiesMore: ["JavaScript"]
   },
   {
-    id: 11,
+    id: 12,
     name: "Netflix Clone",
     technologies: ["JavaScript"],
     images: [Images.NetflixScreen],
@@ -264,7 +278,7 @@ export const projects = [
     technologiesMore: ["JavaScript"]
   },
   {
-    id: 12,
+    id: 13,
     name: "Lightbox Gallery",
     technologies: ["JQuery"],
     images: [Images.DinosaursScreen],
@@ -277,7 +291,7 @@ export const projects = [
     technologiesMore: ["JQuery"]
   },
   {
-    id: 13,
+    id: 14,
     name: "Front Page",
     technologies: ["HTML", "CSS"],
     images: [Images.LegeKrogenScreen],
@@ -290,7 +304,7 @@ export const projects = [
     technologiesMore: ["HTML", "CSS"]
   },
   {
-    id: 14,
+    id: 15,
     name: "A Product Portfolio",
     technologies: ["React"],
     images: [Images.PortfolioScreen],
@@ -303,7 +317,7 @@ export const projects = [
     technologiesMore: ["React", "Bootstrap", "Styled Components", "React Swipable"]
   },
   {
-    id: 15,
+    id: 16,
     name: "MEVN Cart",
     technologies: ["MongoDB", "Express", "Vue", "Node.js"],
     images: [Images.MEVNCartScreen],
@@ -339,7 +353,7 @@ export const projects = [
     ]
   },
   {
-    id: 16,
+    id: 17,
     name: "Monty Hall",
     technologies: ["Flask", "JavaScript", "HTML", "CSS", "p5.js"],
     images: [Images.MontyHallScreen],
