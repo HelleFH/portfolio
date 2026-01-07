@@ -30,8 +30,11 @@ import CloudPortScreen800 from './images/cloud-port-screen-800.png';
 import CloudPortScreen1200 from './images/cloud-port-screen-1200.png';
 import CloudPortScreen1600 from './images/cloud-port-screen-1600.png';
 
-import AdaptationAssemblyScreen from './images/adaptationassemblyscreen.png'
-
+import AdaptationAssemblyScreen400 from './images/adaptationassemblyscreen.png'
+import AdaptationAssemblyScreen800 from './images/adaptationassemblyscreen.png'
+import AdaptationAssemblyScreen1200 from './images/adaptationassemblyscreen.png'
+import AdaptationAssemblyScreen1600 from './images/adaptationassemblyscreen.png'
+0
 import DatingAppScreen400 from './images/datingapp-screen-400.png';
 import DatingAppScreen800 from './images/datingapp-screen-800.png';
 import DatingAppScreen1200 from './images/datingapp-screen-1200.png';
@@ -164,6 +167,8 @@ const TechScreens = {
   SnippetsScreen: responsiveImage(SnippetsScreen400, SnippetsScreen800, SnippetsScreen1200, SnippetsScreen1600),
   LandingPagesScreen: responsiveImage(LandingPagesScreen400, LandingPagesScreen800, LandingPagesScreen1200, LandingPagesScreen1600),
   MobileCalendarScreen: responsiveImage(MobileCalendarScreen400, MobileCalendarScreen800, MobileCalendarScreen1200, MobileCalendarScreen1600),
+AdaptationAssemblyScreen: responsiveImage(AdaptationAssemblyScreen400, AdaptationAssemblyScreen800, AdaptationAssemblyScreen1200, AdaptationAssemblyScreen1600),
+
 };
 
 // Client / profile images
@@ -183,7 +188,6 @@ const ProfileImages = {
 const MediaAssets = {
   FooterLogo,
   heroVideo,
-  AdaptationAssemblyScreen,
   CVImage400,
 };
 
