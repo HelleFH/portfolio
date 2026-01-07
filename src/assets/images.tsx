@@ -7,9 +7,6 @@ import HeroImage800 from './images/hero-image-800.png';
 import HeroImage1200 from './images/hero-image-1200.png';
 import HeroImage1600 from './images/hero-image-1600.png';        
 import CVImage400 from './images/CV-image-400.png';
-import CVImage800 from './images/CV-image-400.png';
-import CVImage1200 from './images/CV-image-400.png';
-import CVImage1600 from './images/CV-image-400.png';
 
 // Navbar logos
 // Import multiple resolutions for each screen
@@ -33,8 +30,7 @@ import CloudPortScreen800 from './images/cloud-port-screen-800.png';
 import CloudPortScreen1200 from './images/cloud-port-screen-1200.png';
 import CloudPortScreen1600 from './images/cloud-port-screen-1600.png';
 
-import AdaptationAssemblyScreen from './images/adaptationassemblyscreen.png';
-
+import AdaptationAssemblyScreen from './images/adaptationassemblyscreen.png'
 
 import DatingAppScreen400 from './images/datingapp-screen-400.png';
 import DatingAppScreen800 from './images/datingapp-screen-800.png';
@@ -168,13 +164,11 @@ const TechScreens = {
   SnippetsScreen: responsiveImage(SnippetsScreen400, SnippetsScreen800, SnippetsScreen1200, SnippetsScreen1600),
   LandingPagesScreen: responsiveImage(LandingPagesScreen400, LandingPagesScreen800, LandingPagesScreen1200, LandingPagesScreen1600),
   MobileCalendarScreen: responsiveImage(MobileCalendarScreen400, MobileCalendarScreen800, MobileCalendarScreen1200, MobileCalendarScreen1600),
-  AdaptationAssemblyScreen,
 };
 
 // Client / profile images
 const ProfileImages = {
   hero: responsiveImage(HeroImage400, HeroImage800, HeroImage1200, HeroImage1600),
-  CVImage: responsiveImage(CVImage400, CVImage800, CVImage1200, CVImage1600),
   UniversityImage: responsiveImage(UniversityImage400, UniversityImage800, UniversityImage1200, UniversityImage1600),
   SentispecImage: responsiveImage(SentispecImage400, SentispecImage800, SentispecImage1200, SentispecImage1600),
   AccentureImage: responsiveImage(AccentureImage400, AccentureImage800, AccentureImage1200, AccentureImage1600),
@@ -189,6 +183,8 @@ const ProfileImages = {
 const MediaAssets = {
   FooterLogo,
   heroVideo,
+  AdaptationAssemblyScreen,
+  CVImage400,
 };
 
 // Merge everything into a single export
