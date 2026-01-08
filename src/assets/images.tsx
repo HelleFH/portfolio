@@ -34,7 +34,7 @@ import AdaptationAssemblyScreen400 from './images/adaptationassemblyscreen.png'
 import AdaptationAssemblyScreen800 from './images/adaptationassemblyscreen.png'
 import AdaptationAssemblyScreen1200 from './images/adaptationassemblyscreen.png'
 import AdaptationAssemblyScreen1600 from './images/adaptationassemblyscreen.png'
-0
+
 import DatingAppScreen400 from './images/datingapp-screen-400.png';
 import DatingAppScreen800 from './images/datingapp-screen-800.png';
 import DatingAppScreen1200 from './images/datingapp-screen-1200.png';
