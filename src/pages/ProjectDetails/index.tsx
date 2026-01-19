@@ -45,7 +45,6 @@ const selectedProject = projectList[currentIndex];
 
   const [showLoginModal, setShowLoginModal] = useState(false);
 
-  // ✅ Hero background image responsive
 
 
   const navigateToProject = (newIndex: number) => {
