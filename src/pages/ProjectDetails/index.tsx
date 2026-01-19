@@ -46,20 +46,7 @@ const selectedProject = projectList[currentIndex];
   const [showLoginModal, setShowLoginModal] = useState(false);
 
   // ✅ Hero background image responsive
-  const [heroBg, setHeroBg] = useState<string>(normalizeImagePath(Images.hero[800]));
 
-  useEffect(() => {
-    const updateHero = () => {
-      const w = window.innerWidth;
-      if (w < 600) setHeroBg(normalizeImagePath(Images.hero[400]));
-      else if (w < 1000) setHeroBg(normalizeImagePath(Images.hero[800]));
-      else if (w < 1600) setHeroBg(normalizeImagePath(Images.hero[1200]));
-      else setHeroBg(normalizeImagePath(Images.hero[1600]));
-    };
-    updateHero();
-    window.addEventListener("resize", updateHero);
-    return () => window.removeEventListener("resize", updateHero);
-  }, []);
 
   const navigateToProject = (newIndex: number) => {
     const total = projectList.length;
@@ -102,20 +89,20 @@ const selectedProject = projectList[currentIndex];
       type: "link",
       text: selectedProject.buttonText || "View Project",
       path: selectedProject.projectLink,
-      external: true, // <-- mark as external
+      external: true, 
     },
     selectedProject.githubLink && {
       type: "link",
       text: selectedProject.githubButtonText || "View GitHub",
       path: selectedProject.githubLink,
-      external: true, // <-- mark as external
+      external: true,
     },
   ].filter(Boolean)}
 >
 
  
 
-      <div className="-mt-[8rem] relative z-10 mx-auto flex flex-col items-center w-full max-w-[1000px] p-6 bg-[rgba(255,255,255,0.9)] rounded-sm shadow-xs my-[7rem] transition-all hover:shadow-2xl">
+      <div className="-mt-[8rem] relative z-10 mx-auto flex flex-col items-center w-full max-w-[1000px] p-6 bg-[rgba(255,255,255,0.9)] rounded-sm shadow-xs my-[7rem] transition-all">
         {/* Back Button */}
         <button
           onClick={() => {
@@ -151,7 +138,7 @@ const selectedProject = projectList[currentIndex];
             <img
               src={normalizeImagePath(
                 (selectedProject.images[0] as ResponsiveImageSet)[400]
-              )}
+                )}
               alt={selectedProject.name}
               className="max-h-[50vh] w-auto object-contain"
               loading="lazy"
