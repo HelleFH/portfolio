@@ -15,7 +15,16 @@ const Navbar: React.FC<NavbarProps> = ({ forceScrolled = false }) => {
   const [scrolled, setScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-const linkColor = scrolled ? "text-[rgba(var(--white-color))] " : "text-black";
+
+  // 🔑 Dynamic colors
+  const linkColor = scrolled ? "text-[rgba(var(--white-color))]" : "text-black";
+  const hoverColor = scrolled
+    ? "hover:text-[rgba(var(--lightgreen))]"
+    : "hover:text-[rgba(var(--darkgreen))]";
+  const textColor = linkColor;
+  const bgColor = scrolled
+    ? "bg-black backdrop-blur-sm"
+    : "md:bg-transparent bg-white";
 
   useEffect(() => {
     let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
@@ -31,9 +40,7 @@ const linkColor = scrolled ? "text-[rgba(var(--white-color))] " : "text-black";
         setIsHidden(false);
       } else if (isScrollingDown && !menuOpen) {
         if (scrollTimeout) clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-          setIsHidden(true);
-        }, 1500);
+        scrollTimeout = setTimeout(() => setIsHidden(true), 1500);
       } else {
         if (scrollTimeout) clearTimeout(scrollTimeout);
         setIsHidden(false);
@@ -43,7 +50,6 @@ const linkColor = scrolled ? "text-[rgba(var(--white-color))] " : "text-black";
     };
 
     window.addEventListener("scroll", handleScroll);
-
     if (forceScrolled) setScrolled(true);
 
     return () => {
@@ -51,11 +57,6 @@ const linkColor = scrolled ? "text-[rgba(var(--white-color))] " : "text-black";
       if (scrollTimeout) clearTimeout(scrollTimeout);
     };
   }, [menuOpen, forceScrolled]);
-
-  const textColor = scrolled ? "text-[rgba(var(--white-color))] " : "text-black";
-  const bgColor = scrolled
-    ? "bg-black backdrop-blur-sm"
-    : "md:bg-transparent bg-white";
 
   return (
     <nav
@@ -81,51 +82,50 @@ const linkColor = scrolled ? "text-[rgba(var(--white-color))] " : "text-black";
               scrolled ? "opacity-100" : "opacity-70"
             }`}
           />
-<span   className={`navbar-link text-lg transition-colors duration-300
-    ${linkColor}
-    hover:text-[rgba(var(--darkgreen))]`}>
-  Helle Fruergaard
-</span>        </Link>
+          <span
+            className={`navbar-link text-lg transition-colors duration-300
+              ${linkColor} ${hoverColor}`}
+          >
+            Helle Fruergaard
+          </span>
+        </Link>
 
         {/* Desktop Links */}
-<ul className="hidden md:flex items-center gap-4">
- <Link
-  to="/about"
-  className={`navbar-link text-lg transition-colors duration-300
-    ${linkColor}
-    hover:text-[rgba(var(--darkgreen))]`}
-  onClick={() => setMenuOpen(false)}
->
-  About
-</Link>
-
+        <ul className="hidden md:flex items-center gap-4">
+          <Link
+            to="/about"
+            className={`navbar-link text-lg transition-colors duration-300
+              ${linkColor} ${hoverColor}`}
+            onClick={() => setMenuOpen(false)}
+          >
+            About
+          </Link>
 
           <div className="pl-2">
             <SocialLinks
-              color={scrolled ? "text-[rgba(var(--white-color))] " : "text-black"}
-              hoverColor="hover:text-[rgba(var(--darkgreen))]"
+              color={linkColor}
+              hoverColor={hoverColor}
             />
           </div>
         </ul>
 
-        {/* Mobile Menu */}
-        <div className="ml-auto">
-
-    
-        </div>
+        {/* Mobile Menu placeholder */}
+        <div className="ml-auto"></div>
       </div>
-          <SideMenu
-          items={[
-            { label: "Home", href: "/" },
-            { label: "About", href: "/about" },
-            { label: "CV", href: "/CV" },
-            { label: "Projects", href: "/project-overview" },
-            { label: "Design & Media", href: "/media" },
-          ]}
-          open={menuOpen}
-          setOpen={setMenuOpen}
-          scrolled={scrolled}
-        />
+
+      {/* SideMenu */}
+      <SideMenu
+        items={[
+          { label: "Home", href: "/" },
+          { label: "About", href: "/about" },
+          { label: "CV", href: "/CV" },
+          { label: "Projects", href: "/project-overview" },
+          { label: "Design & Media", href: "/media" },
+        ]}
+        open={menuOpen}
+        setOpen={setMenuOpen}
+        scrolled={scrolled}
+      />
     </nav>
   );
 };

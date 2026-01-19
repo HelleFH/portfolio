@@ -10,8 +10,7 @@ const AboutMePage = () => {
       <Layout
         heroTitle="About Me"
         heroSubtitle="Helle Fruergaard | Web Developer"
-        heroIntro="React Developer building clean, responsive interfaces and smooth user experiences. 
-        Merging a scientific mindset with creative coding."
+        heroIntro="Hi, I'm Helle. I'm a Web Developer building clean, responsive interfaces and smooth user experiences using a range of technologies. "
         buttons={[{ type: 'link', text: 'Home', path: '/' }]}
       >
 

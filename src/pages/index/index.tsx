@@ -35,8 +35,8 @@ const Home: React.FC = () => {
       heroTitle="Turning ideas into interactive products."
       heroSubtitle="Helle Fruergaard | Web Developer"
       buttons={[{ type: "link", text: "Learn more", path: "/about" }]}
-      heroIntro="React Developer building clean, responsive interfaces and smooth user experiences. Merging a scientific mindset with creative coding.
-"
+        heroIntro="Hi, I'm Helle. I'm a Web Developer building clean, responsive interfaces and smooth user experiences using a range of technologies. "
+
     >
       <div className="flex flex-wrap gap-4 max-w-[1600px] mx-auto">
         {/* Projects section */}
