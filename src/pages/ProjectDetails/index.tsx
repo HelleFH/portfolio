@@ -81,7 +81,7 @@ const selectedProject = projectList[currentIndex];
   return (
 <Layout
   heroTitle={selectedProject.name}
-  heroSubtitle={selectedProject.tagline || selectedProject.role}
+  heroSubtitle={selectedProject.tagline}
   heroIntro={selectedProject.descriptionTagline}
   buttons={[
     selectedProject.projectLink && {

@@ -6,31 +6,9 @@ import "./hero.scss";
 
 const Hero = ({ title, subtitle, intro, buttons }) => {
   const navigate = useNavigate();
-  const [videoVisible, setVideoVisible] = useState(false);
-  const videoRef = useRef(null);
+
 const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
-  const handleButtonClick = (path) => {
-    if (path) navigate(path);
-  };
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const tryPlay = async () => {
-      try {
-        await video.play();
-        setVideoVisible(true); // show video only if it plays
-      } catch (err) {
-        console.log("Autoplay blocked — showing fallback image.");
-        setVideoVisible(false);
-      }
-    };
-
-    tryPlay();
-  }, []);
-  
 
  return (
 
