@@ -33,7 +33,7 @@ const ProjectsAll: React.FC = () => {
         <Layout
             heroTitle="My Projects"
             heroSubtitle="Helle Fruergaard | Web Developer"
-            buttons={[{ type: "link", text: "Learn more", path: "/about" }]}
+            buttons={[{ type: "button", text: "Learn more", path: "/about" }]}
             heroIntro=""
         >
             <div className="flex flex-wrap gap-4 ">

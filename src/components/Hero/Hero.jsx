@@ -35,7 +35,7 @@ const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
  return (
 
 <section
-  className="hero mb-10 relative bg-position-[10rem] flex min-h-[65vh] md:min-h-[75vh] w-full flex-col items-start justify-center py-[5rem] overflow-hidden md:py-0 px-0 md:px-16"
+  className="hero mb-10 relative bg-position-[10rem] flex min-h-[60vh] md:min-h-[75vh] w-full flex-col items-start justify-center py-[5rem] overflow-hidden md:py-0 px-0 md:px-16"
   style={{
     backgroundImage: `url("${
       isMobile ? Images.HeroImageMobile : Images.HeroImage400
@@ -54,21 +54,21 @@ const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
         </h1>
         <p className="max-w-[700px] pt-2">{intro}</p>
 
-    <div className="mt-6 flex flex-row gap-4">
-  {buttons?.map((button, index) => (
-    <a
-      key={index}
-      href={button.href}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <Button className="custom-button">
-        {button.text}
-      </Button>
-    </a>
-  ))}
-</div>
-
+        <div className="mt-6 flex flex-row gap-4">
+          {buttons?.map(
+            (button, index) =>
+              button.type === "link" &&
+              button.text && (
+                <Button
+                  key={index}
+                  onClick={() => handleButtonClick(button.path)}
+                  className="custom-button"
+                >
+                  {button.text}
+                </Button>
+              )
+          )}
+        </div>
       </div>
     </section>
   );

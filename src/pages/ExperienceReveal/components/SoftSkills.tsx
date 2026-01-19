@@ -10,7 +10,7 @@ export default function SoftSkillsMini() {
   ];
 
   return (
-    <section className="max-w-3xl p-5 mx-auto text-[rgba(var(--white),0.9)]">
+    <section className="max-w-3xl px-5 pt-5 pb-7 mx-auto text-[rgba(var(--white),0.9)]">
       <h2 className="text-xl font-semibold mb-4 text-[rgba(var(--white))] tracking-wide">
         My Strongest Soft Skills
       </h2>

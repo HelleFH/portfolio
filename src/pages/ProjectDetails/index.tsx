@@ -111,7 +111,7 @@ const selectedProject = projectList[currentIndex];
 
  
 
-      <div className="relative mb-10 z-10 mx-auto flex flex-col items-center w-full max-w-[1000px] p-6 bg-[rgba(255,255,255,0.9)] rounded-sm  md:-mt-[7rem] ">
+      <div className="relative mb-10 z-10 mx-auto flex flex-col items-center w-full max-w-[1000px] p-6 bg-[rgba(255,255,255,0.9)] rounded-sm  md:-m-[7rem] ">
         {/* Back Button */}
         <button
           onClick={() => {
@@ -124,7 +124,7 @@ const selectedProject = projectList[currentIndex];
         </button>
 
         {/* Main Image */}
-        <div className="flex justify-center mb-4 rounded-sm items-center w-full bg-[rgba(var(--white-color))] dark:bg-gray-800 p-4">
+        <div className="flex justify-center mb-4 rounded-sm items-center w-full bg-white dark:bg-gray-800 p-4">
           <picture>
             <source
               srcSet={normalizeImagePath(
