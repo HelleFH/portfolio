@@ -7,7 +7,7 @@ import HeroImage800 from './images/hero-image-400.png';
 import HeroImage1200 from './images/hero-image-400.png';
 import HeroImage1600 from './images/hero-image-400.png';        
 import CVImage400 from './images/CV-image-400.png';
-import HeroImageMobile from './images/hero-image-mobile.png';
+import HeroImageMobile from './images/hero-image-400.png';
 
 // Navbar logos
 // Import multiple resolutions for each screen

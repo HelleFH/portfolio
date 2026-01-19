@@ -98,20 +98,24 @@ const selectedProject = projectList[currentIndex];
   heroSubtitle={selectedProject.tagline || selectedProject.role}
   heroIntro={selectedProject.descriptionTagline}
   buttons={[
-    {
-      text: selectedProject.buttonText || "Live Site",
-      href: selectedProject.projectLink,
+    selectedProject.projectLink && {
+      type: "link",
+      text: selectedProject.buttonText || "View Project",
+      path: selectedProject.projectLink,
+      external: true, // <-- mark as external
     },
-    {
-      text: selectedProject.githubButtonText || "GitHub",
-      href: selectedProject.githubLink,
+    selectedProject.githubLink && {
+      type: "link",
+      text: selectedProject.githubButtonText || "View GitHub",
+      path: selectedProject.githubLink,
+      external: true, // <-- mark as external
     },
-  ].filter(b => b.href)}
+  ].filter(Boolean)}
 >
 
  
 
-      <div className="relative mb-10 z-10 mx-auto flex flex-col items-center w-full max-w-[1000px] p-6 bg-[rgba(255,255,255,0.9)] rounded-sm  md:-m-[7rem] ">
+      <div className="-mt-[8rem] relative z-10 mx-auto flex flex-col items-center w-full max-w-[1000px] p-6 bg-[rgba(255,255,255,0.9)] rounded-sm shadow-xs my-[7rem] transition-all hover:shadow-2xl">
         {/* Back Button */}
         <button
           onClick={() => {

@@ -54,21 +54,30 @@ const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
         </h1>
         <p className="max-w-[700px] pt-2">{intro}</p>
 
-        <div className="mt-6 flex flex-row gap-4">
-          {buttons?.map(
-            (button, index) =>
-              button.type === "link" &&
-              button.text && (
-                <Button
-                  key={index}
-                  onClick={() => handleButtonClick(button.path)}
-                  className="custom-button"
-                >
-                  {button.text}
-                </Button>
-              )
-          )}
-        </div>
+    <div className="mt-6 flex flex-row gap-4 flex-wrap">
+  {buttons?.map(
+    (button, index) =>
+      button.type === "link" &&
+      button.text && (
+        <Button
+          key={index}
+          onClick={() => {
+            if (button.external) {
+              // External link → open in new tab
+              window.open(button.path, "_blank");
+            } else {
+              // Internal link → navigate
+              navigate(button.path);
+            }
+          }}
+          className="custom-button px-6 py-2 rounded-md  transition"
+        >
+          {button.text}
+        </Button>
+      )
+  )}
+</div>
+
       </div>
     </section>
   );
