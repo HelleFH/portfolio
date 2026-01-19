@@ -64,7 +64,7 @@ const SkillCarousel: React.FC = () => {
   };
 
   return (
-    <div className="w-full bg-[rgba(var(--darkgreen),0.2)] text-black rounded-2xl shadow-lg max-w-full mx-auto px-2 py-8 md:p-8">
+    <div className="w-full bg-[rgba(var(--cyan),0.2)] text-black rounded-2xl shadow-lg max-w-full mx-auto px-2 py-8 md:p-8">
       {/* Title */}
       <h1 className="text-2xl font-bold text-center mb-4">A Few Things About Me...</h1>
       <span className="block w-16 h-1 bg-[rgba(var(--cyan))] rounded-full mx-auto mb-8"></span>

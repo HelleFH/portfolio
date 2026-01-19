@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
         </ Link> 
         <p>1434 Copenhagen, Denmark</p>
 
-<SocialLinks color="text-[rgba(var(--darkgreen))]" hoverColor="hover:text-[rgba(var(--cyan))]" />
+<SocialLinks color="text-[rgba(var(--darkgreen))]" hoverColor="hover:text-[rgba(var(--black-color))]" />
       </div>
 
       {/* Logo Section */}

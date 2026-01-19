@@ -15,7 +15,7 @@ const ProjectButtons: React.FC<ProjectButtonsProps> = ({
               fontColor="rgb(var(--soft))"
 
         bgColor="rgb(var(--darkgreen))"
-        className="text-white border border-[rgba(var(--darkgreen),0.6)] hover:bg-[rgba(var(--darkgreen),0.9)] transition-colors duration-200"
+        className="text-[rgba(var(--white-color))] border border-[rgba(var(--darkgreen),0.6)] hover:bg-[rgba(var(--darkgreen),0.9)] transition-colors duration-200"
         onClick={() => window.open(projectLink, "_blank")}
       >
         {buttonText}
@@ -24,7 +24,7 @@ const ProjectButtons: React.FC<ProjectButtonsProps> = ({
       <Button
         bgColor="transparent"
         fontColor="rgb(var(--black-color))"
-        className="border border-[rgba(var(--darkgreen),0.6)] text-[rgb(var(--black-color))] hover:bg-[rgba(var(--darkgreen),0.05)] transition-colors duration-200"
+        className="border border-[rgba(var(--darkgreen),0.6)] text-[rgb(var(--black-color))] hover:bg-[rgba(var(--black-color),0.1)] transition-colors duration-200"
         onClick={() => window.open(githubLink, "_blank")}
       >
         {githubButtonText}

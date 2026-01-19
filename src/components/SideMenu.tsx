@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Images from "../assets/images.tsx";
@@ -6,78 +6,107 @@ import SocialLinks from "./SocialLinks.tsx";
 import { Link } from "react-router-dom";
 import { SideMenuProps } from "../types/sideMenu.ts";
 
+const SideMenu: React.FC<SideMenuProps> = ({scrolled, items, open, setOpen }) => {
+  
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
-const SideMenu: React.FC<SideMenuProps> = ({ items, open, setOpen }) => {
   return (
-    <div className="text-[rgba(var(--black-color))]">
+    <div>
       {/* Burger Icon */}
-      <button
-        onClick={() => setOpen(!open)}
-        className="burger-icon flex h-[30px] items-center rounded-md p-1 text-[#324b4b] transition-transform duration-200 hover:scale-110 hover:text-[rgba(var(--darkgreen),0.9)]"
-      >
-        {open ? (
-          <X size={24} className="text-[rgba(var(--black-color))]" />
-        ) : (
-          <Menu size={24} className="text-white" />
-        )}
-      </button>
+   <button
+  onClick={() => setOpen(!open)}
+  className={`
+    burger-icon flex h-[32px] items-center rounded-full p-1
+    transition-all duration-300 hover:scale-110
+    ${scrolled
+      ? "bg-transparent text-[rgba(var(--white-color))] "
+      : "bg-[rgba(var(--white-color),0.6)] text-black"}
+  `}
+>
+  {open ? <X size={24} /> : <Menu size={24} />}
+</button>
 
-      {/* Animate menu */}
       <AnimatePresence>
         {open && (
           <>
             {/* Overlay */}
             <motion.div
+              key="overlay"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.5 }}
+              animate={{ opacity: 0.45 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.3 }}
               className="fixed inset-0 z-40 bg-black"
               onClick={() => setOpen(false)}
             />
 
-            {/* Menu panel */}
-            <motion.div
+            {/* Side Menu */}
+            <motion.aside
+              key="menu"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="fixed right-0 top-0 z-50 flex h-full w-full max-w-sm flex-col bg-[rgba(var(--white-color))] shadow-lg md:max-w-md"
+              transition={{ duration: 0.35, ease: "easeInOut" }}
+              className="
+                fixed right-0 top-0 z-50
+                h-screen w-[85vw] max-w-sm
+                bg-[rgba(var(--white-color))] shadow-2xl
+                overflow-y-auto
+              "
             >
               {/* Header */}
-              <div className="flex justify-between border-b bg-[rgba(var(--white-color))] p-4 text-black">
+              <div className="flex items-center gap-4 border-b p-4">
                 <img
                   src={Images.FooterLogo}
                   alt="Logo"
-                  className="h-auto max-w-[50px] object-contain"
+                  className="w-12"
                 />
-                <div className="flex flex-col text-center">
-                  <span className="text-2xl font-['inter'] tracking-[-0.1rem]">
+                <div className="flex flex-col">
+                  <span className="text-lg font-semibold">
                     Helle Fruergaard
                   </span>
-                  <h6>Web Developer</h6>
+                  <span className="text-sm text-gray-600">
+                    Web Developer
+                  </span>
                 </div>
-                <button onClick={() => setOpen(false)}>
-                  <X size={24} />
+                <button
+                  onClick={() => setOpen(false)}
+                  className="ml-auto"
+                >
+                  <X size={22} />
                 </button>
               </div>
 
-              {/* Menu Items */}
-              <div className="side-links flex flex-col gap-4 rounded-b-md bg-[rgba(var(--white-color))] p-4 text-center text-[#324b4b] shadow-xl">
-                {items.map((item, index) => (
-                  <Link
-                    key={index}
-                    to={item.href}
-                    className="block border-b p-4 text-lg font-medium transition-colors duration-200 hover:bg-gray-100"
-                    onClick={() => setOpen(false)}
-                  >
-                    {item.label}
-                  </ Link> 
-                ))}
+              {/* Content */}
+              <div className="flex min-h-[calc(100vh-80px)] flex-col justify-between p-6">
+                {/* Links */}
+                <nav>
+                  <ul className="flex flex-col gap-2">
+                    {items.map((item, index) => (
+                      <li key={index}>
+                        <Link
+                          to={item.href}
+                          className="block rounded-md px-4 py-3 text-lg font-medium transition-colors hover:bg-gray-100"
+                          onClick={() => setOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
 
-                <SocialLinks />
+                {/* Socials */}
+                <div className="pt-8">
+                  <SocialLinks />
+                </div>
               </div>
-            </motion.div>
+            </motion.aside>
           </>
         )}
       </AnimatePresence>

@@ -14,6 +14,7 @@ import ShowLoginButton from "../../components/Links/ShowLoginButton.tsx";
 import { LocationState } from "../../types/locationState.ts";
 import { Project } from "../../types/project.ts";
 import { ResponsiveImageSet } from "../../types/responsiveImageSet.ts";
+import Layout from "../../components/Layout.tsx";
 
 const normalizeImagePath = (path: string): string => {
   if (!path) return "";
@@ -92,16 +93,25 @@ const selectedProject = projectList[currentIndex];
     return <p className="text-center mt-20 text-gray-600">Loading...</p>;
 
   return (
-    <div className="relative min-h-screen overflow-hidden" {...handlers}>
-      {/* Background */}
-      <div
-        className="fixed inset-0 z-[-2] bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
-      <Navbar forceScrolled={true} />
-      <div className="fixed inset-0 z-[-1] bg-gradient-to-b from-[rgba(var(--dark-color),0.9)] via-[rgba(var(--dark-color),0.9)] to-[rgba(var(--soft),0.6)]" />
+<Layout
+  heroTitle={selectedProject.name}
+  heroSubtitle={selectedProject.tagline || selectedProject.role}
+  heroIntro={selectedProject.descriptionTagline}
+  buttons={[
+    {
+      text: selectedProject.buttonText || "Live Site",
+      href: selectedProject.projectLink,
+    },
+    {
+      text: selectedProject.githubButtonText || "GitHub",
+      href: selectedProject.githubLink,
+    },
+  ].filter(b => b.href)}
+>
 
-      <div className="relative z-10 mx-auto flex flex-col items-center w-full max-w-[1000px] p-6 bg-[rgba(255,255,255,0.9)] rounded-sm shadow-xs my-[7rem] transition-all hover:shadow-2xl">
+ 
+
+      <div className="relative mb-10 z-10 mx-auto flex flex-col items-center w-full max-w-[1000px] p-6 bg-[rgba(255,255,255,0.9)] rounded-sm  md:-mt-[7rem] ">
         {/* Back Button */}
         <button
           onClick={() => {
@@ -114,7 +124,7 @@ const selectedProject = projectList[currentIndex];
         </button>
 
         {/* Main Image */}
-        <div className="flex justify-center mb-4 rounded-sm items-center w-full bg-white dark:bg-gray-800 p-4">
+        <div className="flex justify-center mb-4 rounded-sm items-center w-full bg-[rgba(var(--white-color))] dark:bg-gray-800 p-4">
           <picture>
             <source
               srcSet={normalizeImagePath(
@@ -171,7 +181,7 @@ const selectedProject = projectList[currentIndex];
           }}
         />
       </div>
-    </div>
+    </Layout>
   );
 };
 

@@ -34,7 +34,7 @@ const SmallLayout: React.FC<SmallLayoutProps> = ({ children, showFooter = true }
       {/* Fixed Hero Background */}
       <div
         className="fixed inset-0 z-[-2] bg-contain bg-center"
-        style={{ backgroundImage: `url(${heroBg})` }}
+        style={{ backgroundImage: `url(${Images.HeroImage400})` }}
       />
 
       {/* Gradient overlay */}

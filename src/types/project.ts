@@ -17,6 +17,8 @@ export interface Project {
   slug?: string;
   githubButtonText: string;
   descriptionHeader?: string;
+    descriptionTagline?: string;
+
   description?: string;
   username?: string;
   password?: string;

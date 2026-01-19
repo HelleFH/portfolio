@@ -22,7 +22,7 @@ const SkillsList: React.FC = () => {
         {items.map((skill) => (
           <li
             key={skill}
-            className="flex items-center gap-2 rounded-lg bg-[rgba(var(--lightgreen),0.3)] font-['cup-cakes'] text-md text-black px-3 py-1 shadow-sm transition hover:bg-indigo-100"
+            className="flex items-center gap-2 rounded-lg bg-[rgba(var(--darkgreen),0.1)] font-['cup-cakes'] text-md text-black px-3 py-1 shadow-sm transition hover:bg-indigo-100"
           >
             {skillIcons[skill] || null}
             <span>{skill}</span>

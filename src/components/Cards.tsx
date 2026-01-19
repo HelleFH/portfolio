@@ -35,7 +35,7 @@ const Card: React.FC<CardProps> = ({ project, onClick }) => {
     return (
       <li
         key={i}
-            className="flex items-center gap-2 rounded-lg bg-[rgba(var(--lightgreen),0.3)] font-['cup-cakes'] text-sm text-black px-3 py-1 shadow-sm transition hover:bg-indigo-100"
+            className="flex items-center gap-2 rounded-lg bg-[rgba(var(--darkgreen),0.1)] font-['cup-cakes'] text-sm text-black px-3 py-1 shadow-sm transition hover:bg-indigo-100"
       >
         <span className="text-lg">{icon}</span>
         <span>{trimmedTech}</span>

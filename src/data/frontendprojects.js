@@ -6,12 +6,13 @@ export const projects = [
     name: "The Adaptation Assembly",
      technologies: ["React"],
     images: [Images.AdaptationAssemblyScreen],
-    projectLink: "https://theadaptationassembly.com",
+    projectLink: "https://theadaptationassembly.com/",
     githubLink: "https://github.com/HelleFH/sentispec",
     buttonText: "View Project",
     githubButtonText: "GitHub",
     descriptionHeader: "A Film List Website",
-    description: "This is a React-based static website.",
+    description:"A curated film-list platform focused on adaptations across media, designed with a clean and accessible React-based frontend. The site allows users to explore film adaptations in an organized and visually engaging layout, enhanced with YouTube integration for trailers and related video content. Built as a static site with modern styling, it emphasizes performance, clarity, and ease of navigation while showcasing thoughtful UI decisions and component structure.",
+    descriptionTagline: "This is a React-based static website.",
     technologiesMore: ["React", "YouTube integration", "Tailwind"],
     frontpage: true 
   },
@@ -25,7 +26,8 @@ export const projects = [
     buttonText: "View Project",
     githubButtonText: "GitHub",
     descriptionHeader: "A Company Website",
-    description: "This is a React-based static website for a company.",
+    description:"A professional company website built with React, designed to present corporate information clearly and efficiently. The project focuses on clean branding, structured content sections, and seamless third-party integrations, including Google services and external data sources. It serves as a modern, responsive digital presence optimized for clarity, performance, and maintainability.",
+    descriptionTagline: "This is a React-based static website for a company.",
     technologiesMore: ["React", "Google integration", "Bassin integration"],
     frontpage: true 
   },
@@ -39,7 +41,8 @@ export const projects = [
     buttonText: "View Project",
     githubButtonText: "GitHub",
     descriptionHeader: "A Company Website",
-    description: "This is a React-based static website for a company.",
+    description:"A modern SaaS-style company website built with React and TypeScript, emphasizing scalability and maintainable architecture. The platform integrates multiple third-party services such as HubSpot, YouTube, and Outlook to support marketing, communication, and content workflows. Styled with Tailwind CSS, the site balances technical robustness with a polished, professional user experience.",
+    descriptionTagline: "This is a React-based static website for a company.",
     technologiesMore: ["React", "HubSpot APIs", "YouTube integration", "Outlook integration"],
     frontpage: true 
 
@@ -53,8 +56,9 @@ export const projects = [
     githubLink: "https://github.com/HelleFH/react-clothes-store",
     buttonText: "View Project",
     githubButtonText: "GitHub",
+    description:"A full-stack e-commerce application demonstrating end-to-end functionality, from user authentication to real-time product management. Built with React and Firebase, the app supports user accounts, profile editing, and live inventory updates via Firestore. A dedicated admin panel enables full CRUD operations for products, showcasing secure access control, form validation, and global state management in a production-style setup.",
     descriptionHeader: "Full-Stack E-Commerce App with Firebase Backend and Admin Panel",
-    description: "A full-stack e-commerce application built with React and Firebase. It includes user authentication, real-time Firestore database integration, and a secure admin panel for managing products. Users can register, log in, edit their profiles, and browse the product catalog. Admins have full CRUD access for store inventory.",
+    descriptionTagline: "A full-stack e-commerce application built with React and Firebase. It includes user authentication, real-time Firestore database integration, and a secure admin panel for managing products. Users can register, log in, edit their profiles, and browse the product catalog. Admins have full CRUD access for store inventory.",
     technologiesMore: ["Vite", "Formik", "Moment", "Yup", "Redux", "Enzyme"],
     username: "duser7707@gmail.com",
     password: "Demopassword123",
@@ -79,8 +83,9 @@ export const projects = [
     githubLink: "https://github.com/HelleFH/CalendarAppNative",
     buttonText: "View Project",
     githubButtonText: "GitHub",
+    description:"A cross-platform mobile application designed to help users manage plant care on the go. Built with React Native and Expo, the app allows users to track plants, upload photos, set recurring care reminders, and log progress over time. The backend uses Node.js, Express, and MongoDB, with Cloudinary handling image uploads, resulting in a feature-rich and mobile-first experience.",
     descriptionHeader: "Mobile Plant Calendar & Reminder App with React Native",
-    description: "Mobile version of the Plant Calendar app. Designed for users to manage plant care directly from their phones — including reminders, photo logging, and progress tracking.",
+    descriptionTagline: "Mobile version of the Plant Calendar app. Designed for users to manage plant care directly from their phones — including reminders, photo logging, and progress tracking.",
     username: "duser7707@gmail.com",
     password: "Demopassword123",
     technologiesMore: [
@@ -115,8 +120,9 @@ export const projects = [
     githubLink: "https://github.com/HelleFH/product-page",
     buttonText: "View Project",
     githubButtonText: "GitHub",
+    description:"A visually driven React portfolio that presents products in a dynamic grid layout with modal overlays. The project emphasizes smooth interactions, responsive design, and clean component composition. Using Bootstrap, Styled Components, and swipe interactions, it demonstrates how a product-focused layout can feel modern, interactive, and polished without unnecessary complexity.",
     descriptionHeader: "React Product Grid with Modal",
-    description: "A dynamic React portfolio page showcasing a visually appealing image grid with a sleek overlay.",
+    descriptionTagline: "A dynamic React portfolio page showcasing a visually appealing image grid with a sleek overlay.",
     technologiesMore: ["React", "Bootstrap", "Styled Components", "React Swipable"]
   },
   {
@@ -128,8 +134,9 @@ export const projects = [
     githubLink: "https://github.com/HelleFH/react-listings",
     buttonText: "View Project",
     githubButtonText: "GitHub",
+    description:"A full-stack listings platform built with the MERN stack, allowing users to create and manage holiday home listings. The app supports image uploads, detailed descriptions, and location data, all persisted in MongoDB. With a responsive React frontend and a RESTful Express backend, the project highlights scalable architecture, media handling via Cloudinary, and real-world CRUD functionality.",
     descriptionHeader: "Holiday Home Listings App using the MERN Stack",
-    description: "A full-stack listings application built with the MERN stack. Users can create, update, and delete listings including image uploads, titles, descriptions, and location information. The app uses React for the frontend with Bootstrap styling, and a Node.js/Express backend connected to a MongoDB database.",
+    descriptionTagline: "A full-stack listings application built with the MERN stack. Users can create, update, and delete listings including image uploads, titles, descriptions, and location information. The app uses React for the frontend with Bootstrap styling, and a Node.js/Express backend connected to a MongoDB database.",
     technologiesMore: [
       "Vite",
       "Bootstrap",
@@ -159,8 +166,9 @@ export const projects = [
     githubLink: "https://github.com/HelleFH/Plant-calendar",
     buttonText: "View Project",
     githubButtonText: "GitHub",
+    description:"A work-in-progress plant management system that enables users to track plant collections and care schedules through a web interface. Built with the MERN stack, the app includes authentication, image uploads, care reminders, and plant search via an external API. The focus is on long-term tracking, timeline views, and structured plant data management.",
     descriptionHeader: "Plant Calendar and Reminder System with MERN Stack",
-    description: "Work in progress! This app helps users manage plant collections by adding, tracking, and updating plant care tasks. Users can also search for plants via external API.",
+    descriptionTagline: "Work in progress! This app helps users manage plant collections by adding, tracking, and updating plant care tasks. Users can also search for plants via external API.",
     username: "Hellefruergaard@plantcalendar.com",
     password: "fruergaard",
     technologiesMore: [
@@ -195,8 +203,9 @@ export const projects = [
     githubLink: "https://github.com/HelleFH/cloudinary-upload-delete",
     buttonText: "View Project",
     githubButtonText: "GitHub",
+    description:"A lightweight full-stack image management application built with Vue and Express. Users can upload images to Cloudinary and securely delete them using unique delete tokens. The project demonstrates clean API design, safe media handling, and a simple but effective UI for managing hosted images.",
     descriptionHeader: "Image Management App using Vue.js and Cloudinary",
-    description: "A full-stack image management application built with Vue and Express. Users can upload and delete images via Cloudinary API integration. Secure deletion is handled through unique delete tokens, ensuring safe media operations.",
+    descriptionTagline: "A full-stack image management application built with Vue and Express. Users can upload and delete images via Cloudinary API integration. Secure deletion is handled through unique delete tokens, ensuring safe media operations.",
     technologiesMore: [
       "MongoDB",
       "Express",
@@ -225,8 +234,9 @@ export const projects = [
     githubLink: "https://github.com/hellefh/shopping-cart",
     buttonText: "View Project",
     githubButtonText: "GitHub",
+    description:"A full-stack shopping cart application built with the MEVN stack, featuring secure user authentication and persistent cart storage. Users can browse products, manage cart contents, and view detailed product pages, while authentication is handled with JWTs and encrypted passwords. The project highlights state management, form validation, and real-world e-commerce flows.",
     descriptionHeader: "MEVN Stack Shopping Cart with Cart Storage and User Authentication",
-    description: "A full-stack shopping cart app built with the MEVN stack. Users can sign up, log in securely, and manage a persistent shopping cart. Includes real-time form validation, cart updates, and detailed product pages.",
+    descriptionTagline: "A full-stack shopping cart app built with the MEVN stack. Users can sign up, log in securely, and manage a persistent shopping cart. Includes real-time form validation, cart updates, and detailed product pages.",
     username: "hellefruergaard@mevn-shop.com",
     password : "password123",
     technologiesMore: [
@@ -260,8 +270,9 @@ export const projects = [
     githubLink: "https://github.com/HelleFH/Helle-avis-site/tree/main",
     buttonText: "View Project",
     githubButtonText: "GitHub",
+    description:"A lightweight news website focused on Copenhagen, built entirely with vanilla JavaScript, HTML, and CSS. The project demonstrates core frontend fundamentals such as DOM manipulation, data rendering, and responsive layouts without relying on frameworks. It emphasizes simplicity, clarity, and hands-on JavaScript logic.",
     descriptionHeader: "Made with Vanilla JS",
-    description: "A news website for Copenhagen, built with vanilla JavaScript.",
+    descriptionTagline: "A news website for Copenhagen, built with vanilla JavaScript.",
     technologiesMore: ["JavaScript"]
   },
   {
@@ -273,8 +284,9 @@ export const projects = [
     githubLink: "https://github.com/HelleFH/Netflix-clone-main",
     buttonText: "View Project",
     githubButtonText: "GitHub",
+    description:"A frontend clone of the Netflix interface that recreates the look and feel of a modern streaming platform. Built with JavaScript, the project focuses on layout structure, UI interactions, and content presentation. It serves as a study in recreating familiar user experiences through clean styling and dynamic rendering.",
     descriptionHeader: "Netflix-like streaming platform clone",
-    description: "Netflix Clone is a web application that replicates the user interface and functionalities of Netflix.",
+    descriptionTagline: "Netflix Clone is a web application that replicates the user interface and functionalities of Netflix.",
     technologiesMore: ["JavaScript"]
   },
   {
@@ -286,8 +298,9 @@ export const projects = [
     githubLink: "https://github.com/hellefh/Lightbox-gallery",
     buttonText: "View Project",
     githubButtonText: "GitHub",
+    description:"An interactive image gallery built with jQuery, featuring a lightbox-style viewing experience. The project showcases event handling, animations, and dynamic image rendering while displaying AI-generated dinosaur imagery. It highlights classic jQuery techniques for interactive UI behavior.",
     descriptionHeader: "Interactive image gallery with JQuery",
-    description: "A simple site that showcases an interactive image gallery using JQuery showing AI images of dinosaurs.",
+    descriptionTagline: "A simple site that showcases an interactive image gallery using JQuery showing AI images of dinosaurs.",
     technologiesMore: ["JQuery"]
   },
   {
@@ -299,8 +312,9 @@ export const projects = [
     githubLink: "https://github.com/hellefh/legekrogen",
     buttonText: "View Project",
     githubButtonText: "GitHub",
+    description:"A simple webshop front page built using only HTML and CSS. The project demonstrates foundational layout techniques, product grid design, and basic visual hierarchy. It focuses on clean structure and styling fundamentals without relying on JavaScript or frameworks.",
     descriptionHeader: "Simple front page for Web Shop using HTML and CSS",
-    description: "CSS and HTML for a webshop. It showcases a basic online shop layout with product listings.",
+    descriptionTagline: "CSS and HTML for a webshop. It showcases a basic online shop layout with product listings.",
     technologiesMore: ["HTML", "CSS"]
   },
   {
@@ -312,8 +326,9 @@ export const projects = [
     githubLink: "https://github.com/HelleFH/product-page",
     buttonText: "View Project",
     githubButtonText: "GitHub",
+    description:"A React-based product showcase emphasizing visual presentation and interaction. The grid-based layout combined with modal overlays allows users to explore product imagery smoothly. The project demonstrates reusable components, responsive design, and UI polish suitable for portfolio or product-focused sites.",
     descriptionHeader: "React Product Grid with Modal",
-    description: "A dynamic React portfolio page showcasing a visually appealing image grid with a sleek overlay.",
+    descriptionTagline: "A dynamic React portfolio page showcasing a visually appealing image grid with a sleek overlay.",
     technologiesMore: ["React", "Bootstrap", "Styled Components", "React Swipable"]
   },
   {
@@ -326,7 +341,7 @@ export const projects = [
     buttonText: "View Project",
     githubButtonText: "GitHub",
     descriptionHeader: "MEVN Stack Shopping Cart with Cart Storage and User Authentication",
-    description: "A full-stack shopping cart app built with the MEVN stack. Users can sign up, log in securely, and manage a persistent shopping cart. Includes real-time form validation, cart updates, and detailed product pages.",
+    descriptionTagline: "A full-stack shopping cart app built with the MEVN stack. Users can sign up, log in securely, and manage a persistent shopping cart. Includes real-time form validation, cart updates, and detailed product pages.",
     username: "hellefruergaard@mevn-shop.com",
     password: "password123",
     technologiesMore: [
@@ -361,8 +376,9 @@ export const projects = [
     githubLink: "https://github.com/HelleFH/monty-hall-simulator",
     buttonText: "View Project",
     githubButtonText: "GitHub",
+    description:"An educational and interactive application that explores the Monty Hall probability problem through both simulation and gameplay. A Flask backend runs large-scale statistical simulations, while a JavaScript game built with p5.js allows users to experience the problem interactively. The project blends math, visualization, and user interaction to make abstract probability concepts tangible.",
     descriptionHeader: "Interactive Monty Hall Simulation and Game",
-    description: "A dual-experience app where users can simulate the Monty Hall problem statistically using Python and experience it interactively through a JavaScript-based game. Great for exploring probability theory and decision-making under uncertainty.",
+    descriptionTagline: "A dual-experience app where users can simulate the Monty Hall problem statistically using Python and experience it interactively through a JavaScript-based game. Great for exploring probability theory and decision-making under uncertainty.",
     technologiesMore: [
       "Flask",
       "Python",

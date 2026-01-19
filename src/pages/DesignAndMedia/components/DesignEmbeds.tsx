@@ -59,7 +59,7 @@ const embeds: Embed[] = [
 
 const DesignEmbeds: React.FC = () => {
   return (
-    <div className="bg-white mt-8 p-6 rounded-lg max-w-[1200px] mx-auto">
+    <div className="bg-[rgba(var(--white-color))] mt-8 p-6 rounded-lg max-w-[1200px] mx-auto">
       {/* Intro Section */}
 
 

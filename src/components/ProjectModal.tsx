@@ -60,27 +60,27 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
     >
       <div
         {...swipeHandlers}
-        className={`relative bg-white dark:bg-gray-900 rounded-2xl shadow-xl w-[95vw] max-w-4xl overflow-hidden flex flex-col md:flex-row transition-all duration-300 transform ${animateOut ? "scale-95 opacity-0" : "scale-100 opacity-100"
+        className={`relative bg-[rgba(var(--white-color))] dark:bg-gray-900 rounded-2xl shadow-xl w-[95vw] max-w-4xl overflow-hidden flex flex-col md:flex-row transition-all duration-300 transform ${animateOut ? "scale-95 opacity-0" : "scale-100 opacity-100"
           }`}
       >
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 z-20 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white p-2 rounded-full dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          className="absolute top-4 right-4 z-20 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-[rgba(var(--white-color))] p-2 rounded-full dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
         >
           <FontAwesomeIcon icon={faTimes} size="lg" />
         </button>
 
         {/* Chevron Left */}
         <div
-          className="absolute flex items-center justify-center left-3 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white p-2 rounded-[100%] w-[40px] h-[40px] cursor-pointer transition-transform duration-150 hover:scale-105"
+          className="absolute flex items-center justify-center left-3 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-[rgba(var(--white-color))] p-2 rounded-[100%] w-[40px] h-[40px] cursor-pointer transition-transform duration-150 hover:scale-105"
           onClick={handlePrev}
         >
           <FontAwesomeIcon icon={faChevronLeft} />
         </div>
 
         {/* Image */}
-        <div className="flex justify-center items-center w-full md:w-1/2 bg-white dark:bg-gray-800 p-4">
+        <div className="flex justify-center items-center w-full md:w-1/2 bg-[rgba(var(--white-color))] dark:bg-gray-800 p-4">
           <picture>
             <source srcSet={project.images[0][1600]} media="(min-width: 1200px)" />
             <source srcSet={project.images[0][1200]} media="(min-width: 800px)" />
@@ -96,7 +96,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
 
         {/* Chevron Right */}
         <div
-          className="absolute flex items-center justify-center w-[40px] h-[40px] right-3 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full cursor-pointer transition-transform duration-150 hover:scale-105"
+          className="absolute flex items-center justify-center w-[40px] h-[40px] right-3 top-1/2 -translate-y-1/2 bg-black/20 hover:bg-black/40 text-[rgba(var(--white-color))] p-2 rounded-full cursor-pointer transition-transform duration-150 hover:scale-105"
           onClick={handleNext}
         >
           <FontAwesomeIcon icon={faChevronRight} />
@@ -104,7 +104,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
 
         {/* Content */}
         <div className="flex flex-col items-start gap-4 w-full md:w-1/2 p-6 space-y-4">
-          <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white">
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-[rgba(var(--white-color))] ">
             {project.name}
           </h2>
           <p className="hidden md:block text-gray-600 dark:text-gray-300 max-w-md">
@@ -118,7 +118,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
               return (
                 <li
                   key={i}
-                  className="flex items-center gap-2 rounded-lg bg-[rgba(var(--lightgreen),0.3)] font-['cup-cakes'] text-sm text-black px-3 py-1 shadow-sm transition hover:bg-indigo-100"
+                  className="flex items-center gap-2 rounded-lg bg-[rgba(var(--darkgreen),0.1)] font-['cup-cakes'] text-sm text-black px-3 py-1 shadow-sm transition hover:bg-indigo-100"
                 >
                   <span className="text-lg">{icon}</span>
                   <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
@@ -150,7 +150,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
               to={`/projects/${project.name}`}
               state={{  from: location.pathname }}
             >
-              <ReadMoreLink fontColor="rgba(var(--cyan))">Read More</ReadMoreLink>
+              <ReadMoreLink fontColor="rgba(var(--dark-color))">Read More</ReadMoreLink>
             </Link>
           </div>
         </div>

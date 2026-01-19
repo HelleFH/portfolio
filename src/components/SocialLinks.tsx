@@ -6,7 +6,7 @@ import { SocialLinksProps } from "../types/socialLinks";
 const SocialLinks: React.FC<SocialLinksProps> = ({
   onClick,
   color = "text-gray-600",
-  hoverColor = "hover:text-green-700",
+  hoverColor = "hover:text-[(var(--darkgreen))]",
   size = 20,
 }) => {
   const linkBase = `m-0 w-5 transition-colors duration-200 ${color} ${hoverColor}`;

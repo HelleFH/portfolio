@@ -29,8 +29,7 @@
 }
 
 .custom-button:hover {
-  background-color: rgba(var(--lightgreen), 0.4) !important;
-  color: black !important;
+  background-color: rgba(var(--darkgreen), 0.5) !important;
   border-color: rgb(0, 0, 0, 0.1) !important;
   transition: background-color 0.5s, ease 0.5s;
 }

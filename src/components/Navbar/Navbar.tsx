@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Facebook, Github, Instagram, Linkedin } from "lucide-react";
-
 import Images from "../../assets/images.tsx";
 import SideMenu from "../SideMenu.tsx";
 import SocialLinks from "../SocialLinks.tsx";
 import { NavbarProps } from "../../types/navBar.ts";
-
-
 
 const normalizeImagePath = (path: string): string => {
   if (!path) return "";
@@ -16,95 +12,109 @@ const normalizeImagePath = (path: string): string => {
 };
 
 const Navbar: React.FC<NavbarProps> = ({ forceScrolled = false }) => {
-  const [scrolled, setScrolled] = useState<boolean>(false);
-  const [isHidden, setIsHidden] = useState<boolean>(false);
-  const [lastScrollY, setLastScrollY] = useState<number>(0);
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const scrollTimeout = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+const linkColor = scrolled ? "text-[rgba(var(--white-color))] " : "text-black";
 
-useEffect(() => {
-  let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
-  let lastY = window.scrollY;
+  useEffect(() => {
+    let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
+    let lastY = window.scrollY;
 
-  const handleScroll = () => {
-    const currentY = window.scrollY;
-    const isScrollingDown = currentY > lastY;
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      const isScrollingDown = currentY > lastY;
 
-    // Mark as scrolled (adds background, etc.)
-    setScrolled(forceScrolled || currentY > 50);
+      setScrolled(forceScrolled || currentY > 50);
 
-    // Don't hide if we're near the top
-    if (currentY < 100) {
-      setIsHidden(false);
-    } else if (isScrollingDown && !menuOpen) {
-      // User is scrolling down — reset timer and hide after delay
+      if (currentY < 100) {
+        setIsHidden(false);
+      } else if (isScrollingDown && !menuOpen) {
+        if (scrollTimeout) clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          setIsHidden(true);
+        }, 1500);
+      } else {
+        if (scrollTimeout) clearTimeout(scrollTimeout);
+        setIsHidden(false);
+      }
+
+      lastY = currentY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    if (forceScrolled) setScrolled(true);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
       if (scrollTimeout) clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        setIsHidden(true);
-      }, 1500);
-    } else {
-      // Scrolling up or menu open — show navbar
-      if (scrollTimeout) clearTimeout(scrollTimeout);
-      setIsHidden(false);
-    }
+    };
+  }, [menuOpen, forceScrolled]);
 
-    lastY = currentY;
-  };
-
-  window.addEventListener("scroll", handleScroll);
-
-  if (forceScrolled) setScrolled(true);
-
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-    if (scrollTimeout) clearTimeout(scrollTimeout);
-  };
-}, [menuOpen, forceScrolled]);
-
+  const textColor = scrolled ? "text-[rgba(var(--white-color))] " : "text-black";
+  const bgColor = scrolled
+    ? "bg-black backdrop-blur-sm"
+    : "md:bg-transparent bg-white";
 
   return (
     <nav
-      className={`fixed left-0 right-0 top-0 z-[9995] flex h-[7vh] min-h-[60px] items-center justify-between px-6
-        font-medium tracking-tight transition-all duration-500 ease-in-out
-        ${scrolled ? "bg-[rgba(54,75,68,0.95)] backdrop-blur-sm" : "bg-transparent"}
+      className={`fixed top-0 left-0 right-0 z-[9995]
+        flex items-center md:justify-between justify-start
+        h-[7vh] min-h-[60px] md:px-6
+        transition-all duration-500 ease-in-out
+        ${bgColor}
         ${isHidden && !menuOpen ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"}
       `}
     >
-      <div className="flex w-full items-center justify-between text-[rgba(var(--white-color))]">
-        {/* ✅ Logo */}
+      <div className={`w-full md:w-fit flex items-center gap-6 ${textColor}`}>
+        {/* Logo */}
         <Link
           to="/"
-          className="flex items-center justify-start gap-2 text-[rgba(var(--white-color))] no-underline transition-transform duration-300"
+          className={`flex md:items-center justify-start px-3 gap-2 font-semibold text-lg ${textColor}`}
           onClick={() => setMenuOpen(false)}
         >
           <img
             src={normalizeImagePath(Images.FooterLogo)}
             alt="Logo"
-            className="w-9 opacity-[0.7]"
+            className={`w-9 transition-opacity duration-300 ${
+              scrolled ? "opacity-100" : "opacity-70"
+            }`}
           />
-          <span className="text-lg font-semibold navbar-link">
-            Helle Fruergaard
-          </span>
-        </Link>
+<span   className={`navbar-link text-lg transition-colors duration-300
+    ${linkColor}
+    hover:text-[rgba(var(--darkgreen))]`}>
+  Helle Fruergaard
+</span>        </Link>
 
-        {/* ✅ Desktop Links */}
-        <ul className="hidden md:flex items-center gap-4 text-[rgba(var(--white-color))] transition-all duration-300">
-          <li>
-            <Link
-              to="/about"
-              className="mt-[3px] navbar-link rounded-md px-1 text-lg transition-colors duration-300 hover:bg-[rgba(var(--cyan))]"
-              onClick={() => setMenuOpen(false)}
-            >
-              About
-            </Link>
-          </li>
-          <div className="pr-3">
-            <SocialLinks color="text-white" hoverColor="hover:text-[rgba(var(--cyan))]" />
+        {/* Desktop Links */}
+<ul className="hidden md:flex items-center gap-4">
+ <Link
+  to="/about"
+  className={`navbar-link text-lg transition-colors duration-300
+    ${linkColor}
+    hover:text-[rgba(var(--darkgreen))]`}
+  onClick={() => setMenuOpen(false)}
+>
+  About
+</Link>
+
+
+          <div className="pl-2">
+            <SocialLinks
+              color={scrolled ? "text-[rgba(var(--white-color))] " : "text-black"}
+              hoverColor="hover:text-[rgba(var(--darkgreen))]"
+            />
           </div>
         </ul>
 
-        {/* ✅ Mobile Side Menu */}
-        <SideMenu
+        {/* Mobile Menu */}
+        <div className="ml-auto">
+
+    
+        </div>
+      </div>
+          <SideMenu
           items={[
             { label: "Home", href: "/" },
             { label: "About", href: "/about" },
@@ -113,8 +123,9 @@ useEffect(() => {
             { label: "Design & Media", href: "/media" },
           ]}
           open={menuOpen}
-          setOpen={setMenuOpen} scrolled={false}        />
-      </div>
+          setOpen={setMenuOpen}
+          scrolled={scrolled}
+        />
     </nav>
   );
 };
