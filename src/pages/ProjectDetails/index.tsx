@@ -33,7 +33,6 @@ const ProjectDetail: React.FC = () => {
   // ✅ Single unified project list
   const projectList: Project[] = projects;
     const decodedName = decodeURIComponent(name || "").toLowerCase();
-const [heroBg, setHeroBg] = useState(Images.hero[800]);
 
 
 const indexFromName = projectList.findIndex(
