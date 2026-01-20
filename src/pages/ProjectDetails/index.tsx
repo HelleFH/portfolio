@@ -35,19 +35,6 @@ const ProjectDetail: React.FC = () => {
     const decodedName = decodeURIComponent(name || "").toLowerCase();
 const [heroBg, setHeroBg] = useState(Images.hero[800]);
 
-useEffect(() => {
-  const updateHero = () => {
-    const w = window.innerWidth;
-    if (w < 600) setHeroBg(Images.hero[400]);
-    else if (w < 1000) setHeroBg(Images.hero[800]);
-    else if (w < 1600) setHeroBg(Images.hero[1200]);
-    else setHeroBg(Images.hero[1600]);
-  };
-  updateHero();
-  window.addEventListener("resize", updateHero);
-  return () => window.removeEventListener("resize", updateHero);
-}, []);
-
 
 const indexFromName = projectList.findIndex(
   (proj) => proj.name.toLowerCase() === decodedName
@@ -97,7 +84,6 @@ const selectedProject = projectList[currentIndex];
   heroTitle={selectedProject.name}
   heroSubtitle={selectedProject.tagline}
   heroIntro={selectedProject.descriptionTagline}
-  heroBg={heroBg}
   buttons={[
     selectedProject.projectLink && {
       type: "link",

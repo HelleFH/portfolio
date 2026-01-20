@@ -11,7 +11,7 @@ const Hero = ({ title, subtitle, intro, buttons }) => {
     <section
       className="hero mb-10 relative flex min-h-[65vh] md:min-h-[75vh] w-full flex-col items-start justify-center py-[5rem] overflow-hidden md:py-0 px-4 md:px-16"
       style={{
-        backgroundImage: `url(${Images.HeroImage400})`, // ✅ ONE image
+        backgroundImage: `url(${Images.HeroImage400})`, 
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
