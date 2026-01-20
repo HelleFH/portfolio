@@ -87,10 +87,6 @@ a {
 
 
 
-.navbar-link {
-
-  color: white;
-}
 
 h1,
 h2,
@@ -142,6 +138,7 @@ ul {
 a {
   cursor: pointer;
   font-family: 'Cup-cakes';
+  letter-spacing: -0.1rem;
   font-size: 16px;
   @include flex-row;
   gap: 0.5rem;

@@ -10,10 +10,10 @@ const ProjectContent: React.FC<ProjectContentProps> = ({ project }) => {
     <div className="flex flex-col items-center justify-center gap-8 rounded-sm p-3 md:p-5 text-center w-full mt-6">
       {/* Project Description */}
       <div className="bg-[rgba(var(--white-color))] rounded-sm shadow-sm">
-        <h4 className="text-2xl font-semibold pb-4">
+        <h4 className="text-2xl font-semibold p-4">
           {project.descriptionHeader}
         </h4>
-        <p className="text-lg text-justify p-2 leading-relaxed pb-10">{project.description}</p>
+        <p className="text-lg text-justify px-6 py-3 leading-relaxed pb-10">{project.description}</p>
       </div>
 
       {/* Project Details */}

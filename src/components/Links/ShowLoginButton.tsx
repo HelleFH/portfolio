@@ -6,7 +6,7 @@ import { ShowLoginButtonProps } from "../../types/showLoginButton";
 
 const ShowLoginButton: React.FC<ShowLoginButtonProps> = ({
   label = "Show Login Details",
-  fontColor = "rgba(var(--cyan))",
+  fontColor = "rgba(var(--darkgreen))",
   className,
   style,
   showIcon = true,

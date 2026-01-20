@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 .App {
   text-align: center;
 }
@@ -35,9 +36,14 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
-.text-link {@apply inline relative top-[1px] ml-2 text-cyan-600 hover:underline whitespace-break-spaces};
 
+.text-link {
+  @apply inline relative top-[1px] ml-2 text-cyan-600 hover:underline whitespace-break-spaces
+}
+
+;
