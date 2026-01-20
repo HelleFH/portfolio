@@ -95,8 +95,11 @@ h4,
 h5,
 h6 {
   font-family: 'PangramSans-Medium';
-  color: rgba(var(--dark-color))
-}
+color: color-mix(
+  in srgb,
+  rgba(var(--dark-color)) 50%,
+  black
+);}
 
 
 * {

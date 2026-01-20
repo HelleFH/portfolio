@@ -1,26 +1,21 @@
-import React, { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
+import React, { useEffect, useState } from "react";
 import Images from "../../../assets/images.tsx";
 import { SkillsLibrary } from "../../../data/SkillsLibrary.tsx";
 import Navbar from "../../../components/Navbar/Navbar.tsx";
 import SoftSkills from "./SoftSkills.tsx";
 import { Link } from "react-router-dom";
 import TextLink from "../../../components/Links/TextLink.tsx";
-import { ArrowRight, FolderOpen, Home, Info } from "lucide-react";
-
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+import { ArrowRight, Home } from "lucide-react";
 
 export interface Job {
   image:
-  | string
-  | {
-    400: string;
-    800: string;
-    1200: string;
-    1600: string;
-  };
+    | string
+    | {
+        400: string;
+        800: string;
+        1200: string;
+        1600: string;
+      };
   title: string;
   company: string;
   years: string;
@@ -33,31 +28,8 @@ interface ExperienceRevealProps {
 }
 
 export default function ExperienceReveal({ jobs }: ExperienceRevealProps) {
-  const smoothWrapperRef = useRef<HTMLDivElement>(null);
-  const smoothContentRef = useRef<HTMLDivElement>(null);
   const [heroBg, setHeroBg] = useState(Images.hero[800]);
 
-  // Initialize GSAP ScrollSmoother
-  useEffect(() => {
-    if (!smoothWrapperRef.current || !smoothContentRef.current) return;
-
-    const smoother = ScrollSmoother.create({
-      wrapper: smoothWrapperRef.current,
-      content: smoothContentRef.current,
-      smooth: 1,
-      effects: true,
-      normalizeScroll: true,
-    });
-
-    return () => {
-      smoother.kill();
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
-
-
-
-  // Responsive hero background
   useEffect(() => {
     const updateHero = () => {
       const w = window.innerWidth;
@@ -73,32 +45,10 @@ export default function ExperienceReveal({ jobs }: ExperienceRevealProps) {
   }, []);
 
   return (
-    <div className="relative min-h-screen">
-      <Navbar forceScrolled={true} />
+    <div className="min-h-screen bg-[rgba(var(--lightgreen),0.4)]">
+      <Navbar forceScrolled />
 
-      {/* Fixed Hero Background */}
-      <div
-        className="fixed inset-0 z-[-2] bg-cover bg-center"
-      />
-
-
-
-
-
-      {/* ScrollSmoother wrapper */}
-      <div
-        id="smooth-wrapper"
-        ref={smoothWrapperRef}
-        className="relative z-0 bg-[rgba(var(--lightgreen),0.6)]"
-      >
-        
-        <div
-          id="smooth-content"
-          ref={smoothContentRef}
-          className="text-black w-full"
-        >
-
-          {/* HEADER */}
+      {/* Header */}
           <header className="max-w-[1000px] mx-auto flex-col md:flex-row flex gap-3 p-0 md:pt-[6rem] md:pb-[4rem]">
             <div className=" max-w-[96%] md:max-w-[80%] text-[rgba(var(--white-color))] p-3 bg-[rgba(var(--darkgreen),0.8)] mx-auto my-20 md:flex-row flex-col flex gap-3 items-center justify-center rounded-xl">
               <div className="pl-5 flex-1 flex flex-col gap-4">
@@ -149,87 +99,85 @@ export default function ExperienceReveal({ jobs }: ExperienceRevealProps) {
             </div>
           </header>
 
-          {/* JOB SECTIONS */}
-          <div className="my-1  p-1 md:p-10 w-full  mx-auto rounded-xl">
-            {jobs.map((job, index) => {
-              const imageUrl =
-                typeof job.image === "string"
-                  ? job.image
-                  : job.image[1600] || job.image[1200] || job.image[800] || job.image[400];
+      {/* Experience */}
+      <main className="max-w-5xl mx-auto px-4 pb-32 space-y-12">
+        {jobs.map((job, index) => {
+          const imageUrl =
+            typeof job.image === "string"
+              ? job.image
+              : job.image[1200] || job.image[800];
 
-              return (
-                <section
-                  key={index}
-                  className="text-[rgba(var(--white-color))] max-w-[900px] my-0 mx-auto job-section relative flex flex-col items-center justify-center min-h-screen px-4 bg-cover bg-center rounded-2xl shadow-2xl overflow-hidden"
+          return (
+            <section
+              key={index}
+              className="bg-white/90 rounded-xl overflow-hidden shadow-md"
+            >
+              <div className="grid md:grid-cols-3">
+                <div
+                  className="h-48 md:h-full bg-cover bg-center"
                   style={{ backgroundImage: `url(${imageUrl})` }}
-                  data-speed={0.8 + index * 0.1}
-                >
-                  {/* 🔹 Color Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-black/70 via-black/60 to-black/70" />
+                />
 
-                  {/* Text content */}
-                  <div className="relative z-10 flex flex-col items-center justify-start text-center max-w-3xl">
-                    <h2 className="text-4xl font-bold text-[rgba(var(--white-color))] drop-shadow-lg">{job.title}</h2>
-                    <p className="text-[rgba(var(--lightgreen))] text-lg mt-2">
-                      <span className="font-semibold">{job.company}</span> • {job.years}
-                    </p>
-                    <p className="text-[rgba(var(--soft))] text-xl mt-6 leading-relaxed">{job.description}</p>
-                  </div>
+                <div className="md:col-span-2 p-8 text-gray-900">
+                  <h2 className="text-2xl font-bold">{job.title}</h2>
+                  <p className="text-sm text-gray-600 mt-1">
+                    <span className="font-medium">{job.company}</span> ·{" "}
+                    {job.years}
+                  </p>
+
+                  <p className="mt-4 leading-relaxed text-gray-700">
+                    {job.description}
+                  </p>
 
                   {job.skills && job.skills.length > 0 && (
-                    <div className="mt-8 z-[9999]">
-                      <h3 className="text-xl text-[rgba(var(--soft))] text-center font-semibold mb-3 accent-zinc-100 relative">
-                        Skills Gained
-                      </h3>
-                      <ul className="flex flex-wrap justify-center gap-2">
-                        {job.skills.map((skillKey) => {
-                          const skill = SkillsLibrary[skillKey];
-                          return (
-                            <li
-                              key={skillKey}
-                              className="flex items-center gap-2 px-3 py-1 bg-[rgba(var(--darkgreen))] rounded-full text-sm backdrop-blur-md hover:bg-white/30 transition"
-                            >
-                              {skill.icon}
-                              <span className="font-['cup-cakes']">{skill.name}</span>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
+                    <ul className="flex flex-wrap gap-2 mt-6">
+                      {job.skills.map((skillKey) => {
+                        const skill = SkillsLibrary[skillKey];
+                        return (
+                          <li
+                            key={skillKey}
+                            className="px-3 py-1 text-sm bg-gray-100 rounded-full flex items-center gap-2"
+                          >
+                            {skill.icon}
+                            <span className="font-['cup-cakes'] ">{skill.name}</span>
+                          </li>
+                        );
+                      })}
+                    </ul>
                   )}
-                </section>
-              );
-            })}
-          </div>
+                </div>
+              </div>
+            </section>
+          );
+        })}
+      </main>
 
-          <footer className="text-center flex flex-col justify-center items-center py-20 bg-gray-900 w-full">
-            <img src={Images.FooterLogo} className="max-w-20 absolute mb-10 opacity-20" />
-            <TextLink
-              to="/project-overview"
-              className="text-xl !text-[rgba(var(--soft))] flex items-center gap-2"
-            >
-              <ArrowRight className="w-5 h-5 text-[rgba(var(--lightgreen))]" />
-              Click here for some examples of my work
-            </TextLink>
+      {/* Footer */}
+      <footer className="bg-gray-900 py-20 text-center space-y-6">
+        <TextLink
+          to="/project-overview"
+          className="text-lg text-gray-300 flex justify-center items-center gap-2"
+        >
+          <ArrowRight className="w-4 h-4 text-[rgba(var(--lightgreen))]" />
+          View my work
+        </TextLink>
 
-            <TextLink
-              to="/about"
-              className="text-xl !text-[rgba(var(--soft))] flex items-center gap-2"
-            >
-              <ArrowRight className="w-5 h-5 text-[rgba(var(--lightgreen))]" />
-              Click here to learn more about me
-            </TextLink>
+        <TextLink
+          to="/about"
+          className="text-lg text-gray-300 flex justify-center items-center gap-2"
+        >
+          <ArrowRight className="w-4 h-4 text-[rgba(var(--lightgreen))]" />
+          About me
+        </TextLink>
 
-            <TextLink
-              to="/"
-              className="text-xl !text-[rgba(var(--soft))] flex items-center gap-2"
-            >
-              <Home className="w-5 h-5 text-[rgba(var(--lightgreen))]" />
-              Home
-            </TextLink>
-          </footer>
-        </div>
-      </div>
+        <TextLink
+          to="/"
+          className="text-lg text-gray-300 flex justify-center items-center gap-2"
+        >
+          <Home className="w-4 h-4 text-[rgba(var(--lightgreen))]" />
+          Home
+        </TextLink>
+      </footer>
     </div>
   );
 }
