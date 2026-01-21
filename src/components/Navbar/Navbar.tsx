@@ -24,7 +24,7 @@ const Navbar: React.FC<NavbarProps> = ({ forceScrolled = false }) => {
   const textColor = linkColor;
   const bgColor = scrolled
     ? "bg-black backdrop-blur-sm"
-    : "md:bg-transparent bg-white";
+    : "md:bg-transparent bg-white/60";
 
   useEffect(() => {
     let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
