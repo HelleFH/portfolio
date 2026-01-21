@@ -17,7 +17,7 @@ export const projects = [
   },
   {
     id: 2,
-    name: "Cloudporteurope.com",
+    name: "CloudPort",
      technologies: ["React"],
     images: [Images.CloudPortScreen],
     projectLink: "https://cloudporteurope.com",
