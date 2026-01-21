@@ -4,6 +4,7 @@ import Layout from "../../components/Layout.tsx";
 import ProjectsOverview from "./components/ProjectOverview/ProjectOverview.tsx";
 import ProjectsIntro from "./components/ProjectsIntro/ProjectsIntro.tsx";
 import SkillsList from "./components/SkillsList/SkillsList.tsx";
+import AnimatedSection from "../../components/AnimatedSection.jsx";
 
 const Home: React.FC = () => {
   const location = useLocation();

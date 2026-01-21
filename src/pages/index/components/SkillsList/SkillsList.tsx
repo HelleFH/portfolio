@@ -1,5 +1,6 @@
 import React from "react";
 import { skillIcons } from "../../../../components/Pills/SkillIcons.tsx";
+import AnimatedSection from "../../../../components/AnimatedSection.jsx";
 
 const frontendSkills = [
   "HTML", "JavaScript", "CSS/SCSS", "TypeScript", "React", "Vue", "PHP", "Next.js",
@@ -37,9 +38,14 @@ const SkillsList: React.FC = () => {
       <h2 className="mb-2 font-[lato] text-2xl font-semibold text-[rgba(var(--dark-color))] md:text-3xl">
         Technologies</h2>
       <div className="flex flex-col gap-8 md:grid-cols-3">
-        {renderList("Frontend", frontendSkills)}
-        {renderList("Styling & Design", stylingSkills)}
-        {renderList("Misc", miscSkills)}
+        <AnimatedSection>        {renderList("Frontend", frontendSkills)}
+        </AnimatedSection>
+        <AnimatedSection>
+          {renderList("Styling & Design", stylingSkills)}
+        </AnimatedSection>
+        <AnimatedSection>
+          {renderList("Other", miscSkills)}
+        </AnimatedSection>
       </div>
     </div>
   );
