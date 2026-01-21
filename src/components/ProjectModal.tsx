@@ -10,6 +10,7 @@ import { skillIcons } from '../components/Pills/SkillIcons.tsx';
 import ReadMoreLink from "./Links/ReadMoreLink.tsx";
 import ShowLoginButton from "./Links/ShowLoginButton.tsx";
 import { ProjectModalProps } from "../types/projectModal.ts";
+import { X } from "lucide-react";
 
 
 const ProjectModal: React.FC<ProjectModalProps> = ({
@@ -66,9 +67,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 z-20 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-[rgba(var(--white-color))] p-2 rounded-full dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          className="absolute top-4 right-4 z-20 flex text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-[rgba(var(--white-color))] p-2 rounded-full dark:bg-gray-800 hover:bg-gray-300/50 dark:hover:bg-gray-700 transition"
         >
-          <FontAwesomeIcon icon={faTimes} size="lg" />
+          <X size={22} />
         </button>
 
         {/* Chevron Left */}
@@ -148,7 +149,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             <Link
               className="justify-end md:w-fit"
               to={`/projects/${project.name}`}
-              state={{  from: location.pathname }}
+              state={{ from: location.pathname }}
             >
               <ReadMoreLink fontColor="rgba(var(--dark-color))">Read More</ReadMoreLink>
             </Link>

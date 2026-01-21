@@ -110,7 +110,7 @@ const CredentialRow: React.FC<CredentialRowProps> = ({
   onCopy,
   copied,
 }) => (
-  <p className="flex items-center justify-between rounded bg-gray-100 p-3 transition-colors hover:bg-gray-200">
+  <p className="flex items-center justify-between rounded bg-gray-100 p-3 transition-colors hover:bg-gray-300/50">
     <strong className="flex-1">{label}:</strong>
     <span>{value}</span>
     <FontAwesomeIcon

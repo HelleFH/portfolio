@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Project } from "../types/project.ts";
 import { CredentialRowProps } from "../types/credentialRow.ts";
+import { X } from "lucide-react";
 
 
 const LoginModal: React.FC<LoginModalProps> = ({
@@ -24,7 +25,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
   return (
     <div
       className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-50"
-      onClick={onHide} // clicking backdrop closes modal
+      onClick={onHide}
     >
       {/* Modal box */}
       <div
@@ -32,11 +33,13 @@ const LoginModal: React.FC<LoginModalProps> = ({
         onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
       >
         {/* Floating Close Button */}
+
         <button
           onClick={onHide}
-          className="absolute top-3 right-3 text-gray-700 hover:text-gray-900 p-1"
+          className="absolute top-3 right-3 z-20 flex text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-[rgba(var(--white-color))] p-2 rounded-full dark:bg-gray-800 hover:bg-gray-300/50 transition"
+
         >
-          <FontAwesomeIcon icon={faTimes} size="lg" />
+          <X size={22} />
         </button>
 
         {/* Header */}
@@ -116,7 +119,7 @@ const CredentialRow: React.FC<CredentialRowProps> = ({
   onCopy,
   copied,
 }) => (
-  <p className="flex items-center justify-between rounded bg-gray-100 p-3 transition-colors hover:bg-gray-200">
+  <p className="flex items-center justify-between rounded bg-gray-100 p-3 transition-colors hover:bg-gray-300/50">
     <strong className="flex-1">{label}:</strong>
     <span>{value}</span>
     <FontAwesomeIcon

@@ -6,8 +6,8 @@ import SocialLinks from "./SocialLinks.tsx";
 import { Link } from "react-router-dom";
 import { SideMenuProps } from "../types/sideMenu.ts";
 
-const SideMenu: React.FC<SideMenuProps> = ({scrolled, items, open, setOpen }) => {
-  
+const SideMenu: React.FC<SideMenuProps> = ({ scrolled, items, open, setOpen }) => {
+
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -18,18 +18,18 @@ const SideMenu: React.FC<SideMenuProps> = ({scrolled, items, open, setOpen }) =>
   return (
     <div className="pr-3">
       {/* Burger Icon */}
-   <button
-  onClick={() => setOpen(!open)}
-  className={`
+      <button
+        onClick={() => setOpen(!open)}
+        className={`
     burger-icon flex h-[32px] items-center rounded-full p-1
     transition-all duration-300 hover:scale-110
     ${scrolled
-      ? "bg-transparent text-[rgba(var(--white-color))] "
-      : "bg-[rgba(var(--white-color),0.6)] text-black"}
+            ? "bg-transparent text-[rgba(var(--white-color))] "
+            : "bg-[rgba(var(--white-color),0.6)] text-black"}
   `}
->
-  {open ? <X size={24} /> : <Menu size={24} />}
-</button>
+      >
+        {open ? <X size={24} /> : <Menu size={24} />}
+      </button>
 
       <AnimatePresence>
         {open && (
@@ -76,7 +76,8 @@ const SideMenu: React.FC<SideMenuProps> = ({scrolled, items, open, setOpen }) =>
                 </div>
                 <button
                   onClick={() => setOpen(false)}
-                  className="ml-auto"
+                  className="ml-auto top-4 right-4 z-20 flex text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-[rgba(var(--white-color))] p-2 rounded-full dark:bg-gray-800 hover:bg-gray-300/50 dark:hover:bg-gray-700 transition"
+
                 >
                   <X size={22} />
                 </button>
