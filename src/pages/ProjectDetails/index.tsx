@@ -104,7 +104,7 @@ const ProjectDetail: React.FC = () => {
       buttons={[
         selectedProject.projectLink && {
           type: "link",
-          text: selectedProject.buttonText || "View Project",
+          text: selectedProject.buttonText || "Live Site",
           path: selectedProject.projectLink,
           external: true,
         },

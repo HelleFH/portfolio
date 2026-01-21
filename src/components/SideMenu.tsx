@@ -16,13 +16,13 @@ const SideMenu: React.FC<SideMenuProps> = ({scrolled, items, open, setOpen }) =>
   }, [open]);
 
   return (
-    <div>
+    <div className="pr-3">
       {/* Burger Icon */}
    <button
   onClick={() => setOpen(!open)}
   className={`
     burger-icon flex h-[32px] items-center rounded-full p-1
-    transition-all duration-300 hover:scale-110 pr-3
+    transition-all duration-300 hover:scale-110
     ${scrolled
       ? "bg-transparent text-[rgba(var(--white-color))] "
       : "bg-[rgba(var(--white-color),0.6)] text-black"}
@@ -41,7 +41,7 @@ const SideMenu: React.FC<SideMenuProps> = ({scrolled, items, open, setOpen }) =>
               animate={{ opacity: 0.45 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-40 bg-black"
+              className="fixed inset-0 z-40"
               onClick={() => setOpen(false)}
             />
 
