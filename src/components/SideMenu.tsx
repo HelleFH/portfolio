@@ -22,7 +22,7 @@ const SideMenu: React.FC<SideMenuProps> = ({scrolled, items, open, setOpen }) =>
   onClick={() => setOpen(!open)}
   className={`
     burger-icon flex h-[32px] items-center rounded-full p-1
-    transition-all duration-300 hover:scale-110
+    transition-all duration-300 hover:scale-110 pr-3
     ${scrolled
       ? "bg-transparent text-[rgba(var(--white-color))] "
       : "bg-[rgba(var(--white-color),0.6)] text-black"}
