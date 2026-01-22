@@ -16,6 +16,7 @@ import CVPage from "./pages/ExperienceReveal/index.tsx";
 import "./index.css";
 import ProjectsAll from "./pages/ProjectsAll/index.tsx";
 import DesignAndMedia from "./pages/DesignAndMedia/index.jsx";
+import CookieBanner from "./components/CookieBanner.tsx";
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -91,6 +92,8 @@ const App: React.FC = () => {
           element={<CVPage />}
         />
       </Routes>
+                {location.pathname === '/' && <CookieBanner />}
+
     </AnimatePresence>
   );
 };
