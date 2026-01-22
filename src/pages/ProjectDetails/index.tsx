@@ -64,16 +64,13 @@ const ProjectDetail: React.FC = () => {
     []
   );
 
-  const handlers = useSwipeable({
-    onSwipedLeft: !isMobile
-      ? () => navigateToProject(currentIndex + 1)
-      : undefined,
-    onSwipedRight: !isMobile
-      ? () => navigateToProject(currentIndex - 1)
-      : undefined,
-    trackMouse: false,
-    preventScrollOnSwipe: false,
-  });
+const handlers = useSwipeable({
+  onSwipedLeft: () => navigateToProject(currentIndex + 1),
+  onSwipedRight: () => navigateToProject(currentIndex - 1),
+  delta: 50, // minimum swipe distance in px
+  preventScrollOnSwipe: true,
+});
+
 
   /* ---------------- Scroll behavior ---------------- */
 
