@@ -55,7 +55,7 @@ const Intro = () => {
             user-friendly web experiences.
           </p>
 
-          <p>I live in Christianshavn, Copenhagen, with my family.</p>
+          <p>I live in Portsmouth, UK, with my family.</p>
         </div>
       </AnimatedSection>
 
