@@ -243,9 +243,7 @@ export const projects = [
       "Node.js",
       "RESTful API",
       "Zustand",
-      "Formik",
-      "Bcrypt",
-      "Jsonwebtoken"
+  
     ],
     projectDetails: [
       "User authentication (signup, login, logout)",

@@ -70,7 +70,7 @@ body {
   box-sizing: border-box;
   color: var(--black-color);
   scroll-behavior: smooth;
-  background-color: #f9f9f9;
+  background-color: var(--white-color);
 
 }
 
@@ -97,7 +97,7 @@ h6 {
   font-family: 'PangramSans-Medium';
 color: color-mix(
   in srgb,
-  rgba(var(--dark-color)) 50%,
+  rgba(var(--dark-color)) 40%,
   black
 );}
 

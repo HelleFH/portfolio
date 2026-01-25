@@ -62,7 +62,7 @@ const ProjectsOverview = () => {
 
           <div
             className="grid auto-rows-auto gap-4 md:gap-6 
-                   w-full bg-[rgba(var(--white-color))] p-2 rounded-lg shadow-sm"
+                   w-full bg-[rgba(var(--white-color))] p-4 rounded-lg shadow-sm"
             style={{ gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}
           >
             {frontpageProjects.map((project, index) => (

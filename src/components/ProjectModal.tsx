@@ -48,10 +48,10 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
   if (selectedProjectIndex === null || !projects[selectedProjectIndex]) return null;
   const project = projects[selectedProjectIndex];
 
-  const technologiesArray: string[] = Array.isArray(project.technologiesMore)
-    ? project.technologiesMore
-    : project.technologiesMore
-      ? project.technologiesMore.split(",").map((t) => t.trim())
+  const technologiesArray: string[] = Array.isArray(project.technologies)
+    ? project.technologies
+    : project.technologies
+      ? project.technologies.split(",").map((t) => t.trim())
       : [];
 
   return visible ? (
