@@ -11,10 +11,7 @@ const ProjectNavigation: React.FC<{
       &#x2039;
     </button>
 
-    {/* Swipe hint (mobile only) */}
-    <span className="text-sm text-gray-400 md:hidden">
-      Swipe to navigate
-    </span>
+
 
     <button
       onClick={onNext}
