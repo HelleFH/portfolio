@@ -15,6 +15,7 @@ import { LocationState } from "../../types/locationState.ts";
 import { Project } from "../../types/project.ts";
 import { ResponsiveImageSet } from "../../types/responsiveImageSet.ts";
 import Layout from "../../components/Layout.tsx";
+import { ButtonConfig } from "../../types/buttonConfig.ts";
 
 /* ---------------- Utils ---------------- */
 
@@ -56,6 +57,25 @@ const ProjectDetail: React.FC = () => {
 
     navigate(`/projects/${newProject.name}`);
   };
+  const heroButtons: ButtonConfig[] = [
+  selectedProject.projectLink
+    ? {
+        text: selectedProject.buttonText || "Live Site",
+        path: selectedProject.projectLink,
+        external: true,
+        icon: "link",
+      }
+    : null,
+
+  selectedProject.githubLink
+    ? {
+        text: "GitHub",
+        path: selectedProject.githubLink,
+        external: true,
+        icon: "github",
+      }
+    : null,
+].filter((b): b is ButtonConfig => b !== null);
 
   /* ---------------- Mobile-safe swipe ---------------- */
 
@@ -64,12 +84,12 @@ const ProjectDetail: React.FC = () => {
     []
   );
 
-const handlers = useSwipeable({
-  onSwipedLeft: () => navigateToProject(currentIndex + 1),
-  onSwipedRight: () => navigateToProject(currentIndex - 1),
-  delta: 50, // minimum swipe distance in px
-  preventScrollOnSwipe: true,
-});
+  const handlers = useSwipeable({
+    onSwipedLeft: () => navigateToProject(currentIndex + 1),
+    onSwipedRight: () => navigateToProject(currentIndex - 1),
+    delta: 50, // minimum swipe distance in px
+    preventScrollOnSwipe: true,
+  });
 
 
   /* ---------------- Scroll behavior ---------------- */
@@ -98,20 +118,8 @@ const handlers = useSwipeable({
       heroTitle={selectedProject.name}
       heroSubtitle={selectedProject.tagline}
       heroIntro={selectedProject.descriptionTagline}
-      buttons={[
-        selectedProject.projectLink && {
-          type: "link",
-          text: selectedProject.buttonText || "Live Site",
-          path: selectedProject.projectLink,
-          external: true,
-        },
-        selectedProject.githubLink && {
-          type: "link",
-          text: selectedProject.githubButtonText || "View GitHub",
-          path: selectedProject.githubLink,
-          external: true,
-        },
-      ].filter(Boolean)}
+   buttons={heroButtons}
+
     >
       <div
         {...handlers}
@@ -128,7 +136,11 @@ const handlers = useSwipeable({
           <FaArrowLeft size={14} />
           Back to Projects
         </button>
-
+         {/* Chevron navigation (document flow, not sticky) */}
+          <ProjectNavigation
+            onPrev={() => navigateToProject(currentIndex - 1)}
+            onNext={() => navigateToProject(currentIndex + 1)}
+          />
         {/* Main image */}
         <div className="flex justify-center mb-4 rounded-sm items-center w-full bg-white p-4">
           <picture>
@@ -172,11 +184,7 @@ const handlers = useSwipeable({
         <div className="w-full rounded-sm bg-[rgba(255,255,255,0.95)]">
           <ProjectContent project={selectedProject} />
 
-          {/* Chevron navigation (document flow, not sticky) */}
-          <ProjectNavigation
-            onPrev={() => navigateToProject(currentIndex - 1)}
-            onNext={() => navigateToProject(currentIndex + 1)}
-          />
+ 
         </div>
 
         {/* Login modal */}

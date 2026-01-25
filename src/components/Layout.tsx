@@ -1,9 +1,10 @@
 import React, { ReactNode } from "react";
-import Hero from "./Hero/Hero";
+import Hero from "./Hero/Hero.tsx";
 import Navbar from "./Navbar/Navbar.tsx";
 import Footer from "./Footer.tsx";
 import AnimatedSection from "./AnimatedSection";
 import { LayoutProps } from "../types/layout.ts";
+import { ButtonConfig } from "../types/buttonConfig.ts";
 
 
 const Layout: React.FC<LayoutProps> = ({
@@ -12,6 +13,7 @@ const Layout: React.FC<LayoutProps> = ({
   heroIntro,
   buttons = [],
   children,
+  
 }) => {
   return (
     <div className="flex min-h-screen flex-col justify-start relative mx-auto">
