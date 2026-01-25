@@ -26,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({
 
   return (
     <section
-      className="hero mb-10 relative flex min-h-[65vh] w-full flex-col items-start justify-center py-[5rem] overflow-hidden px-4 md:px-16"
+      className="hero mb-10 md:bg-top bg-[65%] relative flex min-h-[65vh] w-full flex-col items-start justify-center py-[5rem] overflow-hidden px-4 md:px-16"
       style={{
         backgroundImage: `url(${Images.HeroImage400})`,
         backgroundSize: "cover",
