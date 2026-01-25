@@ -13,7 +13,7 @@ const ProjectContent: React.FC<ProjectContentProps> = ({ project }) => {
         <h4 className="text-2xl font-semibold p-4">
           {project.descriptionHeader}
         </h4>
-        <p className="text-lg text-justify px-6 py-3 leading-relaxed pb-10">{project.description}</p>
+        <p className="text-lg text-left md:px-6 px-3 py-3 leading-relaxed pb-10">{project.description}</p>
       </div>
 
       {/* Project Details */}

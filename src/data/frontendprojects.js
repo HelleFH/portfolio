@@ -222,40 +222,7 @@ export const projects = [
       "Built with scalability and simplicity in mind"
     ]
   },
-  {
-    id: 10,
-    name: "MEVN Cart",
-    technologies: ["MongoDB", "Express", "Vue", "Node.js"],
-    images: [Images.MEVNCartScreen],
-    projectLink: "https://shopping-cart-master-1-5ylu.onrender.com/",
-    githubLink: "https://github.com/hellefh/shopping-cart",
-    buttonText: "Live Site",
-    githubButtonText: "GitHub",
-    description:"A full-stack shopping cart application built with the MEVN stack, featuring secure user authentication and persistent cart storage. Users can browse products, manage cart contents, and view detailed product pages, while authentication is handled with JWTs and encrypted passwords. The project highlights state management, form validation, and real-world e-commerce flows.",
-    descriptionHeader: "MEVN Stack Shopping Cart with Cart Storage and User Authentication",
-    descriptionTagline: "A full-stack shopping cart app built with the MEVN stack. Users can sign up, log in securely, and manage a persistent shopping cart. Includes real-time form validation, cart updates, and detailed product pages.",
-    username: "hellefruergaard@mevn-shop.com",
-    password : "password123",
-    technologiesMore: [
-      "MongoDB",
-      "Express",
-      "Vue",
-      "Node.js",
-      "RESTful API",
-      "Zustand",
-  
-    ],
-    projectDetails: [
-      "User authentication (signup, login, logout)",
-      "Secure password handling with Bcrypt",
-      "JWT-based session management",
-      "Form validation using Formik and Yup",
-      "Cart features: add, remove, update products",
-      "Product detail view with dynamic routing",
-      "State managed with Zustand",
-      "Vue and TailwindCSS for responsive UI"
-    ]
-  },
+ 
   {
     id: 11,
     name: "News Site",
@@ -333,10 +300,11 @@ export const projects = [
     images: [Images.MEVNCartScreen],
     projectLink: "https://shopping-cart-master-1-5ylu.onrender.com/",
     githubLink: "https://github.com/hellefh/shopping-cart",
+    description:"A full-stack shopping cart application built with the MEVN stack, featuring secure user authentication and persistent cart storage. Users can browse products, manage cart contents, and view detailed product pages, while authentication is handled with JWTs and encrypted passwords. The project highlights state management, form validation, and real-world e-commerce flows.",
     buttonText: "Live Site",
     githubButtonText: "GitHub",
     descriptionHeader: "MEVN Stack Shopping Cart with Cart Storage and User Authentication",
-    descriptionTagline: "A full-stack shopping cart app built with the MEVN stack. Users can sign up, log in securely, and manage a persistent shopping cart. Includes real-time form validation, cart updates, and detailed product pages.",
+    descriptionTagline: "A full-stack shopping cart app built with the MEVN stack",
     username: "hellefruergaard@mevn-shop.com",
     password: "password123",
     technologiesMore: [

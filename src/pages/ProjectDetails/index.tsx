@@ -115,7 +115,7 @@ const handlers = useSwipeable({
     >
       <div
         {...handlers}
-        className="-mt-[8rem] relative z-10 mx-auto flex flex-col items-center w-full max-w-[1000px] p-6 bg-[rgba(255,255,255,0.9)] rounded-sm shadow-xs my-[7rem]"
+        className="-mt-[8rem] relative z-10 mx-auto flex flex-col items-center w-full max-w-[1000px] md:p-6 p-2 bg-[rgba(255,255,255,0.9)] rounded-sm shadow-xs my-[7rem]"
       >
         {/* Back button */}
         <button
